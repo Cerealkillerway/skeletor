@@ -1,0 +1,19 @@
+<template name="userCreate">
+    <div class="panel normalSection">
+
+        <div class="valign-wrapper">
+            <i class="material-icons large left">person</i>
+            <h4 class="valign">
+                {{#if data.item}}
+                    {{_ "updateUser_text"}} <span class="documentTitle">"{{fetchAttributes data.item "username"}}"</span>
+                {{else}}
+                    {{_ "createUser_text"}}
+                {{/if}}
+            </h4>
+        </div>
+
+        <div class="skeleformWrapper">
+            {{> skeleform data}}
+        </div>
+    </div>
+</template>

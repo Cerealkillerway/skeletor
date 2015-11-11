@@ -1,0 +1,18 @@
+<template name="pageCreate">
+    <div class="panel normalSection">
+        <div class="valign-wrapper">
+            <i class="material-icons large left">find_in_page</i>
+            <h4 class="valign">
+                {{#if data.item}}
+                    {{_ "updatePage_text"}} <span class="documentTitle">"{{fetchAttributes data.item "code"}}"</span>
+                {{else}}
+                    {{_ "createPage_text"}}
+                {{/if}}
+            </h4>
+        </div>
+
+        <div class="skeleformWrapper">
+            {{> skeleform data}}
+        </div>
+    </div>
+</template>

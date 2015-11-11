@@ -1,0 +1,247 @@
+<template name="panelLayout">
+    <nav class="firstColor">
+        <div class="nav-wrapper">
+            <div id="logout" class="bold upperCase left">
+                <i class="mdi-action-exit-to-app small left"></i>
+                {{_ "menu_logout"}}
+            </div>
+            <a href="#" data-activates="mainMenuMobile" class="button-collapse right hSpaced"><i class="mdi-navigation-menu"></i></a>
+            <ul class="right hide-on-med-and-down iconSwing">
+                {{> mainMenu}}
+            </ul>
+            <ul class="side-nav firstColor" id="mainMenuMobile">
+                {{> mainMenu}}
+            </ul>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="centralBody">    
+            <div class="row vSpaced">
+                <div class="col s12 m6 l8 left-align">
+                    <div class="card-panel thirdColor langBar">
+                        {{> langBar}}
+                    </div>
+                </div>
+                <div class="col s12 m6 l4 right-align">
+                    <div class="card-panel secondColor">
+                        <i class="material-icons small left relative1">perm_identity</i>{{_ "currentLoggedUser_msg"}} {{currentUser.username}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="centralBody">
+                {{> Template.dynamic template=main}}      
+            </div>
+        </div>
+        
+        {{> statusBar}}
+    </main>
+
+    <footer>
+        {{> panelFooter}} 
+        {{#if debug}}
+            {{> debugToolbar}}
+        {{/if}}
+    </footer>
+</template>
+
+
+<template name="mainMenu">
+    <li>
+        <a href="/panel/dashboard{{currentLangLink}}">
+            <i class="material-icons small left">dashboard</i>
+            <div class="navItemName">{{_ "menu_dashboard"}}</div>
+        </a>
+    </li>
+    <li>
+        <a href="/pages/home{{currentLangLink}}" target="_blank">
+            <i class="material-icons small left">public</i>
+            <div class="navItemName">{{_ "menu_website"}}</div>
+        </a>
+    </li>
+    <li>
+        <a href="/panel/users{{currentLangLink}}">
+            <i class="material-icons small left">person</i>
+            <div class="navItemName">{{_ "menu_users"}}</div>
+        </a>
+    </li>
+    <li>
+        <a href="/panel/roles{{currentLangLink}}">
+            <i class="material-icons small left">beenhere</i>
+            <div class="navItemName">{{_ "menu_roles"}}</div>
+        </a>
+    </li>
+    <li>
+        <a href="/panel/pages{{currentLangLink}}">
+            <i class="material-icons small left">find_in_page</i>
+            <div class="navItemName">{{_ "menu_pages"}}</div>
+        </a>
+    </li>
+</template>
+
+
+<template name="panelFooter">
+    <footer id="panelFooter" class="page-footer firstColor">
+        <div class="footer-copyright lighten" style="margin-bottom: 20px;">
+            <div class="container">
+                {{_ "version"}} {{conf "version"}}
+                <a>
+                    <i class="medium material-icons firstInteractiveColor pointer right backTop waves-effect waves-light tooltipped" data-position="bottom" data-delay="10" data-tooltip="{{_ "backTop_tooltip"}}">arrow_drop_up</i>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5>{{conf "name"}}</h5>
+                    <p>
+                        <span class="bold">{{conf "appName"}}</span><br>
+                        {{_ "adminPanel_msg"}}<br><br>
+
+                        {{_ "support_msg"}} <a href="mailto:{{conf "webmasterEmail"}}">{{conf "webmasterEmail"}}</a>
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <img src="/images/logos/miniLogo.png" />
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright lighten">
+            <div class="container">
+                © {{display "currentYear"}} {{_ "designedBy_text"}} {{conf "author.name"}} {{_ "for_text"}} {{conf "name"}}
+                <a class="right" href="{{conf "author.website"}}" target="_blank">
+                    <i class="mdi-social-public small left"></i>
+                    {{conf "author.websiteText"}}
+                </a>
+            </div>
+        </div>
+    </footer>
+</template>
+
+
+<template name="panelModals">
+    <div class="modal" id="panelError">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="panelErrorTitle"></h4>
+                </div>
+                <div class="modal-body">
+                    <img src="/images/icons/status/error.png" style="max-height: 100px; margin-right: 10px; float: left;">
+                    <p>{{_ "details_msg"}}</p>
+                    <p id="panelErrorMessage" style="font-weight: bold;"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">{{_ "ok_btn"}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="panelConfirm">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="panelConfirmTitle"></h4>
+                </div>
+                <div class="modal-body">
+                    <img src="/images/icons/status/confirm.png" style="max-height: 100px; margin-right: 10px; float: left;">
+                    <p>{{_ "details_msg"}}</p>
+                    <p id="panelConfirmMessage" style="font-weight: bold;"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="panelConfirmOk">{{_ "ok_btn"}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="panelOkCancel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="panelOkCancelTitle"></h4>
+                </div>
+                <div class="modal-body">
+                    <img src="/images/icons/status/question.png" style="max-height: 100px; margin-right: 10px; float: left;">
+                    <p>{{_ "details_msg"}}</p>
+                    <p id="panelOkCancelMessage" style="font-weight: bold;"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal" id="panelOkCancelConfirm">{{_ "ok_btn"}}</button>
+                    <button type="button" class="btn btn-info" data-dismiss="modal">{{_ "cancel_btn"}}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<template name="panelLoading">
+    <div class="wrapperLoading">
+        <div class="centralBody">
+
+            <div class="panel centeredSection" style="max-width: 450px; margin: 70px auto 30px auto;">
+                <img src="/images/logos/miniLogo.png" height="100">
+
+                <div id="gear" style="height: 210px;">
+                    <div class="gearContainer">
+                        <div class="gearbox">
+                            <div class="overlay"></div>
+                            <div class="gear one">
+                                <div class="gear-inner">
+                                    <div class="gear-bar"></div>
+                                    <div class="gear-bar"></div>
+                                    <div class="gear-bar"></div>
+                                </div>
+                            </div>
+                            <div class="gear two">
+                                <div class="gear-inner">
+                                    <div class="gear-bar"></div>
+                                    <div class="gear-bar"></div>
+                                    <div class="gear-bar"></div>
+                                </div>
+                            </div>
+                            <div class="gear three">
+                                <div class="gear-inner">
+                                    <div class="gear-bar"></div>
+                                    <div class="gear-bar"></div>
+                                    <div class="gear-bar"></div>
+                                </div>
+                            </div>
+                            <div class="gear four large">
+                                <div class="gear-inner">
+                                    <div class="gear-bar"></div>
+                                    <div class="gear-bar"></div>
+                                    <div class="gear-bar"></div>
+                                    <div class="gear-bar"></div>
+                                    <div class="gear-bar"></div>
+                                    <div class="gear-bar"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3>{{_ "loading_msg"}}</h3>
+                <p>{{conf "name"}}</p>
+
+            </div>
+        </div>
+    </div>
+</template>
+
+
+
+
+<!--
+GUIDE
+================================
+NAV
+________________________________
+- iconSwing class controls the icon swing style menu; remove this class for a normal menu
+-->

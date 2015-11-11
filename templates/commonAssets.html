@@ -1,0 +1,84 @@
+<!-- language and social bar -->
+<template name="langBar">
+    <span class="hide-on-med-and-down langLabel">
+        {{_ "languages_lbl"}}
+    </span>
+    {{#each langs}}
+        <div class="langFlag" data-lang="{{this}}">
+            <img src="/images/icons/lang/{{this}}.jpg">
+        </div>
+    {{/each}}
+
+    {{#if social}}
+        <span class="langSpacer">|</span>
+        <span class="hide-on-med-and-down langLabel">
+            {{_ "social_lbl"}}
+        </span>
+        {{#each social}}
+            <div class="socialIcon" data-type="{{type}}">
+                <a href="{{url}}" target="_blank">
+                    <img src="/images/icons/social/{{type}}.jpg">
+                </a>
+            </div>
+        {{/each}}
+    {{/if}}
+</template>
+
+<!-- status bar -->
+<template name="statusBar">
+    <div id="statusBar">
+        <div class="firstColor">
+            <span class="hide-on-med-and-down langLabel">
+                {{_ "status_lbl"}}
+            </span>
+            <div class="status {{statusColor}}"></div>
+            ({{display "connectionStatus"}})
+
+            <a class="waves-effect waves-light firstColor right statusLabel" id="statusBarVisibility">
+                <i class="small material-icons">star</i>
+            </a>
+            <div class="right spacer"></div>
+            
+            <a class="waves-effect waves-light firstColor right statusLabel" id="reconnect">
+                <i class="small material-icons">swap_calls</i>
+            </a>
+            <a class="waves-effect waves-light firstColor right statusLabel" id="disconnect">
+                <i class="small material-icons">portable_wifi_off</i>
+            </a>
+            <div class="right" id="statusDescription"></div>
+
+        </div>
+    </div>
+</template>
+
+<!-- command bar for click-to-edit editor -->
+<template name="editorCommands">
+    <div class="commands hidden">
+        <div class="btn btn-success editSave">{{_ "save_btn"}}</div>
+        <div class="btn btn-danger editCancel">{{_ "cancel_btn"}}</div>
+    </div>
+</template>
+
+
+
+
+
+
+<!-- DEVELOPMENT and ERROR management -->
+<template name="workInProgress">
+    <div class="panel centeredSection">
+        <img src="/images/assets/work-in-progress.png"><br><br>
+        {{_ "workInProgress_text"}}
+    </div>
+</template>
+
+
+<template name="404">
+    <div class="panel centeredSection">
+        <img src="/images/logos/miniLogo.png">
+        <h2 class="blueTitle">{{_ "404Title_text"}}</h2>
+
+        <p><b>{{_ "404Subtitle_text"}}</b></p>
+        <p>{{{_ "404Detail_text"}}}</p>
+    </div>
+</template>

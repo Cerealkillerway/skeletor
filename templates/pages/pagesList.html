@@ -1,0 +1,44 @@
+<template name="pagesList">
+    <div class="panel normalSection">
+        <i class="material-icons large left">find_in_page</i>
+        <h2>
+            {{_ "pagesListTitle_text"}}
+        </h2>
+
+        <div style="margin-bottom: 35px">
+            <a href="/panel/pages/create{{currentLangLink}}" class="waves-effect waves-light btn firstColor">
+                <i class="material-icons small left">add_box</i>
+                {{_ "pagesCreate_btn"}}
+            </a>
+        </div>
+        <table class="hoverable responsive-table">
+            <thead>
+                <tr>
+                    <th>{{_ "title_lbl"}}</th>
+                    <th>{{_ "code_lbl"}}</th>
+                    <th>{{_ "delete_lbl"}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                    <tr>
+                        <td class="listPageName" data-page="{{_id}}">
+                            <a href="/panel/pages/{{code}}?lang={{currentLang}}">
+                                {{stripHtmlLang this "title" 50}}
+                            </a>
+                        </td>
+                        <td>
+                            {{code}}
+                        </td>
+                        <td>
+                            <div class="waves-effect waves-light btn secondColor deletePage">
+                                <i class="material-icons small left">delete</i>
+                                {{_ "delete_btn"}}
+                            </div>
+                        </td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</template>

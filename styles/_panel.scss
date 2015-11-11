@@ -1,0 +1,281 @@
+/* panel styles */
+.panelBody {
+    background-image: url(/images/backgrounds/bg.png);
+    background-position: center 0;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-color: #333;
+}
+
+.shortInput {
+    max-width: 350px;
+}
+
+.relative1 {
+    position: relative;
+    top: -4px;
+}
+
+
+#dashboardBtns {
+    .dashboardBtn {
+        width: 172px !important;
+        height: 172px !important;
+        margin: 15px !important;
+        padding-top: 15px !important;
+        line-height: 1.5 !important;
+
+        & i {
+            font-size: 6rem !important;
+            position: relative;
+            margin-bottom: 50px;
+            top: -20px;
+        }
+
+        & div {
+            position: relative;
+            bottom: 35px;
+        }
+    }
+}
+
+
+
+.thickTableLine {
+    line-height: 50px !important;
+}
+
+.inputContainer {
+    position: relative;
+}
+
+.fileLoader {
+    position: absolute;
+    height: 43px;
+    z-index: 2;
+    cursor: pointer;
+    opacity: 0;
+    max-width: 111px;
+}
+
+.fileLoaderCover {
+    position: absolute;
+    top: 0;
+}
+
+.fileNameContainer {
+    color: #eee;
+    padding: 10px 10px 6px 10px;
+    position: relative;
+    height: 43px;
+    max-width: 300px;
+    background-color: #333;
+}
+
+.canvasContainer {
+    background-color: #333;
+    margin: 5px 0 15px 0;
+    padding: 10px;
+}
+
+.canvasContainerEmpty {
+    background-image: url('images/assets/image-placeholder.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.canvasImage, #imagesReloaded > img {
+    border: solid 12px #999;
+    vertical-align: baseline;
+}
+
+.canvasThumb {
+    margin: 20px 0 0 20px;
+    border: solid 12px #999;
+}
+
+.orangeText {
+    color: #FF8000;
+}
+
+.panelMap {
+    height: 400px;
+    width: 100%;
+    max-width: 100% !important;
+}
+
+.coordinates {
+    min-height: 35px;
+    margin-bottom: 20px;
+    color: #ddd;
+}
+
+.coorField {
+    width: 250px;
+    margin-right: 15px;
+}
+
+.dasboardBtn {
+    margin-bottom: 40px;
+}
+
+#mapPlacemarks {
+    color: #fff;
+}
+
+#mapPlacemarks li {
+    position: relative;
+    list-style: square;
+    height: 43px;
+    line-height: 43px;
+    margin-bottom: 7px;
+}
+
+#mapPlacemarks > li > select {
+    max-width: 200px;
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+#mapPlacemarks > li > img {
+    position: absolute;
+    right: 210px;
+    max-height: 44px;
+}
+
+.markerDelete {
+    color: #fff;
+    height: 43px;
+    margin-right: 15px;
+    padding: 11px 15px;
+    background-color: #ff9000;
+    border: solid 1px #c56f00;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.markerDelete:hover {
+    background-color: #9954bb;
+    transition: all 1s linear;
+}
+
+.panelForm {
+    position: relative;
+}
+
+.langSwitch {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    width: 100px;
+}
+
+.langSwitch a, .confLngSwitch a {
+    width: 43px;
+}
+
+.confLngSwitch {
+    margin-left: 21px;
+}
+
+.langSwitchFixed {
+    margin-right: 23px;
+}
+
+.langEnable, .langDisable {
+    height: 43px;
+    padding: 0;
+}
+
+.langEnable i {
+    padding: 6px 9px;
+}
+
+.langDisable i {
+    padding: 6px;
+}
+
+#langQuickLinks {
+    margin-left: 25px;
+}
+
+#langQuickLinks img {
+    cursor: pointer;
+}
+
+.confOption {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.miniUpperText {
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.bordered {
+    border: solid 3px #333;
+}
+
+.centralBodyPanel {
+    max-width: 1100px;
+    position: relative;
+    margin: 20px auto 30px auto;
+}
+
+.centralBodyThin {
+    max-width: 1100px;
+    position: relative;
+    margin: 0 auto 0 auto;
+}
+
+.barSpaced {
+    padding-left: 221px;
+}
+
+
+
+#statusBar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 3000;
+
+    div {
+        padding: 15px;
+    }
+
+    .spacer {
+        width: 25px;
+        padding: 0 !important;
+        height: 52px;
+        margin-top: -15px;
+    }
+
+    a {
+        height: 52px;
+        margin-top: -15px;
+        padding-top: 12px;
+    }
+
+    .status {
+        //height: 30px;
+        width: 30px;
+        margin: auto 7px;
+        display: inline;
+    }
+
+    #statusDescription {
+        margin-top: -15px;
+        color: $firstColorLinkHover;
+    }
+}
+
+.barActivator {
+    width: 100%;
+    height: 15px;
+    padding: 0 !important;
+    z-index: 3000;
+    background-color: transparent;
+}

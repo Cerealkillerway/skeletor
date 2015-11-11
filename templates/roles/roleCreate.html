@@ -1,0 +1,16 @@
+<template name="roleCreate">
+
+    <div class="panel normalSection">
+        <h2 class="violetTitle">
+            <img src="/images/icons/tools/roles.png" class="titleIcon">
+            {{#if item}}
+                {{_ "updateRole_text"}} <span class="documentTitle">" {{item.name}} "</span>
+            {{else}}
+                {{_ "createRole_text"}}                
+            {{/if}}
+        </h2><br><br>    
+        <div>
+            {{> skeleform schema=this.schema item=this.item onUpdate="updateRoleFromPanel" onCreate="newRoleFromPanel"}}
+        </div>
+    </div>
+</template>
