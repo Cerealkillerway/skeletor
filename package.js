@@ -47,7 +47,13 @@ Package.onUse(function(api) {
     api.addFiles('templates/roles/rolesList.html', 'client');
     api.addFiles('templates/users/userCreate.html', 'client');
     api.addFiles('templates/users/usersList.html', 'client');
+    api.addFiles('templates/debug.html', 'client');
     
+
+    // i18n
+    api.addFiles('i18n/it.i18n.json');
+    api.addFiles('i18n/en.i18n.json');
+
 
     // libraries
     api.addFiles('namespace.js');
@@ -56,6 +62,8 @@ Package.onUse(function(api) {
     api.addFiles('lib/routerPanel.js');
     api.addFiles('lib/methods.js');
     api.addFiles('lib/permissions.js');
+    api.addFiles('lib/clientUtilities.js', 'client');
+    api.addFiles('events/debugEvents.js', 'client');
 
     api.addFiles('helpers/generalHelpers.js', 'client');
     api.addFiles('helpers/panelHelpers.js', 'client');

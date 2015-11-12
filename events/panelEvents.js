@@ -11,7 +11,7 @@ Template.panelLayout.rendered = function() {
 Template.panelLayout.events({
     "click #logout": function(event) {
         Meteor.logout(function(error) {
-            Router.go(configuration.login.defaultLogoutPath);
+            FlowRouter.go(Skeletor.configuration.login.defaultLogoutPath);
         });
     },
     "click .backTop": function(event) {

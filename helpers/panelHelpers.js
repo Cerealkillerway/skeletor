@@ -15,7 +15,7 @@ Template.pageCreate.helpers({
         }
         
         context.schemaName = 'Pages_default';
-        context.schema = Schemas.Pages_default;
+        context.schema = Skeletor.Schemas.Pages_default;
         context.undoPath = '/panel/pages';
 
         return context;
@@ -39,7 +39,7 @@ Template.userCreate.helpers({
         }
         
         context.schemaName = 'Users_default';
-        context.schema = Schemas.Users_default;
+        context.schema = Skeletor.Schemas.Users_default;
         context.undoPath = '/panel/users';
         context.method = {
             insert: 'insertUser',

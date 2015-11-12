@@ -1,0 +1,43 @@
+<template name="debugToolbar">
+    <div id="debug">   
+        <div id="debugActionsContainer">
+            <span class="debugGroup">
+                <span class="waves-effect waves-dark btn miniPadded firstDebugColor tooltipped" id="debugLangChange" data-position="top" data-delay="10" data-tooltip="{{_ "debugAlternateLangs_tooltip"}}">
+                    <i class="material-icons small">language</i>
+                </span>
+                <div class="fixed-action-btn">
+                    <span class="waves-effect waves-dark btn miniPadded firstDebugColor" id="debugLogger">
+                        <i class="material-icons small">list</i>
+                    </span>
+                    <ul>
+                        <li>
+                            <a class="btn-floating firstDebugColor">
+                                <i class="material-icons">brightness_7</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn-floating firstDebugColor">
+                                <i class="material-icons">format_quote</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn-floating firstDebugColor">
+                                <i class="material-icons">publish</i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="btn-floating firstDebugColor">
+                                <i class="material-icons">attach_file</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </span>
+        </div>
+        <div id="debugActivator">
+            <span class="waves-effect waves-light btn miniPadded alertDebugColor" id="debugOpen">
+                <i class="material-icons small">power_settings_new</i>
+            </span>
+       </div>
+    </div>
+</template>
