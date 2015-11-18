@@ -56,7 +56,7 @@ Template.panelFooter.rendered = function() {
 };
 
 
-//user list
+// user list
 Template.usersList.events({
     "click .deleteUser": function(event) {
         var userToDelete = $(event.target).parent().siblings('.listUsername').html().replace(/<(?:.|\n)*?>/gm, '').trim();
@@ -84,11 +84,17 @@ Template.usersList.events({
         
     }
 });
+// user create
+Template.userCreate.events({
+    "click .skeleformUpdate": function(event, template) {
+        console.log('clicked update!');
+    }
+});
 
 
-//ROLES
-/*=================================================================================*/
-//role list
+// ROLES
+/* =================================================================================*/
+// role list
 Template.rolesList.events({
     "click .deleteRole": function(event) {
         var roleToDelete = $(event.target).parent().siblings('.listRoleName').data('role');
