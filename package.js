@@ -17,6 +17,7 @@ Package.onUse(function(api) {
     api.use('mongo');
     api.use('session');
     api.use('blaze-html-templates', 'client');
+    api.use('underscore@1.0.0');
     api.use('kadira:flow-router@2.8.0');
     api.use('kadira:blaze-layout@2.2.0', 'client');
     api.use('meteorhacks:subs-manager@1.6.2');

@@ -25,7 +25,7 @@
                 {{#each data}}
                     <tr class="{{#if isMe username}}danger{{/if}} {{#if isUndeletableRole username}}info{{/if}}">
                         <td class="thickTableLine listUsername">
-                            <a href="/panel/users/{{username}}">
+                            <a href="/panel/users/{{username}}?lang={{currentLang}}">
                                 {{#if isUndeletableRole username}}
                                     <img src="/images/icons/alert.png" style="margin-right: 15px;">
                                 {{/if}}

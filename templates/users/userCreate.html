@@ -5,7 +5,7 @@
             <i class="material-icons large left">person</i>
             <h4 class="valign">
                 {{#if data.item}}
-                    {{_ "updateUser_text"}} <span class="documentTitle">"{{fetchAttributes data.item "username"}}"</span>
+                    {{_ "updateUser_text"}} <span class="documentTitle">"{{data.item.username}}"</span>
                 {{else}}
                     {{_ "createUser_text"}}
                 {{/if}}

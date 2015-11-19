@@ -35,12 +35,14 @@ Template.userCreate.helpers({
         var username = FlowRouter.getParam("username");
 
         if (username) {
-            context.item = Meteor.users.find({username: username});
+            context.item = Meteor.users.findOne({username: username});
+            if (context.item) {
+                context.item.userEmail = context.item.emails[0].address;
+            }
         }
-        
+
         context.schemaName = 'Users_default';
         context.schema = Skeletor.Schemas.Users_default;
-        context.undoPath = '/panel/users';
         context.method = {
             insert: 'insertUser',
             update: 'updateUser'

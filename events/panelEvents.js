@@ -11,7 +11,7 @@ Template.panelLayout.rendered = function() {
 Template.panelLayout.events({
     "click #logout": function(event) {
         Meteor.logout(function(error) {
-            FlowRouter.go(Skeletor.configuration.login.defaultLogoutPath);
+            FlowRouter.go(Skeletor.configuration.login.defaultLogoutPath, {}, {lang: FlowRouter.current().queryParams.lang});
         });
     },
     "click .backTop": function(event) {
@@ -82,12 +82,6 @@ Template.usersList.events({
             });
         });
         
-    }
-});
-// user create
-Template.userCreate.events({
-    "click .skeleformUpdate": function(event, template) {
-        console.log('clicked update!');
     }
 });
 
