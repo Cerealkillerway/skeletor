@@ -26,16 +26,18 @@ Package.onUse(function(api) {
     api.use('tap:i18n@1.7.0');
     api.use('momentjs:moment@2.10.6');
     api.use('materialize:materialize@0.97.3', 'client');
+    api.use('cerealkiller:utils');
     // need skeleform, but allow it to be loaded last
     api.use('cerealkiller:skeleform', {unordered: true});
     
 
     // exports
-    api.export('Skeletor');
+    api.export('Skeletor');   // package namespace
 
     // styles
     api.addFiles('styles/skeletor.scss', 'client');
     api.addFiles('styles/_panel.scss', 'client');
+    api.addFiles('styles/gearLoader.scss', 'client');
     
 
     // templates
@@ -65,6 +67,7 @@ Package.onUse(function(api) {
     api.addFiles('lib/methods.js');
     api.addFiles('lib/permissions.js');
     api.addFiles('lib/clientUtilities.js', 'client');
+    api.addFiles('lib/ckMaterializeOverrides.js', 'client');
     api.addFiles('events/debugEvents.js', 'client');
 
     api.addFiles('helpers/generalHelpers.js', 'client');

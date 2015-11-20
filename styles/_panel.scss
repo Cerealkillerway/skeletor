@@ -1,21 +1,243 @@
-/* panel styles */
-.panelBody {
-    background-image: url(/images/backgrounds/bg.png);
-    background-position: center 0;
-    background-repeat: repeat;
-    background-attachment: fixed;
-    background-color: #333;
+* {
+    outline-width: 0 !important;  // fix messed up selection borders with chrome
 }
 
-.shortInput {
-    max-width: 350px;
+/* --- utilitiy classes --- */
+.centralBodyFlex {
+    max-width: 1100px;
+    margin: 0 auto 0 auto;
+}
+.centralBody {
+    @extend .centralBodyFlex;
+    width: 100%;
+}
+.panel {
+    background: $firstBackgroundColor;
+    margin: 0 auto 35px auto;
+    padding: 35px 35px 55px 35px;
+}
+
+.wrapperLoading {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(21, 21, 21, 0.8);
 }
 
 .relative1 {
     position: relative;
     top: -4px;
 }
+.vSpaced {
+    margin: 15px auto;
+}
+.hSpaced {
+    margin: auto 15px;
+}
+.hPadded {
+    padding: 0 35px;
+}
+.topSpaced {
+    margin-top: 35px !important;
+}
+.pointer, input[type="file"] {
+    cursor: pointer;
+}
+.divider {
+    background-color: lighten($firstTextColor, 30%) !important;
+}
+.bold {
+    font-weight: 500;
+}
+.upperCase {
+    text-transform: uppercase;
+}
+.transparent {
+    opacity: 0;
+}
+/* --- end utility classes --- */
 
+
+
+/* --- panel styles --- */
+.panelBody {
+    background-image: url(/images/backgrounds/panel.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #2b2b2b;
+    background-position: right top;
+    color: $firstTextColor;
+}
+body.panelBody {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: justify;
+
+    &::-webkit-scrollbar {
+        width: 17px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $firstColor;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: lighten($firstColor, 20%);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: lighten($firstColor, 30%);
+    }
+    &::-webkit-scrollbar-button {
+        display: none !important;
+    }
+
+    main {
+        flex: 1 0 auto;
+    }
+    
+    // headers
+    h5 {
+        i.large {
+            height: 6rem;
+        }
+    }
+    p {
+        margin: 0;
+        padding: 0;
+    }
+    
+    // links
+    a {
+        &:link {
+            color: $defaultLink;
+        }
+        &:visited {
+            color: $defaultLinkVisited;
+        }
+        &:hover {
+            color: $defaultLinkHover;
+        }
+        &:active {
+            color: $defaultLinkActive;
+        }
+    }
+    
+    // images
+    img {
+        max-width: 100%;
+    }
+    
+    // tables
+    td, th{
+        border-radius: 0 !important;
+    }
+
+    table.hoverable tbody tr:hover {
+        background-color: $firstHoverColor !important;
+    }
+
+    .btn {
+        i + span {
+            @extend .hide-on-small-only;
+        }
+    }
+    
+    // main menu
+    nav {
+        ul div {
+            float: left;
+            overflow: hidden;
+        }
+        .side-nav {
+            i {
+                margin-top: 15px;
+            }
+        }
+        .iconSwing {
+            .navItemName {
+                max-width: 0;
+                overflow: hidden;
+            }
+            .menuItemName {
+                text-transform: uppercase;
+                color: $firstColorLinkHover;
+                position: relative;
+                left: -35px;
+                font-weight: bold;
+            }
+            i.left {
+                margin-right: 0 !important;
+            }
+        }
+
+        #logout {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    }
+    
+    // dialogs
+    #toast-container {
+        z-index: 2007 !important;
+
+        .toast {
+            border: solid 2px;
+        }
+    }
+    
+    // languages and socials bar
+    .langBar {
+        max-height: 62px;
+
+        &:last-child:after {
+            content:'';
+            display:block;
+            clear: both;
+        }
+
+        .langLabel {
+            float: left;
+            margin-right: 15px;
+        }
+
+        .langSpacer {
+            float: left;
+            margin: auto 15px;
+        }
+
+        img {
+            max-height: 30px;
+            border: solid 3px $thirdColorBorder;
+            margin-right: 5px;
+            margin-top: -3px;
+            cursor: pointer !important;
+        }
+
+        .langFlag, .socialIcon {
+            height: 30px;
+            float: left;
+            margin-top: -4px;
+        }
+    }
+}
+/* --- end panel styles --- */
+
+
+
+/* --- specific rules --- */
+#skeleformLoading {
+    clear: both;
+
+    .panel {
+        max-width: 450px;
+        margin: 70px auto 30px auto;
+        z-index: 3000;
+    }
+}
 
 #dashboardBtns {
     .dashboardBtn {
@@ -31,211 +253,58 @@
             margin-bottom: 50px;
             top: -20px;
         }
-
         & div {
             position: relative;
             bottom: 35px;
         }
     }
 }
+/* --- end specific rules --- */
 
 
 
-.thickTableLine {
-    line-height: 50px !important;
+/* --- debug functions --- */
+#debug .btn {
+    width: 37px;
 }
-
-.inputContainer {
-    position: relative;
-}
-
-.fileLoader {
-    position: absolute;
-    height: 43px;
-    z-index: 2;
-    cursor: pointer;
-    opacity: 0;
-    max-width: 111px;
-}
-
-.fileLoaderCover {
-    position: absolute;
-    top: 0;
-}
-
-.fileNameContainer {
-    color: #eee;
-    padding: 10px 10px 6px 10px;
-    position: relative;
-    height: 43px;
-    max-width: 300px;
-    background-color: #333;
-}
-
-.canvasContainer {
-    background-color: #333;
-    margin: 5px 0 15px 0;
-    padding: 10px;
-}
-
-.canvasContainerEmpty {
-    background-image: url('images/assets/image-placeholder.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.canvasImage, #imagesReloaded > img {
-    border: solid 12px #999;
-    vertical-align: baseline;
-}
-
-.canvasThumb {
-    margin: 20px 0 0 20px;
-    border: solid 12px #999;
-}
-
-.orangeText {
-    color: #FF8000;
-}
-
-.panelMap {
-    height: 400px;
-    width: 100%;
-    max-width: 100% !important;
-}
-
-.coordinates {
-    min-height: 35px;
-    margin-bottom: 20px;
-    color: #ddd;
-}
-
-.coorField {
-    width: 250px;
-    margin-right: 15px;
-}
-
-.dasboardBtn {
-    margin-bottom: 40px;
-}
-
-#mapPlacemarks {
-    color: #fff;
-}
-
-#mapPlacemarks li {
-    position: relative;
-    list-style: square;
-    height: 43px;
-    line-height: 43px;
-    margin-bottom: 7px;
-}
-
-#mapPlacemarks > li > select {
-    max-width: 200px;
-    display: inline-block;
-    position: absolute;
+#debugActivator {
+    position: fixed;
+    bottom: 0;
     right: 0;
+    padding: 11px 21px 7px 21px;
+    z-index: 2000;
 }
+#debugActionsContainer {
+    @extend #debugActivator;
+    border-top-left-radius: 5px;
+    margin-right: 50px;
+    right: 28px;
 
-#mapPlacemarks > li > img {
-    position: absolute;
-    right: 210px;
-    max-height: 44px;
+    .fixed-action-btn {
+        position: static !important;
+        display: inline-block !important;
+        padding-top: 0 !important;
+
+        ul {
+            bottom: 40px !important;
+            right: -38px !important;
+
+            .btn-floating {
+                border-radius: 2px !important;
+            }
+        }
+    }
 }
-
-.markerDelete {
-    color: #fff;
-    height: 43px;
-    margin-right: 15px;
-    padding: 11px 15px;
-    background-color: #ff9000;
-    border: solid 1px #c56f00;
-    cursor: pointer;
-    font-weight: bold;
+.debugGroup {
+    margin: {
+        left: 7px;
+        right: 7px;
+    }
 }
-
-.markerDelete:hover {
-    background-color: #9954bb;
-    transition: all 1s linear;
-}
-
-.panelForm {
-    position: relative;
-}
-
-.langSwitch {
-    position: absolute;
-    top: -60px;
-    left: 0;
-    width: 100px;
-}
-
-.langSwitch a, .confLngSwitch a {
-    width: 43px;
-}
-
-.confLngSwitch {
-    margin-left: 21px;
-}
-
-.langSwitchFixed {
-    margin-right: 23px;
-}
-
-.langEnable, .langDisable {
-    height: 43px;
-    padding: 0;
-}
-
-.langEnable i {
-    padding: 6px 9px;
-}
-
-.langDisable i {
-    padding: 6px;
-}
-
-#langQuickLinks {
-    margin-left: 25px;
-}
-
-#langQuickLinks img {
-    cursor: pointer;
-}
-
-.confOption {
-    position: relative;
-    margin-bottom: 15px;
-}
-
-.miniUpperText {
-    font-size: 12px;
-    text-transform: uppercase;
-}
-
-.bordered {
-    border: solid 3px #333;
-}
-
-.centralBodyPanel {
-    max-width: 1100px;
-    position: relative;
-    margin: 20px auto 30px auto;
-}
-
-.centralBodyThin {
-    max-width: 1100px;
-    position: relative;
-    margin: 0 auto 0 auto;
-}
-
-.barSpaced {
-    padding-left: 221px;
-}
+/* --- end debug functions --- */
 
 
-
+/* --- skeletor status bar --- */
 #statusBar {
     position: fixed;
     bottom: 0;
@@ -245,27 +314,23 @@
     div {
         padding: 15px;
     }
-
     .spacer {
         width: 25px;
         padding: 0 !important;
         height: 52px;
         margin-top: -15px;
     }
-
     a {
         height: 52px;
         margin-top: -15px;
         padding-top: 12px;
     }
-
     .status {
         //height: 30px;
         width: 30px;
         margin: auto 7px;
         display: inline;
     }
-
     #statusDescription {
         margin-top: -15px;
         color: $firstColorLinkHover;
@@ -279,3 +344,4 @@
     z-index: 3000;
     background-color: transparent;
 }
+/* --- end skeletor status bar --- */

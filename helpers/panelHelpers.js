@@ -11,7 +11,7 @@ Template.pageCreate.helpers({
         var code = FlowRouter.getParam("code");
 
         if (code) {
-            context.item = Skeletor.Data.Pages__detail__.find({code: code});
+            context.item = Skeletor.Data.Pages__detail__.findOne({code: code});
         }
         
         context.schemaName = 'Pages_default';
