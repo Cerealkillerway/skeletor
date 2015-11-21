@@ -48,11 +48,9 @@
     "genericUpdate_msg": "Data updated correctly",
     "genericDelete_msg": "Succesfully deleted",
 
-
     "translationTitle_missing": "<h3 class='subTitle'>Missing translation</h3>",
     "translationTitleNoHTML_missing": "Missing translation",
     "translationText_missing": "We are sorry but the translated version of this content is not available yet.<br>Please try again later...",
-
 
     "whatYouNeed_text": "what do you need?",
     "adminTools_text": "<b>Administrative tools</b>",
@@ -109,7 +107,6 @@
     "incorrectPassword_error": "Wrong password",
     "accessDenied_error": "Access denied",
 
-
     "error_validation": "<b>Error: %s</b>",
     "min_validation": "minimum length: %s",
     "max_validation": "maximum length: %s",
@@ -124,7 +121,6 @@
     "date_validationDetail": "date dd/mm/yyyy",
     "required_validationDetail": "required field",
     "float_validationDetail": "float number",
-
 
     "ok_btn": "Ok",
     "save_btn": "Save",
@@ -146,22 +142,13 @@
     "news_btn": "News",
     "newsCreate_btn": "Create news",
     "loadImages_btn": "Load images...",
-    "customers_btn": "Customers",
-    "customersCreate_btn": "Insert new customer",
-    "cards_btn": "Subscription types",
-    "cardsCreate_btn": "Create new subscription type",
-    "accessControl_btn": "Access control",
-    "entries_btn": "Accesses",
-    "barcodeGenerator_btn": "Barcode generator",
-    "generate_btn": "Generate",
     "saveDefault_btn": "Set as default",
     "codeOptions_lbl": "Codes options",
-    "codeStart_lbl": "Start from",
-    "codesNumber_lbl": "Num. of codes",
     "print_btn": "Print",
     "loadFile_btn": "Load file...",
     "imageUploader_btn": "Insert image",
     "videoEmbeed_btn": "Embeed video",
+    "changePassword_btn": "Change password",
 
     "openWebsite_tooltip": "Open website in a new window",
     "users_tooltip": "Go to user management",
@@ -184,6 +171,9 @@
     "usernameMail_lbl": "Username or email",
     "password_lbl": "Password",
     "passwordShadowConfirm_lbl": "Repeat password",
+    "oldPassword_lbl": "Old password",
+    "newPassword_lbl": "New password",
+    "newPasswordShadowConfirm_lbl": "New password confirm",
     "old_lbl": "Old",
     "username_lbl": "Username",
     "roles_lbl": "Roles",
@@ -266,16 +256,12 @@
     "superuser_role": "Super user",
     "superuserLong_role": "Superutente dal divino potere",
 
-
     "dataTable_search": "Search in table:",
     "dataTable_lengthMenu": "Show _MENU_ rows",
 
     "imageUploadTitle_modal": "Image upload:",
     "videoEmbeed_modal": "Embeed video:",
 
-
-
     "welcome_msg": "Welcome",
-    "appSlogan_msg": "Climbing gym",
     "version": "Version"
 }

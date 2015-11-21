@@ -5,7 +5,6 @@ Template.panelLayout.rendered = function() {
         closeOnClick: true,
         edge: 'right'
     });
-
     ckSwingMenu(this, '.iconSwing');
 };
 Template.panelLayout.events({
@@ -20,12 +19,6 @@ Template.panelLayout.events({
         }, 500);
     }
 });
-
-
-// Loading Panel
-Template.panelLoading.rendered = function() {
-    setPanelBackground();
-};
 
 
 // Login
@@ -55,7 +48,7 @@ Template.panelFooter.rendered = function() {
     this.$('.tooltipped').ckTooltip({delay: 10, container: this.$('#panelFooter')});
 };
 
-
+// --- USERS ---
 // user list
 Template.usersList.events({
     "click .deleteUser": function(event) {
@@ -87,8 +80,7 @@ Template.usersList.events({
 
 
 // ROLES
-/* =================================================================================*/
-// role list
+// --- role list ---
 Template.rolesList.events({
     "click .deleteRole": function(event) {
         var roleToDelete = $(event.target).parent().siblings('.listRoleName').data('role');
@@ -119,9 +111,8 @@ Template.rolesList.events({
 });
 
 
-//PAGES
-/*=================================================================================*/
-//page list
+// --- PAGES ---
+// page list
 Template.pagesList.events({
     "click .deletePage": function(event) {
         var pageToDelete = $(event.target).parent().siblings('.listPageName').data('page');

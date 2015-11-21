@@ -182,11 +182,19 @@ body.panelBody {
     
     // dialogs
     #toast-container {
-        z-index: 2007 !important;
+        z-index: 3007 !important;
 
         .toast {
             border: solid 2px;
         }
+    }
+
+    .modal {
+        z-index: 3003 !important;
+    }
+
+    #panelLoadingModal {
+        max-width: 550px;
     }
     
     // languages and socials bar

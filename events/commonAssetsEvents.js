@@ -88,4 +88,10 @@ Template.statusBar.events({
             template.visibility.set(true);
         }
     }
-})
+});
+
+Template.skeleformUserUpdateButtons.events({
+    "click .skeleformChangePassword": function(event, template) {
+        $('#skeletorUserChangePasswordModal').openModal();
+    }
+});

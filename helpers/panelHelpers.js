@@ -51,3 +51,14 @@ Template.userCreate.helpers({
         return context;
     }
 });
+
+Template.userChangePassword.helpers({
+    data: function() {
+        var context = {
+            schemaName: 'Users_changePassword',
+            schema: Skeletor.Schemas.Users_changePassword
+        };
+
+        return context;
+    }
+});

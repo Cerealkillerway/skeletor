@@ -107,7 +107,6 @@
     "incorrectPassword_error": "Passwrod errata",
     "accessDenied_error": "Accesso negato",
 
-
     "error_validation": "<b>Errore: %s</b>",
     "min_validation": "lunghezza minima: %s",
     "max_validation": "lunghezza massima: %s",
@@ -122,7 +121,6 @@
     "date_validationDetail": "data gg/mm/aaaa",
     "required_validationDetail": "campo richiesto",
     "float_validationDetail": "decimale",
-
 
     "ok_btn": "Ok",
     "save_btn": "Salva",
@@ -144,19 +142,12 @@
     "news_btn": "News",
     "newsCreate_btn": "Crea news",
     "loadImages_btn": "Carica immagini...",
-    "customers_btn": "Clienti",
-    "customersCreate_btn": "Registra cliente",
-    "cards_btn": "Tipi di abbonamento",
-    "cardsCreate_btn": "Crea nuovo tipo di abbonamento",
-    "accessControl_btn": "Controllo accessi",
-    "entries_btn": "Accessi",
-    "barcodeGenerator_btn": "Generatore codici",
-    "generate_btn": "Genera",
     "saveDefault_btn": "Imposta come predefinito",
     "print_btn": "Stampa",
     "loadFile_btn": "Carica file...",
     "imageUploader_btn": "Inserisci immagine",
     "videoEmbeed_btn": "Incorpora video",
+    "changePassword_btn": "Cambia password",
 
     "openWebsite_tooltip": "Apri il sito in una nuova scheda",
     "users_tooltip": "Vai alla gestione utenti",
@@ -179,6 +170,9 @@
     "usernameMail_lbl": "Nome utente o mail",
     "password_lbl": "Password",
     "passwordShadowConfirm_lbl": "Conferma password",
+    "oldPassword_lbl": "Vecchia password",
+    "newPassword_lbl": "Nuova password",
+    "newPasswordShadowConfirm_lbl": "Conferma nuova password",
     "old_lbl": "Vecchia",
     "username_lbl": "Nome utente",
     "roles_lbl": "Ruoli",
@@ -264,16 +258,12 @@
     "superuser_role": "Super utente",
     "superuserLong_role": "Superutente dal divino potere",
 
-
     "dataTable_search": "Cerca nella tabella:",
     "dataTable_lengthMenu": "Mostra _MENU_ righe",
 
     "imageUploadTitle_modal": "Inserimento immagine:",
     "videoEmbeed_modal": "Incorpora video:",
 
-
-
     "welcome_msg": "Benvenuto",
-    "appSlogan_msg": "Climbing gym",
     "version": "Versione"
 }
