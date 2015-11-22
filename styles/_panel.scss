@@ -231,6 +231,51 @@ body.panelBody {
             margin-top: -4px;
         }
     }
+
+    .modal {
+        background-color: $firstColor;
+        color: $firstColorText;
+        z-index: 1057 !important;
+        backface-visibility: hidden;
+
+        .input-field input:not([readonly]), .input-field input.datepicker {
+            border-color: $firstColorText !important;
+        }
+        .input-field input:focus:not([readonly]), .input-field input.datepicker:focus, textarea.materialize-textarea:focus:not([readonly]) {
+            box-shadow: 0 1px 0 0 $firstFocusColor !important;
+            border-color: $firstFocusColor !important;
+        }
+        label, .input-field input:not([readonly]) + label, .input-field input.datepicker + label, .input-field .prefix, .note-editor + label {
+            color: $firstColorText !important;
+        }
+        .input-field input:focus:not([readonly]) + label, .input-field input.datepicker:focus + label, .input-field .prefix.active, textarea.materialize-textarea:focus:not([readonly]) + label {
+            color: $firstFocusColor !important;
+        }
+
+        .btn {
+            background-color: $secondColor;
+        }
+        .btn:hover {
+            background-color: lighten($secondColor, 10%) !important;
+        }
+
+        .btn.disabled {
+            background-color: darken($secondColor, 15%) !important;
+        }
+
+        .modal-footer {
+            background-color: darken($firstColor, 10%);
+
+            .btnClose {
+                margin-right: 15px;
+                background-color: $thirdColor;
+            }
+
+            .btnClose:hover {
+                background-color: lighten($thirdColor, 10%) !important;
+            }
+        }
+    }
 }
 /* --- end panel styles --- */
 

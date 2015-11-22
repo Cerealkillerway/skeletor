@@ -1,14 +1,19 @@
 <template name="login">
-    {{> panelModals}}
     <div class="centralBodyFlex">
         <div class="panel z-depth-5 topSpaced">
             <div class="center-align">
                 <h3>{{conf "appName"}}</h3>
             </div>
-            <!--{{> langBar}}-->
+            <div class="row">
+                <div class="col s12 m6 l8 left-align">
+                    <div class="card-panel thirdColor langBar">
+                        {{> langBar}}
+                    </div>
+                </div>
+            </div>
 
             <h5 class="secondColorText">
-                {{_ "adminAccess_msg"}}
+                {{_ "panelAccess_msg"}}
             </h5>
             <div>{{_ "login_msg"}}</div><br>
             
@@ -34,7 +39,10 @@
                     </a>
                 </div>
             </div>
-            <div class="vSpaced">{{_ "adminReserved_msg"}}</div>
+            <div class="vSpaced">{{_ "reservedAccess_msg"}}</div>
+            <div class="center-align">
+                <img src="/images/logos/miniLogo.png" />
+            </div>
         </div>
     </div>
 </template>

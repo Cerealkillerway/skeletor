@@ -65,6 +65,7 @@ Package.onUse(function(api) {
     api.addFiles('lib/collections.js');
     api.addFiles('lib/routerPanel.js');
     api.addFiles('lib/methods.js');
+    api.addFiles('lib/methodsServer.js', 'server');
     api.addFiles('lib/permissions.js');
     api.addFiles('lib/clientUtilities.js', 'client');
     api.addFiles('lib/ckMaterializeOverrides.js', 'client');

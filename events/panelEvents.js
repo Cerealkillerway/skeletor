@@ -77,6 +77,21 @@ Template.usersList.events({
         
     }
 });
+// user update extra buttons
+Template.userUpdateExtras.events({
+    "click .skeleformChangePassword": function(event, template) {
+        $('#skeletorUserChangePasswordModal').openModal();
+    }
+});
+// user change password toolbar
+Template.userChangePasswordToolbar.events({
+    "click .undoChangePassword": function(event, template) {
+        $('#skeletorUserChangePasswordModal').closeModal();
+    },
+    "click .skeleformChangePassword": function(event, template) {
+        Meteor.call('updateUserPassword', template.data.item._id, $('#newPassword').val());
+    }
+});
 
 
 // ROLES

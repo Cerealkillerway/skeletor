@@ -89,9 +89,3 @@ Template.statusBar.events({
         }
     }
 });
-
-Template.skeleformUserUpdateButtons.events({
-    "click .skeleformChangePassword": function(event, template) {
-        $('#skeletorUserChangePasswordModal').openModal();
-    }
-});
