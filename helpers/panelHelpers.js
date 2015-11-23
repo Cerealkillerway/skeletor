@@ -1,7 +1,13 @@
 // Pages
 Template.pagesList.helpers({
     data: function() {
-        return Skeletor.Data.Pages.find();
+        var context = {};
+
+        context.list = Skeletor.Data.Pages.find();
+        context.schemaName = 'Pages_default';
+        context.schema = Skeletor.Schemas.Pages_default;
+
+        return context;
     }
 });
 

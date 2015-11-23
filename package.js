@@ -29,6 +29,7 @@ Package.onUse(function(api) {
     api.use('cerealkiller:utils');
     // need skeleform, but allow it to be loaded last
     api.use('cerealkiller:skeleform', {unordered: true});
+    api.use('cerealkiller:skelelist', {unordered: true});
     
 
     // exports

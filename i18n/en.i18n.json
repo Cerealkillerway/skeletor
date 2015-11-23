@@ -15,8 +15,6 @@
     "menu_times": "Times",
 
     "logged_bar_msg": "You are logged in as:",
-    "loading_msg": "Loading...",
-    "applicationLoading_msg": "Initialization",
     "panelAccess_msg": "Management portal",
     "reservedAccess_msg": "Access is reserved",
     "details_msg": "Details:",
