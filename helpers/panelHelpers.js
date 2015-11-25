@@ -3,7 +3,6 @@ Template.usersList.helpers({
     data: function() {
         var context = {};
 
-        context.list = Skeletor.Data.Users.find({}, {sort: {username: 1}});
         context.schemaName = 'Users_default';
         context.schema = Skeletor.Schemas.Users_default;
 
@@ -17,7 +16,7 @@ Template.userCreate.helpers({
         var username = FlowRouter.getParam("username");
 
         if (username) {
-            context.item = Meteor.users.findOne({username: username});
+            context.item = Skeletor.Data.Users__detail__.findOne({username: username});
             if (context.item) {
                 context.item.userEmail = context.item.emails[0].address;
             }
@@ -42,7 +41,37 @@ Template.userChangePassword.helpers({
             schema: Skeletor.Schemas.Users_changePassword
         };
 
-        context.item = Meteor.users.findOne({username: username});
+        context.item = Template.instance().data.item;
+
+        return context;
+    }
+});
+
+
+// Roles
+Template.rolesList.helpers({
+    data: function() {
+        var context = {};
+
+        context.schemaName = 'Roles_default';
+        context.schema = Skeletor.Schemas.Roles_default;
+
+        return context;
+    }
+});
+
+Template.roleCreate.helpers({
+    data: function() {
+        var context = {};
+        var name = FlowRouter.getParam("name");
+
+        if (name) {
+            context.item = Skeletor.Data.Roles__detail__.findOne({name: name});
+        }
+        
+        context.schemaName = 'Roles_default';
+        context.schema = Skeletor.Schemas.Roles_default;
+        context.undoPath = '/panel/roles';
 
         return context;
     }
@@ -54,7 +83,6 @@ Template.pagesList.helpers({
     data: function() {
         var context = {};
 
-        context.list = Skeletor.Data.Pages.find({}, {sort: {code: 1}});
         context.schemaName = 'Pages_default';
         context.schema = Skeletor.Schemas.Pages_default;
 

@@ -9,7 +9,7 @@ Template.langBar.events({
 
 //status bar
 Template.statusBar.rendered = function() {
-    this.visibility = new ReactiveVar(true);
+    this.visibility = new ReactiveVar(false);
     $('footer').css({marginBottom: '52px'});
 
     var self = this;
@@ -49,18 +49,24 @@ Template.statusBar.rendered = function() {
         if (!self.visibility.get()) {
             $('footer').css({marginBottom: 0});
 
-            $statusBar.mouseleave(function(event) {
+            function hideStatusBar() {
                 $statusBar.animate({bottom: '-52px'}, 200, function() {
                     if ($statusBar.children('.barActivator').length === 0) {
                         $statusBar.prepend('<div class="barActivator"></div>');
-
-                        var $barActivator = $statusBar.children('.barActivator').first();
-                        $barActivator.mouseenter(function(event) {
-                            $statusBar.animate({bottom: 0}, 200);
-                            $barActivator.remove();
-                        });
                     }
+                    var $barActivator = $statusBar.children('.barActivator').first();
+                    $barActivator.mouseenter(function(event) {
+                        $statusBar.animate({bottom: 0}, 200);
+                        $barActivator.remove();
+                    });
+
                 });
+            }
+
+            hideStatusBar();
+
+            $statusBar.mouseleave(function(event) {
+                hideStatusBar();
             });
         }
         else {

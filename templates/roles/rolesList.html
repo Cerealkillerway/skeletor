@@ -1,50 +1,17 @@
 <template name="rolesList">
     <div class="panel normalSection">
-        <h2 class="violetTitle">
-            <img src="/images/icons/tools/roles.png" class="titleIcon">{{_ "rolesListTitle_text"}}
+        <i class="material-icons large left">beenhere</i>
+        <h2>
+            {{_ "rolesListTitle_text"}}
         </h2>
 
-
         <div style="margin-bottom: 35px">
-            <a href="/panel/{{print "currentLang"}}/roles/create" class="btn btn-default">{{_ "rolesCreate_btn"}}</a>
+            <a href="/panel/roles/create{{currentLangLink}}" class="waves-effect waves-light btn firstColor">
+                <i class="material-icons small left">add_box</i>
+                {{_ "rolesCreate_btn"}}
+            </a>
         </div>
 
-        <table class="table table-striped table-hover ">
-            <thead>
-                <tr>
-                    <th>{{_ "role_lbl"}}</th>
-                    <th>{{_ "delete_lbl"}}</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                {{#each this}}
-                    <tr class="{{#if isSuperRole name}}info{{/if}} {{#if isAdminRole name}}danger{{/if}}">
-                        <td class="thickTableLine listRoleName" data-role="{{_id}}">
-                            {{#if isSuperRole name}}
-                                {{name}}
-                            {{else}}
-                                <a href="/panel/{{print "currentLang"}}/roles/{{name}}">
-                                    {{name}}
-                                </a>
-                            {{/if}}
-                        </td>
-                        <td class="thickTableLine">
-                            {{#if isSuperRole name}}
-                                {{_ "undeletable_msg"}}
-                            {{else}}
-                                <div class="btn btn-{{#if isAdminRole name}}default{{else}}danger{{/if}} deleteRole">{{_ "delete_btn"}}</div>
-                            {{/if}}
-                        </td>
-                    </tr>
-                {{/each}}
-            </tbody>
-        </table>
-
-        <br><br>
-        <div class="alert alert-dismissable alert-warning">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            {{{_ "roles_text"}}}
-        </div>
+        {{> skelelist data}}
     </div>
 </template>

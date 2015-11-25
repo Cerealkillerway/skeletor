@@ -188,10 +188,6 @@ body.panelBody {
             border: solid 2px;
         }
     }
-
-    .modal {
-        z-index: 3003 !important;
-    }
     
     // languages and socials bar
     .langBar {
@@ -229,6 +225,7 @@ body.panelBody {
     }
 
     .modal {
+        z-index: 3003 !important;
         background-color: $firstColor;
         color: $firstColorText;
         z-index: 1057 !important;
@@ -250,6 +247,7 @@ body.panelBody {
 
         .btn {
             background-color: $secondColor;
+            margin-right: 15px;
         }
         .btn:hover {
             background-color: lighten($secondColor, 10%) !important;

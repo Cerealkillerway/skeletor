@@ -44,6 +44,7 @@
     "genericInsert_msg": "Data inserted correctly",
     "genericUpdate_msg": "Data updated correctly",
     "genericDelete_msg": "Succesfully deleted",
+    "passwordCanged_msg": "%s's password updated",
 
     "translationTitle_missing": "<h3 class='subTitle'>Missing translation</h3>",
     "translationTitleNoHTML_missing": "Missing translation",
@@ -128,7 +129,7 @@
     "openWebsite_btn": "Open website",
     "users_btn": "Users",
     "userCreate_btn": "Create user",
-    "delete_btn": "Elimina",
+    "delete_btn": "Delete",
     "create_btn": "Create",
     "update_btn": "Update",
     "add_btn": "Add",

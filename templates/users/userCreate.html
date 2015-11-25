@@ -1,8 +1,5 @@
 <template name="userCreate">
     <div class="panel normalSection">
-        {{#if data.item}}
-            {{> userChangePassword item=data.item}}
-        {{/if}}
         <div class="valign-wrapper">
             <i class="material-icons large left">person</i>
             <h4 class="valign">
@@ -17,36 +14,5 @@
         <div class="skeleformWrapper">
             {{> skeleform data}}
         </div>
-    </div>
-</template>
-
-<template name="userChangePassword">
-    <div id="skeletorUserChangePasswordModal" class="modal modal-fixed-footer">
-        <div class="modal-content">
-            {{> skeleform data}}
-        </div>
-        <div class="modal-footer" id="skeletorUserChangePasswordToolbar"></div>
-    </div>
-</template>
-
-
-
-<!-- extra buttons for user update toolbar -->
-<template name="userUpdateExtras">
-    <div class="waves-effect waves-light btn thirdColor skeleformChangePassword">
-        <i class="material-icons small left">lock</i>
-        <span>{{_ "changePassword_btn"}}</span>
-    </div>
-</template>
-
-<!-- toolbar for users' change password form -->
-<template name="userChangePasswordToolbar">
-    <div class="waves-effect waves-light btn secondColor skeleformChangePassword">
-        <i class="material-icons small left">lock</i>
-        <span>{{_ "update_btn"}}</span>
-    </div>
-    <div class="waves-effect waves-light btn firstColor undoChangePassword">
-        <i class="material-icons small left">undo</i>
-        <span>{{_ "cancel_btn"}}</span>
     </div>
 </template>

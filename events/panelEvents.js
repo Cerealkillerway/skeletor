@@ -48,10 +48,20 @@ Template.panelFooter.rendered = function() {
     this.$('.tooltipped').ckTooltip({delay: 10, container: this.$('#panelFooter')});
 };
 
+
 // --- USERS ---
 // user update extra buttons
-Template.userUpdateExtras.events({
-    "click .skeleformChangePassword": function(event, template) {
+Template.usersList.events({
+    "click .skelelistChangePassword": function(event, template) {
+        if (template.changePasswordInstance) {
+            Blaze.remove (template.changePasswordInstance);
+        }
+
+        var id = $(event.target).closest('tr').data('id');
+        var item = Meteor.users.findOne({_id: id});
+
+        template.changePasswordInstance = Blaze.renderWithData(Template.userChangePassword, {item: item}, $('#changePassword')[0]);
+
         $('#skeletorUserChangePasswordModal').openModal();
     }
 });
@@ -61,41 +71,16 @@ Template.userChangePasswordToolbar.events({
         $('#skeletorUserChangePasswordModal').closeModal();
     },
     "click .skeleformChangePassword": function(event, template) {
-        Meteor.call('updateUserPassword', template.data.item._id, $('#newPassword').val());
-    }
-});
-
-
-// ROLES
-// --- role list ---
-Template.rolesList.events({
-    "click .deleteRole": function(event) {
-        var roleToDelete = $(event.target).parent().siblings('.listRoleName').data('role');
-        //console.log(roleToDelete);
-        $('#panelOkCancelTitle').html(TAPi18n.__("askConfirmation_msg"));
-        $('#panelOkCancelMessage').html(TAPi18n.__("deleteConfirmation_msg"));
-        $('#panelOkCancel').modal('show');
-        
-        //on click on modal ok button, go for deletion
-        $('#panelOkCancel').on('click', '#panelOkCancelConfirm', function() {
-
-            Meteor.call('deleteRoleFromPanel', roleToDelete, function(error, result) {
-
+        if ($('#newPassword').val().length > 5 && $('#newPassword').val() === $('#newPasswordShadowConfirm').val()) {
+            Meteor.call('updateUserPassword', template.data.item._id, $('#newPassword').val(), function(error, result) {
                 if (error) {
-                    $('#panelErrorTitle').html(TAPi18n.__("delete_error"));
-                    $('#panelErrorMessage').html(TAPi18n.__("operationDetail_error") + error.reason);
-                    $('#panelError').modal('show');
+                    Materialize.toast(TAPi18n.__("serverError_error"), 5000, 'error');
                 }
                 else {
-                    $('#panelConfirmTitle').html(TAPi18n.__("deleteConfirm_msg"));
-                    $('#panelConfirmMessage').html(TAPi18n.__("roleDeletionOk_msg"));
-                    $('#panelConfirm').modal('show');
+                    Materialize.toast(TAPi18n.__("passwordCanged_msg", template.data.item.username), 5000, 'success');
+                    $('#skeletorUserChangePasswordModal').closeModal();
                 }
             });
-        });
-        
+        }
     }
 });
-
-
-// --- PAGES ---

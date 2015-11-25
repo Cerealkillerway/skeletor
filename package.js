@@ -38,6 +38,7 @@ Package.onUse(function(api) {
     // styles
     api.addFiles('styles/skeletor.scss', 'client');
     api.addFiles('styles/_panel.scss', 'client');
+    api.addFiles('styles/_responsive.scss', 'client');
     api.addFiles('styles/gearLoader.scss', 'client');
     
 
@@ -62,6 +63,7 @@ Package.onUse(function(api) {
 
     // libraries
     api.addFiles('namespace.js');
+    api.addFiles('lib/publish.js', 'server');
     api.addFiles('lib/main-init.js');
     api.addFiles('lib/collections.js');
     api.addFiles('lib/routerPanel.js');
