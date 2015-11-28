@@ -4,6 +4,8 @@
             {{{_ "adminTools_text"}}}
         </h2>                
         <p>{{_ "welcome_msg"}} <b>{{currentUser.username}}</b> - {{_ "whatYouNeed_text"}}</p><br>
+
+        <div id="dashboardCustom"></div>
                 
         <h4>{{_ "websiteButtons_text"}}</h4>
         <div>
@@ -11,6 +13,18 @@
                 <i class="material-icons large">public</i>
                 <div>{{_ "openWebsite_btn"}}</div>
             </a>
+            <a href="/panel/sections{{currentLangLink}}" class="secondColor waves-effect waves-light btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "sections_tooltip"}}">
+                <i class="material-icons">assignment</i>
+                <div>{{_ "sections_btn"}}</div>
+            </a>
+            <a href="/panel/pages{{currentLangLink}}" class="firstColor waves-effect waves-light btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "pages_tooltip"}}">
+                <i class="material-icons">find_in_page</i>
+                <div>{{_ "pages_btn"}}</div>
+            </a>
+        </div>
+
+        <h4>{{_ "aclButtons_text"}}</h4>
+        <div>
             <a href="/panel/users{{currentLangLink}}" class="secondColor waves-effect waves-light btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "users_tooltip"}}">
                 <i class="material-icons">person</i>
                 <div>{{_ "users_btn"}}</div>
@@ -18,10 +32,6 @@
             <a href="/panel/roles{{currentLangLink}}" class="firstColor waves-effect waves-light btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "roles_tooltip"}}">
                 <i class="material-icons">beenhere</i>
                 <div>{{_ "roles_btn"}}</div>
-            </a>
-            <a href="/panel/pages{{currentLangLink}}" class="secondColor waves-effect waves-light btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "pages_tooltip"}}">
-                <i class="material-icons">find_in_page</i>
-                <div>{{_ "pages_btn"}}</div>
             </a>
         </div>
     </div>
