@@ -47,6 +47,7 @@
     "genericDelete_msg": "Succesfully deleted",
     "passwordCanged_msg": "%s's password updated",
 
+    "general_missing": "(Missing)",
     "translationTitle_missing": "<h3 class='subTitle'>Missing translation</h3>",
     "translationTitleNoHTML_missing": "Missing translation",
     "translationText_missing": "We are sorry but the translated version of this content is not available yet.<br>Please try again later...",
@@ -244,6 +245,7 @@
     "videoAddress_lbl": "Video address",
     "preview_lbl": "Preview:",
     "telephone_lbl": "Telephone",
+    "UILang_lbl": "UI language:",
     "languages_lbl": "langs: ",
     "social_lbl": "social:",
     "status_lbl": "status:",

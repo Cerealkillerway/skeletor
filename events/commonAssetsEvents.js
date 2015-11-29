@@ -42,26 +42,26 @@ Template.statusBar.rendered = function() {
         }, 1500);
     });
 
+    var $statusBar = $('#statusBar');
+    function hideStatusBar() {
+        $statusBar.animate({bottom: '-52px'}, 200, function() {
+            if ($statusBar.children('.barActivator').length === 0) {
+                $statusBar.prepend('<div class="barActivator"></div>');
+            }
+            var $barActivator = $statusBar.children('.barActivator').first();
+            $barActivator.mouseenter(function(event) {
+                $statusBar.animate({bottom: 0}, 200);
+                $barActivator.remove();
+            });
+
+        });
+    }
+
     Tracker.autorun(function() {
-        var $statusBar = $('#statusBar');
         description.html('');
 
         if (!self.visibility.get()) {
             $('footer').css({marginBottom: 0});
-
-            function hideStatusBar() {
-                $statusBar.animate({bottom: '-52px'}, 200, function() {
-                    if ($statusBar.children('.barActivator').length === 0) {
-                        $statusBar.prepend('<div class="barActivator"></div>');
-                    }
-                    var $barActivator = $statusBar.children('.barActivator').first();
-                    $barActivator.mouseenter(function(event) {
-                        $statusBar.animate({bottom: 0}, 200);
-                        $barActivator.remove();
-                    });
-
-                });
-            }
 
             hideStatusBar();
 
@@ -74,7 +74,7 @@ Template.statusBar.rendered = function() {
             $statusBar.unbind('mouseleave');
         }
     });
-}
+};
 Template.statusBar.events({
     "click #disconnect": function(event, template) {
         Meteor.disconnect();

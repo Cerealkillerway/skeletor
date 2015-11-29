@@ -67,10 +67,10 @@ body {
 /* --- panel styles --- */
 .panelBody {
     background-image: url(/images/backgrounds/panel.jpg);
-    background-size: contain;
     background-repeat: no-repeat;
     background-color: $panelBackgroundColor;
     background-position: right top;
+    background-attachment: fixed;
     color: $firstTextColor;
 }
 body.panelBody {
@@ -228,7 +228,6 @@ body.panelBody {
         z-index: 3003 !important;
         background-color: $firstColor;
         color: $firstColorText;
-        z-index: 1057 !important;
         backface-visibility: hidden;
 
         .input-field input:not([readonly]), .input-field input.datepicker {

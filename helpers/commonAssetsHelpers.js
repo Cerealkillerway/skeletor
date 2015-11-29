@@ -3,7 +3,7 @@ Template.langBar.helpers({
     langs: function() {
         var result = [];
 
-        _.each(GlobalConf.langEnable, function(value, key) {
+        _.each(Skeletor.GlobalConf.langEnable, function(value, key) {
             if (value) {
                 result.push(key);
             }

@@ -1,3 +1,8 @@
+// outputs the defaultLang
+UI.registerHelper('defaultLang', function() {
+    return Skeletor.configuration.lang.default;
+});
+
 // Users
 Template.usersList.helpers({
     data: function() {
@@ -93,10 +98,19 @@ Template.pagesList.helpers({
 Template.pageCreate.helpers({
     data: function() {
         var context = {};
-        var code = FlowRouter.getParam("code");
+        var code = FlowRouter.getParam('code');
 
         if (code) {
-            context.item = Skeletor.Data.Pages__detail__.findOne({code: code});
+            var query = {};
+
+            if (Session.get('currentItem')) {
+                query._id = Session.get('currentItem');
+            }
+            else {
+                query[FlowRouter.getParam('itemLang') + '.code'] = code;
+            }
+
+            context.item = Skeletor.Data.Pages__detail__.findOne(query);
         }
         
         context.schemaName = 'Pages_default';

@@ -47,6 +47,7 @@
     "genericDelete_msg": "Eliminato correttamente",
     "passwordCanged_msg": "Password di %s aggiornata",
 
+    "general_missing": "(Mancante)",
     "translationTitle_missing": "<h3 class='subTitle'>Traduzione mancante</h3>",
     "translationTitleNoHTML_missing": "Traduzione mancante",
     "translationText_missing": "Ci spiace, questo contenuto non è stato ancora tradotto.<br>Vi invitiamo a riprovare in seguito...",
@@ -246,6 +247,7 @@
     "videoAddress_lbl": "Indirizzo del video",
     "preview_lbl": "Anteprima:",
     "telephone_lbl": "Telefono",
+    "UILang_lbl": "Lingua interfaccia:",
     "languages_lbl": "lingue: ",
     "social_lbl": "social:",
     "status_lbl": "stato:",
