@@ -255,6 +255,7 @@
     "waiting_lbl": "waiting for connection",
     "offline_lbl": "connection interrupted",
     "changePasswordTitle_lbl": "Password change...",
+    "published_lbl": "Published",
 
     "administrator_role": "Administrator",
     "administratorLong_role": "System Administrator",

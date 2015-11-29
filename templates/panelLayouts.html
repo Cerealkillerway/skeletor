@@ -54,22 +54,11 @@
             <div class="navItemName">{{_ "menu_dashboard"}}</div>
         </a>
     </li>
+    <div class="separator darken"></div>
     <li>
         <a href="/pages/home{{currentLangLink}}" target="_blank">
             <i class="material-icons small left">public</i>
             <div class="navItemName">{{_ "menu_website"}}</div>
-        </a>
-    </li>
-    <li>
-        <a href="/panel/users{{currentLangLink}}{{isPaginated "Users_default"}}">
-            <i class="material-icons small left">person</i>
-            <div class="navItemName">{{_ "menu_users"}}</div>
-        </a>
-    </li>
-    <li>
-        <a href="/panel/roles{{currentLangLink}}{{isPaginated "Roles_default"}}">
-            <i class="material-icons small left">beenhere</i>
-            <div class="navItemName">{{_ "menu_roles"}}</div>
         </a>
     </li>
     <li>
@@ -82,6 +71,19 @@
         <a href="/panel/pages/{{defaultLang}}{{currentLangLink}}{{isPaginated "Pages_default"}}">
             <i class="material-icons small left">find_in_page</i>
             <div class="navItemName">{{_ "menu_pages"}}</div>
+        </a>
+    </li>
+    <div class="separator darken"></div>
+    <li>
+        <a href="/panel/roles{{currentLangLink}}{{isPaginated "Roles_default"}}">
+            <i class="material-icons small left">beenhere</i>
+            <div class="navItemName">{{_ "menu_roles"}}</div>
+        </a>
+    </li>
+    <li>
+        <a href="/panel/users{{currentLangLink}}{{isPaginated "Users_default"}}">
+            <i class="material-icons small left">person</i>
+            <div class="navItemName">{{_ "menu_users"}}</div>
         </a>
     </li>
 </template>
