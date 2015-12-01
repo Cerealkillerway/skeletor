@@ -7,7 +7,7 @@ Template.panelLayout.rendered = function() {
     });
     ckSwingMenu(this, '.iconSwing');
 
-    Session.set('appRendered', true);
+    Session.set('appRendered', true);     // used by skeleform to understand when all templates are rendered (ex. to init staticbar)
 };
 Template.panelLayout.events({
     "click #logout": function(event) {
