@@ -6,6 +6,8 @@ Template.panelLayout.rendered = function() {
         edge: 'right'
     });
     ckSwingMenu(this, '.iconSwing');
+
+    Session.set('appRendered', true);
 };
 Template.panelLayout.events({
     "click #logout": function(event) {

@@ -1,1 +1,3 @@
-Skeletor = {};
+Skeletor = {
+    Utilities: {}
+};

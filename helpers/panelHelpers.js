@@ -83,6 +83,47 @@ Template.roleCreate.helpers({
 });
 
 
+// Sections
+Template.sectionsList.helpers({
+    data: function() {
+        var context = {};
+
+        context.schemaName = 'Sections_default';
+        context.schema = Skeletor.Schemas.Sections_default;
+
+        return context;
+    }
+});
+
+Template.sectionCreate.helpers({
+    data: function() {
+        var context = {};
+        var code = FlowRouter.getParam('code');
+
+        if (code) {
+            var query = {};
+
+            if (Session.get('currentItem')) {
+                // coming from skelelist link
+                query._id = Session.get('currentItem');
+            }
+            else {
+                // normal mode
+                query[FlowRouter.getParam('itemLang') + '.code'] = code;
+            }
+
+            context.item = Skeletor.Data.Sections__detail__.findOne(query);
+        }
+        
+        context.schemaName = 'Sections_default';
+        context.schema = Skeletor.Schemas.Sections_default;
+        context.undoPath = '/panel/sections';
+
+        return context;
+    }
+});
+
+
 // Pages
 Template.pagesList.helpers({
     data: function() {

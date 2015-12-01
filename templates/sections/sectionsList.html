@@ -1,0 +1,17 @@
+<template name="sectionsList">
+    <div class="panel normalSection">
+        <i class="material-icons large left">assignment</i>
+        <h2>
+            {{_ "sectionsListTitle_text"}}
+        </h2>
+
+        <div style="margin-bottom: 35px">
+            <a href="/panel/sections/{{defaultLang}}/create{{currentLangLink}}" class="waves-effect waves-light btn firstColor">
+                <i class="material-icons small left">add_box</i>
+                {{_ "sectionsCreate_btn"}}
+            </a>
+        </div>
+    
+        {{> skelelist data}}
+    </div>
+</template>

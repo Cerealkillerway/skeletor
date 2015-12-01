@@ -56,13 +56,13 @@
     </li>
     <div class="separator darken"></div>
     <li>
-        <a href="/pages/home{{currentLangLink}}" target="_blank">
+        <a href="/{{defaultLang}}/home{{currentLangLink}}" target="_blank">
             <i class="material-icons small left">public</i>
             <div class="navItemName">{{_ "menu_website"}}</div>
         </a>
     </li>
     <li>
-        <a href="/panel/sections{{currentLangLink}}{{isPaginated "Sections_default"}}">
+        <a href="/panel/sections/{{defaultLang}}{{currentLangLink}}{{isPaginated "Sections_default"}}">
             <i class="material-icons small left">assignment</i>
             <div class="navItemName">{{_ "menu_sections"}}</div>
         </a>

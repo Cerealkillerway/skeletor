@@ -13,9 +13,13 @@ Package.describe({
 Package.onUse(function(api) {
     api.versionsFrom('1.2.1');
 
+    // namespace
+    api.addFiles('namespace.js');
+
     // packages
     api.use('mongo');
     api.use('session');
+    api.use('jquery', 'client');
     api.use('blaze-html-templates', 'client');
     api.use('underscore@1.0.0');
     api.use('kadira:flow-router@2.8.0');
@@ -47,12 +51,12 @@ Package.onUse(function(api) {
     api.addFiles('templates/dashboard.html', 'client');
     api.addFiles('templates/login.html', 'client');
     api.addFiles('templates/panelLayouts.html', 'client');
-    api.addFiles('templates/pages/pageCreate.html', 'client');
-    api.addFiles('templates/pages/pagesList.html', 'client');
-    api.addFiles('templates/roles/roleCreate.html', 'client');
-    api.addFiles('templates/roles/rolesList.html', 'client');
-    api.addFiles('templates/users/userCreate.html', 'client');
-    api.addFiles('templates/users/usersList.html', 'client');
+
+    api.addFiles(['templates/users/usersList.html', 'templates/users/userCreate.html'], 'client');
+    api.addFiles(['templates/roles/rolesList.html', 'templates/roles/roleCreate.html'], 'client');
+    api.addFiles(['templates/pages/pagesList.html', 'templates/pages/pageCreate.html'], 'client');
+    api.addFiles(['templates/sections/sectionsList.html', 'templates/sections/sectionCreate.html'], 'client');
+    
     api.addFiles('templates/debug.html', 'client');
     
 
@@ -62,7 +66,6 @@ Package.onUse(function(api) {
 
 
     // libraries
-    api.addFiles('namespace.js');
     api.addFiles('lib/publish.js', 'server');
     api.addFiles('lib/main-init.js');
     api.addFiles('lib/collections.js');

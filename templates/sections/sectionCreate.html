@@ -1,0 +1,18 @@
+<template name="sectionCreate">
+    <div class="panel normalSection">
+        <div class="valign-wrapper">
+            <i class="material-icons large left">assignment</i>
+            <h4 class="valign">
+                {{#if data.item}}
+                    {{_ "updateSection_text"}} <span class="documentTitle">"{{langAttribute data.item "name" "param"}}"</span>
+                {{else}}
+                    {{_ "createSection_text"}}
+                {{/if}}
+            </h4>
+        </div>
+
+        <div class="skeleformWrapper">
+            {{> skeleform data}}
+        </div>
+    </div>
+</template>
