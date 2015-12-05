@@ -1,12 +1,12 @@
-<template name="pageCreate">
+<template name="menuCreate">
     <div class="panel normalSection">
         <div class="valign-wrapper">
-            <i class="material-icons large left">find_in_page</i>
+            <i class="material-icons large left">menu</i>
             <h4 class="valign">
                 {{#if data.item}}
-                    {{_ "updatePage_text"}} <span class="documentTitle">"{{langAttribute data.item "code" "skeletorDefault"}}"</span>
+                    {{_ "updateMenu_text"}} <span class="documentTitle">"{{langAttribute data.item "name" "skeletorDefault"}}"</span>
                 {{else}}
-                    {{_ "createPage_text"}}
+                    {{_ "createMenu_text"}}
                 {{/if}}
             </h4>
         </div>

@@ -54,8 +54,9 @@ Package.onUse(function(api) {
 
     api.addFiles(['templates/users/usersList.html', 'templates/users/userCreate.html'], 'client');
     api.addFiles(['templates/roles/rolesList.html', 'templates/roles/roleCreate.html'], 'client');
-    api.addFiles(['templates/pages/pagesList.html', 'templates/pages/pageCreate.html'], 'client');
     api.addFiles(['templates/sections/sectionsList.html', 'templates/sections/sectionCreate.html'], 'client');
+    api.addFiles(['templates/pages/pagesList.html', 'templates/pages/pageCreate.html'], 'client');
+    api.addFiles(['templates/menus/menusList.html', 'templates/menus/menuCreate.html'], 'client');
     
     api.addFiles('templates/debug.html', 'client');
     

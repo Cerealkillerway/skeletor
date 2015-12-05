@@ -3,7 +3,7 @@ Template.langBar.events({
     "click .langFlag": function(event, template) {
         var newLang = $(event.target).closest(".langFlag").data("lang");
 
-        changeRouteLang(newLang);
+        Skeletor.Utilities.changeRouteLang(newLang);
     }
 });
 

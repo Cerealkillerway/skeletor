@@ -117,7 +117,6 @@ Template.sectionCreate.helpers({
         
         context.schemaName = 'Sections_default';
         context.schema = Skeletor.Schemas.Sections_default;
-        context.undoPath = '/panel/sections';
 
         return context;
     }
@@ -148,7 +147,7 @@ Template.pageCreate.helpers({
                 query._id = Session.get('currentItem');
             }
             else {
-                query[FlowRouter.getParam('itemLang') + '.code'] = code;
+                query[Skeletor.configuration.lang.default + '.code'] = code;
             }
 
             context.item = Skeletor.Data.Pages__detail__.findOne(query);
@@ -156,7 +155,43 @@ Template.pageCreate.helpers({
         
         context.schemaName = 'Pages_default';
         context.schema = Skeletor.Schemas.Pages_default;
-        context.undoPath = '/panel/pages';
+
+        return context;
+    }
+});
+
+// Menus
+Template.menusList.helpers({
+    data: function() {
+        var context = {};
+
+        context.schemaName = 'Menus_default';
+        context.schema = Skeletor.Schemas.Menus_default;
+
+        return context;
+    }
+});
+
+Template.menuCreate.helpers({
+    data: function() {
+        var context = {};
+        var code = FlowRouter.getParam('code');
+
+        if (code) {
+            var query = {};
+
+            if (Session.get('currentItem')) {
+                query._id = Session.get('currentItem');
+            }
+            else {
+                query[FlowRouter.getParam('itemLang') + '.code'] = code;
+            }
+
+            context.item = Skeletor.Data.Menus__detail__.findOne(query);
+        }
+        
+        context.schemaName = 'Menus_default';
+        context.schema = Skeletor.Schemas.Menus_default;
 
         return context;
     }

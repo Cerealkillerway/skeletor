@@ -1,0 +1,17 @@
+<template name="menusList">
+    <div class="panel normalSection">
+        <i class="material-icons large left">menu</i>
+        <h2>
+            {{_ "menusListTitle_text"}}
+        </h2>
+
+        <div style="margin-bottom: 35px">
+            <a href="/panel/menus/{{defaultLang}}/create{{currentLangLink}}" class="waves-effect waves-light btn firstColor">
+                <i class="material-icons small left">add_box</i>
+                {{_ "menusCreate_btn"}}
+            </a>
+        </div>
+    
+        {{> skelelist data}}
+    </div>
+</template>
