@@ -109,7 +109,7 @@ Template.sectionCreate.helpers({
             }
             else {
                 // normal mode
-                query[FlowRouter.getParam('itemLang') + '.code'] = code;
+                query[Skeletor.configuration.lang.default + '.code'] = code;
             }
 
             context.item = Skeletor.Data.Sections__detail__.findOne(query);
@@ -184,7 +184,7 @@ Template.menuCreate.helpers({
                 query._id = Session.get('currentItem');
             }
             else {
-                query[FlowRouter.getParam('itemLang') + '.code'] = code;
+                query[Skeletor.configuration.lang.default + '.code'] = code;
             }
 
             context.item = Skeletor.Data.Menus__detail__.findOne(query);

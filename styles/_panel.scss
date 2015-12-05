@@ -65,15 +65,14 @@ body {
 
 
 /* --- panel styles --- */
-.panelBody {
+body.panelBody {
     background-image: url(/images/backgrounds/panel.jpg);
     background-repeat: no-repeat;
     background-color: $panelBackgroundColor;
     background-position: right top;
     background-attachment: fixed;
     color: $firstTextColor;
-}
-body.panelBody {
+
     display: flex;
     min-height: 100vh;
     flex-direction: column;
@@ -214,18 +213,24 @@ body.panelBody {
             margin: auto 15px;
         }
 
-        img {
-            max-height: 30px;
-            border: solid 3px $thirdColorBorder;
-            margin-right: 5px;
-            margin-top: -3px;
-            cursor: pointer !important;
-        }
-
         .langFlag, .socialIcon {
             height: 30px;
             float: left;
             margin-top: -4px;
+
+            img {
+                max-height: 30px;
+                border: solid 3px $thirdColorBorder;
+                margin-right: 5px;
+                margin-top: -3px;
+                cursor: pointer !important;
+            }
+
+            &.active {
+                img {
+                    border-color: $firstHoverColor;
+                }
+            }
         }
     }
 
@@ -291,22 +296,32 @@ body.panelBody {
 }
 
 #dashboardBtns {
-    .dashboardBtn {
-        width: 172px !important;
-        height: 172px !important;
-        margin: 15px !important;
-        padding-top: 15px !important;
-        line-height: 1.5 !important;
-
-        & i {
-            font-size: 6rem !important;
-            position: relative;
-            margin-bottom: 50px;
-            top: -20px;
+    .buttonsContainer {
+        a:nth-child(odd) {
+            @extend .firstColor;
         }
-        & div {
-            position: relative;
-            bottom: 35px;
+
+        a:nth-child(even) {
+            @extend .secondColor;
+        }
+
+        .dashboardBtn {
+            width: 172px !important;
+            height: 172px !important;
+            margin: 15px !important;
+            padding-top: 15px !important;
+            line-height: 1.5 !important;
+
+            & i {
+                font-size: 6rem !important;
+                position: relative;
+                margin-bottom: 50px;
+                top: -20px;
+            }
+            & div {
+                position: relative;
+                bottom: 35px;
+            }
         }
     }
 }

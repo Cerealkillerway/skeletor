@@ -1,8 +1,8 @@
 Package.describe({
     name: 'cerealkiller:skeletor',
-    version: '0.0.2',
+    version: '0.0.3',
     // Brief, one-line summary of the package.
-    summary: 'CRUD app skeletor!',
+    summary: 'CRUD app skeleton!',
     // URL to the Git repository containing the source code for this package.
     git: '',
     // By default, Meteor will default to using README.md for documentation.
@@ -30,10 +30,10 @@ Package.onUse(function(api) {
     api.use('tap:i18n@1.7.0');
     api.use('momentjs:moment@2.10.6');
     api.use('materialize:materialize@0.97.3', 'client');
-    api.use('cerealkiller:utils');
+    api.use('cerealkiller:utils@1.0.0');
     // need skeleform, but allow it to be loaded last
-    api.use('cerealkiller:skeleform', {unordered: true});
-    api.use('cerealkiller:skelelist', {unordered: true});
+    api.use('cerealkiller:skeleform@0.0.3', {unordered: true});
+    api.use('cerealkiller:skelelist@0.0.2', {unordered: true});
     
 
     // exports

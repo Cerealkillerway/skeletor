@@ -16,9 +16,7 @@ Template.panelLayout.events({
         });
     },
     "click .backTop": function(event) {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 500);
+        ckUtils.globalUtilities.scrollTo(0, Skeletor.configuration.animations.scrollTop);
     }
 });
 

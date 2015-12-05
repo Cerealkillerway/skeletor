@@ -29,6 +29,11 @@ Template.langBar.helpers({
         else {
             return false;
         }
+    },
+    isActiveLang: function(buttonLang) {
+        if (FlowRouter.getQueryParam('lang') === buttonLang) {
+            return 'active';
+        }
     }
 });
 
