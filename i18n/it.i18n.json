@@ -16,6 +16,9 @@
     "menu_entries": "Accessi",
     "menu_times": "Orari",
 
+    "publish_title": "Pubblicazione",
+    "menuItem_title": "Voce di menu",
+
     "logged_bar_msg": "Sei loggato come:",
     "panelAccess_msg": "Portale di gestione",
     "reservedAccess_msg": "L'accesso è riservato",
@@ -175,7 +178,6 @@
     "cards_tooltip": "Vai alla gestione tipi di abbonamento",
     "accessControl_tooltip": "Vai all'applicazione di controllo accessi",
     "entries_tooltip": "Visualizza accessi alla palestra",
-    "barcodeGenerator_tooltip": "Vai al generatore di codici a barre",
     "backTop_tooltip": "Torna su",
     "debugAlternateLangs_tooltip": "Alterna lingue (it/en)",
     "debugActivateLogger_tooltip": "Attiva/disattiva console logger",
@@ -206,7 +208,7 @@
     "role_lbl": "Ruolo",
     "data_lbl": "Dati:",
     "title_lbl": "Titolo",
-    "code_lbl": "Codice",
+    "code_lbl": "Segmento URL",
     "content_lbl": "Testo",
     "date_lbl": "Data",
     "mainImage_lbl": "Foto principale",
@@ -247,8 +249,6 @@
     "pageTop_lbl": "Superiore",
     "pageBottom_lbl": "Inferiore",
     "codeOptions_lbl": "Opzioni codici",
-    "codeStart_lbl": "Parti da",
-    "codesNumber_lbl": "N° di codici",
     "page_lbl": "Pagina",
     "codesText_lbl": "Testo sopra i codici",
     "paperFormat_lbl": "Formato pagina",
@@ -273,6 +273,7 @@
     "published_lbl": "Pubblicato",
     "section_lbl": "Sezione",
     "menu_lbl": "Assegna al menu",
+    "menuName_lbl": "Nome voce menu",
 
     "administrator_role": "Amministratore",
     "administratorLong_role": "Amministratore di Sistema",
