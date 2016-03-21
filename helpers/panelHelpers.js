@@ -73,7 +73,7 @@ Template.roleCreate.helpers({
         if (name) {
             context.item = Skeletor.Data.Roles__detail__.findOne({name: name});
         }
-        
+
         context.schemaName = 'Roles_default';
         context.schema = Skeletor.Schemas.Roles_default;
         context.undoPath = '/panel/roles';
@@ -99,22 +99,23 @@ Template.sectionCreate.helpers({
     data: function() {
         var context = {};
         var code = FlowRouter.getParam('code');
+        var itemLang = FlowRouter.getParam('itemLang');
 
         if (code) {
             var query = {};
 
+            // coming from skelelist link
             if (Session.get('currentItem')) {
-                // coming from skelelist link
                 query._id = Session.get('currentItem');
             }
+            // normal mode
             else {
-                // normal mode
-                query[Skeletor.configuration.lang.default + '.code'] = code;
+                query[itemLang + '.code'] = code;
             }
 
             context.item = Skeletor.Data.Sections__detail__.findOne(query);
         }
-        
+
         context.schemaName = 'Sections_default';
         context.schema = Skeletor.Schemas.Sections_default;
 
@@ -139,20 +140,23 @@ Template.pageCreate.helpers({
     data: function() {
         var context = {};
         var code = FlowRouter.getParam('code');
+        var itemLang = FlowRouter.getParam('itemLang');
 
         if (code) {
             var query = {};
 
+            // coming from skelelist link
             if (Session.get('currentItem')) {
                 query._id = Session.get('currentItem');
             }
+            // normal mode
             else {
-                query[Skeletor.configuration.lang.default + '.code'] = code;
+                query[itemLang + '.code'] = code;
             }
 
             context.item = Skeletor.Data.Pages__detail__.findOne(query);
         }
-        
+
         context.schemaName = 'Pages_default';
         context.schema = Skeletor.Schemas.Pages_default;
 
@@ -176,20 +180,23 @@ Template.menuCreate.helpers({
     data: function() {
         var context = {};
         var code = FlowRouter.getParam('code');
+        var itemLang = FlowRouter.getParam('itemLang');
 
         if (code) {
             var query = {};
 
+            // coming from skelelist link
             if (Session.get('currentItem')) {
                 query._id = Session.get('currentItem');
             }
+            // normal mode
             else {
-                query[Skeletor.configuration.lang.default + '.code'] = code;
+                query[itemLang + '.code'] = code;
             }
 
             context.item = Skeletor.Data.Menus__detail__.findOne(query);
         }
-        
+
         context.schemaName = 'Menus_default';
         context.schema = Skeletor.Schemas.Menus_default;
 
