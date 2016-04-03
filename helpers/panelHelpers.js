@@ -99,7 +99,7 @@ Template.sectionCreate.helpers({
     data: function() {
         var context = {};
         var code = FlowRouter.getParam('code');
-        var itemLang = FlowRouter.getParam('itemLang');
+        var segmentLang = FlowRouter.getQueryParam('sLang');
 
         if (code) {
             var query = {};
@@ -110,7 +110,7 @@ Template.sectionCreate.helpers({
             }
             // normal mode
             else {
-                query[itemLang + '.code'] = code;
+                query[segmentLang + '.code'] = code;
             }
 
             context.item = Skeletor.Data.Sections__detail__.findOne(query);
@@ -140,7 +140,7 @@ Template.pageCreate.helpers({
     data: function() {
         var context = {};
         var code = FlowRouter.getParam('code');
-        var itemLang = FlowRouter.getParam('itemLang');
+        var segmentLang = FlowRouter.getQueryParam('sLang');
 
         if (code) {
             var query = {};
@@ -151,7 +151,7 @@ Template.pageCreate.helpers({
             }
             // normal mode
             else {
-                query[itemLang + '.code'] = code;
+                query[segmentLang + '.code'] = code;
             }
 
             context.item = Skeletor.Data.Pages__detail__.findOne(query);
@@ -180,7 +180,7 @@ Template.menuCreate.helpers({
     data: function() {
         var context = {};
         var code = FlowRouter.getParam('code');
-        var itemLang = FlowRouter.getParam('itemLang');
+        var segmentLang = FlowRouter.getQueryParam('sLang');
 
         if (code) {
             var query = {};
@@ -191,7 +191,7 @@ Template.menuCreate.helpers({
             }
             // normal mode
             else {
-                query[itemLang + '.code'] = code;
+                query[segmentLang + '.code'] = code;
             }
 
             context.item = Skeletor.Data.Menus__detail__.findOne(query);
