@@ -33,7 +33,7 @@
     "deleteConfirmation_msg": "Sei certo di voler proseguire?<br>L'eliminazione è irreversibile",
     "deleteConfirm_msg": "Conferma eliminazione",
     "userDeletionOk_msg": "Utente eliminato correttamente",
-    "login_msg": "Credenziali:",
+    "login_msg": "Accesso:",
     "currentUser_msg": "(utente corrente)",
     "undeletable_msg": "(non eliminabile)",
     "currentLoggedUser_msg": "Utente loggato:",

@@ -1,47 +1,58 @@
 <template name="login">
-    <div class="centralBodyFlex">
-        <div class="panel z-depth-5 topSpaced">
-            <div class="center-align">
-                <h3>{{conf "appName"}}</h3>
-            </div>
-            <div class="row">
-                <div class="col s12 m6 l8 left-align">
-                    <div class="card-panel thirdColor langBar">
-                        {{> langBar}}
+    <div class="centralBodyFlex" id="panelLogin">
+        <div class="row">
+            <div class="col s12 m10 l8">
+                <div class="panel z-depth-5 topSpaced">
+                    <div class="row">
+                        <div class="col s12">
+                            <h3>{{conf "appName"}}</h3>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12">
+                            <h5 class="secondColorText">
+                                {{_ "panelAccess_msg"}}
+                            </h5>
+                            <div>{{_ "login_msg"}}</div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="email" type="text">
+                            <label for="email">{{_ "usernameMail_lbl"}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m6">
+                            <input id="password" type="password">
+                            <label for="password">{{_ "password_lbl"}}</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <a id="login" class="secondColor vSpaced waves-effect waves-light btn">
+                                <i class="material-icons left">perm_identity</i>{{_ "login_btn"}}
+                            </a>
+                            <a href="/" class="firstColor vSpaced waves-effect waves-light btn">
+                                <i class="material-icons left">backspace</i>{{_ "backToSite_btn"}}
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 m6 l8 left-align">
+                            <div class="card-panel thirdColor langBar">
+                                {{> langBar}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <b>{{_ "reservedAccess_msg"}}</b>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <h5 class="secondColorText">
-                {{_ "panelAccess_msg"}}
-            </h5>
-            <div>{{_ "login_msg"}}</div><br>
-            
-            <div class="row">
-                <div class="input-field col s12 m6">
-                    <input id="email" type="text">
-                    <label for="email">{{_ "usernameMail_lbl"}}</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12 m6">
-                    <input id="password" type="password">
-                    <label for="password">{{_ "password_lbl"}}</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <a id="login" class="secondColor vSpaced waves-effect waves-light btn">
-                        <i class="material-icons left">perm_identity</i>{{_ "login_btn"}}
-                    </a>
-                    <a href="/" class="firstColor vSpaced waves-effect waves-light btn">
-                        <i class="material-icons left">backspace</i>{{_ "backToSite_btn"}}
-                    </a>
-                </div>
-            </div>
-            <div class="vSpaced">{{_ "reservedAccess_msg"}}</div>
-            <div class="center-align">
-                <img src="/images/logos/miniLogo.png" />
             </div>
         </div>
     </div>

@@ -68,7 +68,7 @@ body {
 body.panelBody {
     background-image: url(/images/backgrounds/panel.jpg);
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-color: $panelBackgroundColor;
     background-position: right top;
     background-attachment: fixed;
@@ -301,10 +301,18 @@ body.panelBody {
     .buttonsContainer {
         a:nth-child(odd) {
             @extend .firstColor;
+
+            &:hover {
+                background-color: darken($firstColor, 30%) !important;
+            }
         }
 
         a:nth-child(even) {
             @extend .secondColor;
+
+            &:hover {
+                background-color: lighten($secondColor, 15%) !important;
+            }
         }
 
         .dashboardBtn {
