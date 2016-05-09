@@ -23,6 +23,7 @@
     "panelAccess_msg": "Management portal",
     "reservedAccess_msg": "Access is reserved",
     "details_msg": "Details:",
+    "adminPanel_msg": "Administration panel",
     "support_msg": "Support:",
     "insertConfirm_msg": "Insert confirmed",
     "userCreatedOk_msg": "New user added correctly",

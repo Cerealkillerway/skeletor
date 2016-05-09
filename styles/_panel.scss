@@ -68,10 +68,12 @@ body {
 body.panelBody {
     background-image: url(/images/backgrounds/panel.jpg);
     background-repeat: no-repeat;
+    background-size: contain;
     background-color: $panelBackgroundColor;
     background-position: right top;
     background-attachment: fixed;
     color: $firstTextColor;
+    position: relative;
 
     display: flex;
     min-height: 100vh;
@@ -97,7 +99,7 @@ body.panelBody {
     main {
         flex: 1 0 auto;
     }
-    
+
     // headers
     h5 {
         i.large {
@@ -108,7 +110,7 @@ body.panelBody {
         margin: 0;
         padding: 0;
     }
-    
+
     // links
     a {
         &:link {
@@ -124,12 +126,12 @@ body.panelBody {
             color: $defaultLinkActive;
         }
     }
-    
+
     // images
     img {
         max-width: 100%;
     }
-    
+
     // tables
     td, th{
         border-radius: 0 !important;
@@ -144,7 +146,7 @@ body.panelBody {
             @extend .hide-on-small-only;
         }
     }
-    
+
     // main menu
     nav {
         ul div {
@@ -183,7 +185,7 @@ body.panelBody {
             cursor: pointer;
         }
     }
-    
+
     // dialogs
     #toast-container {
         z-index: 3007 !important;
@@ -192,7 +194,7 @@ body.panelBody {
             border: solid 2px;
         }
     }
-    
+
     // languages and socials bar
     .langBar {
         max-height: 62px;
