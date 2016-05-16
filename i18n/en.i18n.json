@@ -276,6 +276,8 @@
     "menu_lbl": "Assign to menu",
     "menuName_lbl": "Menu item name",
     "description_lbl": "Description",
+    "yes_lbl": "Yes",
+    "no_lbl": "No",
 
     "administrator_role": "Administrator",
     "administratorLong_role": "System Administrator",

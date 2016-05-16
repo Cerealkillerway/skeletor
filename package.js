@@ -1,6 +1,6 @@
 Package.describe({
     name: 'cerealkiller:skeletor',
-    version: '0.9.7',
+    version: '0.9.8',
     // Brief, one-line summary of the package.
     summary: 'CRUD app skeleton!',
     // URL to the Git repository containing the source code for this package.
@@ -11,8 +11,6 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-    api.versionsFrom('1.2.1');
-
     // namespace
     api.addFiles('namespace.js');
 
