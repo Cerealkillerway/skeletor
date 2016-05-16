@@ -275,6 +275,7 @@
     "section_lbl": "Section",
     "menu_lbl": "Assign to menu",
     "menuName_lbl": "Menu item name",
+    "description_lbl": "Description",
 
     "administrator_role": "Administrator",
     "administratorLong_role": "System Administrator",

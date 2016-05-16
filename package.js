@@ -1,6 +1,6 @@
 Package.describe({
     name: 'cerealkiller:skeletor',
-    version: '0.0.3',
+    version: '0.9.7',
     // Brief, one-line summary of the package.
     summary: 'CRUD app skeleton!',
     // URL to the Git repository containing the source code for this package.
@@ -35,7 +35,7 @@ Package.onUse(function(api) {
     api.use('cerealkiller:skeleform@0.0.3', {unordered: true});
     api.use('cerealkiller:skelelist@0.0.2', {unordered: true});
     api.use('cerealkiller:skelesite@0.0.1', {unordered: true});
-    
+
 
     // exports
     api.export('Skeletor');   // package namespace
@@ -45,7 +45,7 @@ Package.onUse(function(api) {
     api.addFiles('styles/_panel.scss', 'client');
     api.addFiles('styles/_responsive.scss', 'client');
     api.addFiles('styles/gearLoader.scss', 'client');
-    
+
 
     // templates
     api.addFiles('templates/commonAssets.html', 'client');
@@ -58,9 +58,9 @@ Package.onUse(function(api) {
     api.addFiles(['templates/sections/sectionsList.html', 'templates/sections/sectionCreate.html'], 'client');
     api.addFiles(['templates/pages/pagesList.html', 'templates/pages/pageCreate.html'], 'client');
     api.addFiles(['templates/menus/menusList.html', 'templates/menus/menuCreate.html'], 'client');
-    
+
     api.addFiles('templates/debug.html', 'client');
-    
+
 
     // i18n
     api.addFiles('i18n/it.i18n.json');
@@ -85,7 +85,7 @@ Package.onUse(function(api) {
 
     api.addFiles('events/panelEvents.js', 'client');
     api.addFiles('events/commonAssetsEvents.js', 'client');
-    
+
 });
 
 Package.onTest(function(api) {

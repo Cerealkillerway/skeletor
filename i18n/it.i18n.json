@@ -275,6 +275,7 @@
     "section_lbl": "Sezione",
     "menu_lbl": "Assegna al menu",
     "menuName_lbl": "Nome voce menu",
+    "description_lbl": "Descrizione",
 
     "administrator_role": "Amministratore",
     "administratorLong_role": "Amministratore di Sistema",
