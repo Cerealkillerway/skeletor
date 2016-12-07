@@ -7,10 +7,10 @@
             </div>
             <a href="#" data-activates="mainMenuMobile" class="button-collapse right hSpaced"><i class="mdi-navigation-menu"></i></a>
             <ul class="right hide-on-med-and-down iconSwing">
-                {{> mainMenu}}
+                {{> panelMainMenu}}
             </ul>
             <ul class="side-nav firstColor" id="mainMenuMobile">
-                {{> mainMenu}}
+                {{> panelMainMenu}}
             </ul>
         </div>
     </nav>
@@ -47,7 +47,7 @@
 </template>
 
 
-<template name="mainMenu">
+<template name="panelMainMenu">
     <li>
         <a href="/panel/dashboard{{currentLangLink}}">
             <i class="material-icons small left">dashboard</i>
