@@ -21,7 +21,7 @@ Template.userCreate.helpers({
         var username = FlowRouter.getParam("username");
 
         if (username) {
-            context.item = Skeletor.Data.Users__detail__.findOne({username: username});
+            context.item = Skeletor.Data.Users.findOne({username: username});
             if (context.item) {
                 context.item.userEmail = context.item.emails[0].address;
             }
@@ -71,7 +71,7 @@ Template.roleCreate.helpers({
         var name = FlowRouter.getParam("name");
 
         if (name) {
-            context.item = Skeletor.Data.Roles__detail__.findOne({name: name});
+            context.item = Skeletor.Data.Roles.findOne({name: name});
         }
 
         context.schemaName = 'Roles_default';
@@ -110,10 +110,10 @@ Template.sectionCreate.helpers({
             }
             // normal mode
             else {
-                query[segmentLang + '.code'] = code;
+                query[segmentLang + '---code'] = code;
             }
 
-            context.item = Skeletor.Data.Sections__detail__.findOne(query);
+            context.item = Skeletor.Data.Sections.findOne(query);
         }
 
         context.schemaName = 'Sections_default';
@@ -151,10 +151,10 @@ Template.pageCreate.helpers({
             }
             // normal mode
             else {
-                query[segmentLang + '.code'] = code;
+                query[segmentLang + '---code'] = code;
             }
 
-            context.item = Skeletor.Data.Pages__detail__.findOne(query);
+            context.item = Skeletor.Data.Pages.findOne(query);
         }
 
         context.schemaName = 'Pages_default';
@@ -191,10 +191,10 @@ Template.menuCreate.helpers({
             }
             // normal mode
             else {
-                query[segmentLang + '.code'] = code;
+                query[segmentLang + '---code'] = code;
             }
 
-            context.item = Skeletor.Data.Menus__detail__.findOne(query);
+            context.item = Skeletor.Data.Menus.findOne(query);
         }
 
         context.schemaName = 'Menus_default';
