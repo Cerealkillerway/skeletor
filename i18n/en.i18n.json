@@ -128,6 +128,7 @@
     "type_validation": "type mismatch, required: %s",
     "unique_validation": "value not avaliable (already taken)",
     "confirm_validation": "(It does not match)",
+    "required_validation": "Required",
 
     "string_validationDetail": "text",
     "number_validationDetail": "number",
