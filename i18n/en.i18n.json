@@ -122,22 +122,6 @@
     "incorrectPassword_error": "Wrong password",
     "accessDenied_error": "Access denied",
 
-    "error_validation": "<b>Error: %s</b>",
-    "min_validation": "minimum length: %s",
-    "max_validation": "maximum length: %s",
-    "type_validation": "type mismatch, required: %s",
-    "unique_validation": "value not avaliable (already taken)",
-    "confirm_validation": "(It does not match)",
-    "required_validation": "Required",
-
-    "string_validationDetail": "text",
-    "number_validationDetail": "number",
-    "email_validationDetail": "e-mail address",
-    "url_validationDetail": "url (a-z, 0-9, -, _)",
-    "date_validationDetail": "date dd/mm/yyyy",
-    "required_validationDetail": "required field",
-    "float_validationDetail": "float number",
-
     "ok_btn": "Ok",
     "save_btn": "Save",
     "cancel_btn": "Cancel",

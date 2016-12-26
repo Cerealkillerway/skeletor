@@ -122,22 +122,6 @@
     "incorrectPassword_error": "Passwrod errata",
     "accessDenied_error": "Accesso negato",
 
-    "error_validation": "<b>Errore: %s</b>",
-    "min_validation": "lunghezza minima: %s",
-    "max_validation": "lunghezza massima: %s",
-    "type_validation": "tipo non corretto, richiesto: %s",
-    "unique_validation": "valore non disponibile (già usato)",
-    "confirm_validation": "(non corrisponde)",
-    "required_validation": "Obbligatorio",
-
-    "string_validationDetail": "testo",
-    "number_validationDetail": "numero",
-    "email_validationDetail": "indirizzo e-mail",
-    "url_validationDetail": "url (a-z, 0-9, -, _)",
-    "date_validationDetail": "data gg/mm/aaaa",
-    "required_validationDetail": "campo richiesto",
-    "float_validationDetail": "decimale",
-
     "ok_btn": "Ok",
     "save_btn": "Salva",
     "cancel_btn": "Annulla",
