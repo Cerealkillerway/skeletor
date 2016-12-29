@@ -28,7 +28,7 @@ Package.onUse(function(api) {
     api.use('tap:i18n@1.7.0');
     api.use('momentjs:moment@2.10.6');
     api.use('materialize:materialize@=0.97.7', 'client');
-    api.use('cerealkiller:utils@1.0.0');
+    api.use('cerealkiller:skeleutils@1.0.0');
     // need skeleform, but allow it to be loaded last
     api.use('cerealkiller:skeleform@0.0.3', {unordered: true});
     api.use('cerealkiller:skelelist@0.0.2', {unordered: true});
