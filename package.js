@@ -1,6 +1,6 @@
 Package.describe({
     name: 'cerealkiller:skeletor',
-    version: '0.9.8',
+    version: '0.32.7',
     // Brief, one-line summary of the package.
     summary: 'CRUD app skeleton!',
     // URL to the Git repository containing the source code for this package.
@@ -27,7 +27,7 @@ Package.onUse(function(api) {
     api.use('fourseven:scss@3.2.0', 'client');
     api.use('tap:i18n@1.7.0');
     api.use('momentjs:moment@2.10.6');
-    api.use('materialize:materialize@=0.97.7', 'client');
+    api.use('materialize:materialize@=0.97.7', 'client');  // force 0.97.7 since 0.97.8 is buggy
     api.use('cerealkiller:skeleutils@1.0.0');
     // need skeleform, but allow it to be loaded last
     api.use('cerealkiller:skeleform@0.0.3', {unordered: true});
