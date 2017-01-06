@@ -151,7 +151,6 @@
     "loadFile_btn": "Carica file...",
     "imageUploader_btn": "Inserisci immagine",
     "videoEmbeed_btn": "Incorpora video",
-    "changePassword_btn": "Cambia password",
 
     "openWebsite_tooltip": "Apri il sito in una nuova scheda",
     "users_tooltip": "Vai alla gestione utenti",
@@ -255,7 +254,6 @@
     "failed_lbl": "connessione fallita",
     "waiting_lbl": "in attesa di riconnessione",
     "offline_lbl": "connessione interrotta",
-    "changePasswordTitle_lbl": "Cambio password...",
     "published_lbl": "Pubblicato",
     "section_lbl": "Sezione",
     "menu_lbl": "Assegna al menu",

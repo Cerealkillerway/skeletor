@@ -38,20 +38,6 @@ Template.userCreate.helpers({
     }
 });
 
-Template.userChangePassword.helpers({
-    data: function() {
-        var username = FlowRouter.getParam("username");
-        var context = {
-            schemaName: 'Users_changePassword',
-            schema: Skeletor.Schemas.Users_changePassword
-        };
-
-        context.item = Template.instance().data.item;
-
-        return context;
-    }
-});
-
 
 // Roles
 Template.rolesList.helpers({

@@ -238,11 +238,11 @@ body.panelBody {
 
     .modal {
         z-index: 3003 !important;
-        background-color: $firstColor;
-        color: $firstColorText;
+        background-color: $firstBackgroundColor;
+        border-radius: 0;
         backface-visibility: hidden;
 
-        .input-field input:not([readonly]), .input-field input.datepicker {
+        /*.input-field input:not([readonly]), .input-field input.datepicker {
             border-color: $firstColorText !important;
         }
         .input-field input:focus:not([readonly]), .input-field input.datepicker:focus, textarea.materialize-textarea:focus:not([readonly]) {
@@ -254,7 +254,7 @@ body.panelBody {
         }
         .input-field input:focus:not([readonly]) + label, .input-field input.datepicker:focus + label, .input-field .prefix.active, textarea.materialize-textarea:focus:not([readonly]) + label {
             color: $firstFocusColor !important;
-        }
+        }*/
 
         .btn {
             background-color: $secondColor;
@@ -270,6 +270,7 @@ body.panelBody {
 
         .modal-footer {
             background-color: darken($firstColor, 10%);
+            border-radius: 0;
 
             .btnClose {
                 margin-right: 15px;
