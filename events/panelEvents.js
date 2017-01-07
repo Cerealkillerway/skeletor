@@ -1,5 +1,8 @@
 // Panel layout
-Template.panelLayout.rendered = function() {
+Template.panelLayout.onCreated(function() {
+    Skeletor.appRendered = new ReactiveVar(false);
+});
+Template.panelLayout.onRendered(function() {
     setPanelBackground();
     $('.button-collapse').sideNav({
         closeOnClick: true,
@@ -7,8 +10,9 @@ Template.panelLayout.rendered = function() {
     });
     ckSwingMenu(this, '.iconSwing');
 
-    Session.set('appRendered', true);     // used by skeleform to understand when all templates are rendered (ex. to init staticbar)
-};
+    // used by skeleform to understand when all templates are rendered (ex. to init staticbar)
+    Skeletor.appRendered.set(true);
+});
 Template.panelLayout.events({
     'click #logout': function(event) {
         Meteor.logout(function(error) {
@@ -22,10 +26,10 @@ Template.panelLayout.events({
 
 
 // Login
-Template.login.rendered = function() {
+Template.login.onRendered(function() {
     setPanelBackground();
     $('#email').focus();
-};
+});
 Template.login.events({
     'keypress': function(event) {
         if (event.charCode === 13) {
@@ -39,11 +43,11 @@ Template.login.events({
 
 
 // Dashboard
-Template.dashboard.rendered = function() {
+Template.dashboard.onRendered(function() {
     this.$('.tooltipped').ckTooltip({delay: 10, container: this.$('#dashboardBtns')});
-};
+});
 
 // Panel footer
-Template.panelFooter.rendered = function() {
+Template.panelFooter.onRendered(function() {
     this.$('.tooltipped').ckTooltip({delay: 10, container: this.$('#panelFooter')});
-};
+});
