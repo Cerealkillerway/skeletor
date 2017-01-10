@@ -6,7 +6,7 @@ UI.registerHelper('defaultLang', function() {
 // Users
 Template.usersList.helpers({
     data: function() {
-        var context = {};
+        let context = {};
 
         context.schemaName = 'Users_default';
         context.schema = Skeletor.Schemas.Users_default;
@@ -17,8 +17,8 @@ Template.usersList.helpers({
 
 Template.userCreate.helpers({
     data: function() {
-        var context = {};
-        var username = FlowRouter.getParam("username");
+        let context = {};
+        let username = FlowRouter.getParam("username");
 
         if (username) {
             context.item = Skeletor.Data.Users.findOne({username: username});
@@ -42,7 +42,7 @@ Template.userCreate.helpers({
 // Roles
 Template.rolesList.helpers({
     data: function() {
-        var context = {};
+        let context = {};
 
         context.schemaName = 'Roles_default';
         context.schema = Skeletor.Schemas.Roles_default;
@@ -53,8 +53,8 @@ Template.rolesList.helpers({
 
 Template.roleCreate.helpers({
     data: function() {
-        var context = {};
-        var name = FlowRouter.getParam("name");
+        let context = {};
+        let name = FlowRouter.getParam("name");
 
         if (name) {
             context.item = Skeletor.Data.Roles.findOne({name: name});
@@ -72,7 +72,7 @@ Template.roleCreate.helpers({
 // Sections
 Template.sectionsList.helpers({
     data: function() {
-        var context = {};
+        let context = {};
 
         context.schemaName = 'Sections_default';
         context.schema = Skeletor.Schemas.Sections_default;
@@ -83,12 +83,12 @@ Template.sectionsList.helpers({
 
 Template.sectionCreate.helpers({
     data: function() {
-        var context = {};
-        var code = FlowRouter.getParam('code');
-        var segmentLang = FlowRouter.getQueryParam('sLang');
+        let context = {};
+        let code = FlowRouter.getParam('code');
+        let segmentLang = FlowRouter.getQueryParam('sLang');
 
         if (code) {
-            var query = {};
+            let query = {};
 
             // coming from skelelist link
             if (Session.get('currentItem')) {
@@ -113,7 +113,7 @@ Template.sectionCreate.helpers({
 // Pages
 Template.pagesList.helpers({
     data: function() {
-        var context = {};
+        let context = {};
 
         context.schemaName = 'Pages_default';
         context.schema = Skeletor.Schemas.Pages_default;
@@ -124,12 +124,12 @@ Template.pagesList.helpers({
 
 Template.pageCreate.helpers({
     data: function() {
-        var context = {};
-        var code = FlowRouter.getParam('code');
-        var segmentLang = FlowRouter.getQueryParam('sLang');
+        let context = {};
+        let code = FlowRouter.getParam('code');
+        let segmentLang = FlowRouter.getQueryParam('sLang');
 
         if (code) {
-            var query = {};
+            let query = {};
 
             // coming from skelelist link
             if (Session.get('currentItem')) {
@@ -153,7 +153,7 @@ Template.pageCreate.helpers({
 // Menus
 Template.menusList.helpers({
     data: function() {
-        var context = {};
+        let context = {};
 
         context.schemaName = 'Menus_default';
         context.schema = Skeletor.Schemas.Menus_default;
@@ -164,12 +164,12 @@ Template.menusList.helpers({
 
 Template.menuCreate.helpers({
     data: function() {
-        var context = {};
-        var code = FlowRouter.getParam('code');
-        var segmentLang = FlowRouter.getQueryParam('sLang');
+        let context = {};
+        let code = FlowRouter.getParam('code');
+        let segmentLang = FlowRouter.getQueryParam('sLang');
 
         if (code) {
-            var query = {};
+            let query = {};
 
             // coming from skelelist link
             if (Session.get('currentItem')) {

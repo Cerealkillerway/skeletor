@@ -1,7 +1,7 @@
 // Lang bar
 Template.langBar.events({
-    "click .langFlag": function(event, template) {
-        var newLang = $(event.target).closest(".langFlag").data("lang");
+    'click .langFlag': function(event, template) {
+        let newLang = $(event.target).closest('.langFlag').data('lang');
 
         Skeletor.Utilities.changeRouteLang(newLang);
     }
@@ -12,13 +12,12 @@ Template.statusBar.rendered = function() {
     this.visibility = new ReactiveVar(false);
     $('footer').css({marginBottom: '52px'});
 
-    var self = this;
-    var description = this.$('#statusDescription');
-    var cleaner;
+    let description = this.$('#statusDescription');
+    let cleaner;
 
     this.$('.statusLabel').mouseover(function() {
-        var id = $(this).attr('id');
-        var name;
+        let id = $(this).attr('id');
+        let name;
 
         if (id === 'statusBarVisibility') {
             if ($(this).children('i').first().html() === 'star') {
@@ -29,7 +28,7 @@ Template.statusBar.rendered = function() {
             }
         }
         else {
-            name = TAPi18n.__(id + "_tooltip");
+            name = TAPi18n.__(id + '_tooltip');
         }
 
         Meteor.clearTimeout(cleaner);
@@ -42,7 +41,8 @@ Template.statusBar.rendered = function() {
         }, 1500);
     });
 
-    var $statusBar = $('#statusBar');
+    let $statusBar = $('#statusBar');
+
     function hideStatusBar() {
         $statusBar.animate({bottom: '-52px'}, 200, function() {
             if ($statusBar.children('.barActivator').length === 0) {
@@ -57,10 +57,10 @@ Template.statusBar.rendered = function() {
         });
     }
 
-    Tracker.autorun(function() {
+    Tracker.autorun(() => {
         description.html('');
 
-        if (!self.visibility.get()) {
+        if (!this.visibility.get()) {
             $('footer').css({marginBottom: 0});
 
             hideStatusBar();
@@ -76,13 +76,13 @@ Template.statusBar.rendered = function() {
     });
 };
 Template.statusBar.events({
-    "click #disconnect": function(event, template) {
+    'click #disconnect': function(event, template) {
         Meteor.disconnect();
     },
-    "click #reconnect": function(event, template) {
+    'click #reconnect': function(event, template) {
         Meteor.reconnect();
     },
-    "click #statusBarVisibility": function(event, template) {
+    'click #statusBarVisibility': function(event, template) {
         var icon = template.$('#statusBarVisibility').children('i');
 
         if (icon.html() === 'star') {

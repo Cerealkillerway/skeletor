@@ -1,7 +1,7 @@
 // LangBar
 Template.langBar.helpers({
     langs: function() {
-        var result = [];
+        let result = [];
 
         _.each(Skeletor.GlobalConf.langEnable, function(value, key) {
             if (value) {
@@ -12,7 +12,7 @@ Template.langBar.helpers({
         return result;
     },
     social: function() {
-        var result = [];
+        let result = [];
 
         Skeletor.configuration.social.forEach(function(item, index) {
             if (item.enabled) {

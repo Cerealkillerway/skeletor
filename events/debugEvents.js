@@ -2,10 +2,10 @@
 // ==========================================================================================
 Template.debugToolbar.events({
     // open/close actions
-    "click #debugOpen": function(event, template) {
-        var container = $('#debugActionsContainer');
-        var width = container.width() + 13;
-        var position = parseInt(container.css('right'));
+    'click #debugOpen': function(event, instance) {
+        let container = $('#debugActionsContainer');
+        let width = container.width() + 13;
+        let position = parseInt(container.css('right'));
 
         if (position > 0) {
             localStorage.setItem('debugBarOpen', false);
@@ -17,14 +17,14 @@ Template.debugToolbar.events({
         }
     },
     // change current lang
-    "click #debugLangChange": function(event, template) {
+    'click #debugLangChange': function(event, instance) {
         if (TAPi18n.getLanguage() === 'it') changeLang('en');
         else changeLang('it');
     },
     // toggle logger function
-    "click #debugLogger": function(event, template) {
-        var btn = $(event.target).closest('.btn');
-        var listBtns = btn.next('ul').find('.btn-floating');
+    'click #debugLogger': function(event, instance) {
+        let btn = $(event.target).closest('.btn');
+        let listBtns = btn.next('ul').find('.btn-floating');
 
         if (Session.get('consoleLogger')) {
             Session.set('consoleLogger', false);
