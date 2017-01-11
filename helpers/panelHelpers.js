@@ -4,12 +4,15 @@ UI.registerHelper('defaultLang', function() {
 });
 
 // Users
+Template.usersList.helpers(Skeletor.generalHelpers);
 Template.usersList.helpers({
     data: function() {
+        const instance = Template.instance();
         let context = {};
 
         context.schemaName = 'Users_default';
         context.schema = Skeletor.Schemas.Users_default;
+        context.skeleSubsReady = instance.skeleSubsReady;
 
         return context;
     }
@@ -17,16 +20,16 @@ Template.usersList.helpers({
 
 Template.userCreate.helpers({
     data: function() {
+        const instance = Template.instance();
         let context = {};
-        let username = FlowRouter.getParam("username");
+        let username = FlowRouter.getParam('username');
 
-        if (username) {
+        if (username && instance.skeleSubsReady.get()) {
             context.item = Skeletor.Data.Users.findOne({username: username});
-            if (context.item) {
-                context.item.userEmail = context.item.emails[0].address;
-            }
+            context.item.userEmail = context.item.emails[0].address;
         }
 
+        context.skeleSubsReady = instance.skeleSubsReady;
         context.schemaName = 'Users_default';
         context.schema = Skeletor.Schemas.Users_default;
         context.method = {
@@ -54,7 +57,7 @@ Template.rolesList.helpers({
 Template.roleCreate.helpers({
     data: function() {
         let context = {};
-        let name = FlowRouter.getParam("name");
+        let name = FlowRouter.getParam('name');
 
         if (name) {
             context.item = Skeletor.Data.Roles.findOne({name: name});

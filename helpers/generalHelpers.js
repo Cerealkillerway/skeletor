@@ -1,9 +1,14 @@
-// General skeleform spacebar's helpers
-
-// check if supplied role is undeletable
-UI.registerHelper('isUndeletableRole', function(role, options) {
-    if ((role === 'admin') || (role === 'superuser')) {
-        return true;
+// General skeleform helpers
+Skeletor.generalHelpers = {
+    skeleSubsReady: function(subscription) {
+        // if particular subscription state is requested, look for a reactive var
+        // with name subscription + 'Ready'
+        if (subscription) {
+            return Template.instance()[subscription + 'Ready'].get();
+        }
+        // otherwise return standard skeleSubsReady reactive var
+        else {
+            return Template.instance().skeleSubsReady.get();
+        }
     }
-    else return false;
-});
+};
