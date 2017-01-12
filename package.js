@@ -74,7 +74,6 @@ Package.onUse(function(api) {
     api.addFiles('lib/methodsServer.js', 'server');
     api.addFiles('lib/permissions.js');
     api.addFiles('lib/clientUtilities.js', 'client');
-    api.addFiles('lib/ckMaterializeOverrides.js', 'client');
     api.addFiles('events/debugEvents.js', 'client');
 
     api.addFiles('helpers/generalHelpers.js', 'client');

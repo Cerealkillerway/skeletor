@@ -1,7 +1,8 @@
 // outputs the defaultLang
-UI.registerHelper('defaultLang', function() {
+Template.registerHelper('defaultLang', function() {
     return Skeletor.configuration.lang.default;
 });
+
 
 // Users
 Template.usersList.helpers(Skeletor.generalHelpers);
@@ -29,13 +30,13 @@ Template.userCreate.helpers({
             context.item.userEmail = context.item.emails[0].address;
         }
 
-        context.skeleSubsReady = instance.skeleSubsReady;
         context.schemaName = 'Users_default';
         context.schema = Skeletor.Schemas.Users_default;
         context.method = {
             insert: 'insertUser',
             update: 'updateUser'
         };
+        context.skeleSubsReady = instance.skeleSubsReady;
 
         return context;
     }
@@ -45,10 +46,12 @@ Template.userCreate.helpers({
 // Roles
 Template.rolesList.helpers({
     data: function() {
+        const instance = Template.instance();
         let context = {};
 
         context.schemaName = 'Roles_default';
         context.schema = Skeletor.Schemas.Roles_default;
+        context.skeleSubsReady = instance.skeleSubsReady;
 
         return context;
     }
@@ -56,6 +59,7 @@ Template.rolesList.helpers({
 
 Template.roleCreate.helpers({
     data: function() {
+        const instance = Template.instance();
         let context = {};
         let name = FlowRouter.getParam('name');
 
@@ -65,7 +69,7 @@ Template.roleCreate.helpers({
 
         context.schemaName = 'Roles_default';
         context.schema = Skeletor.Schemas.Roles_default;
-        context.undoPath = '/panel/roles';
+        context.skeleSubsReady = instance.skeleSubsReady;
 
         return context;
     }
@@ -75,10 +79,12 @@ Template.roleCreate.helpers({
 // Sections
 Template.sectionsList.helpers({
     data: function() {
+        const instance = Template.instance();
         let context = {};
 
         context.schemaName = 'Sections_default';
         context.schema = Skeletor.Schemas.Sections_default;
+        context.skeleSubsReady = instance.skeleSubsReady;
 
         return context;
     }
@@ -86,6 +92,7 @@ Template.sectionsList.helpers({
 
 Template.sectionCreate.helpers({
     data: function() {
+        const instance = Template.instance();
         let context = {};
         let code = FlowRouter.getParam('code');
         let segmentLang = FlowRouter.getQueryParam('sLang');
@@ -107,6 +114,7 @@ Template.sectionCreate.helpers({
 
         context.schemaName = 'Sections_default';
         context.schema = Skeletor.Schemas.Sections_default;
+        context.skeleSubsReady = instance.skeleSubsReady;
 
         return context;
     }
@@ -116,10 +124,12 @@ Template.sectionCreate.helpers({
 // Pages
 Template.pagesList.helpers({
     data: function() {
+        const instance = Template.instance();
         let context = {};
 
         context.schemaName = 'Pages_default';
         context.schema = Skeletor.Schemas.Pages_default;
+        context.skeleSubsReady = instance.skeleSubsReady;
 
         return context;
     }
@@ -127,6 +137,7 @@ Template.pagesList.helpers({
 
 Template.pageCreate.helpers({
     data: function() {
+        const instance = Template.instance();
         let context = {};
         let code = FlowRouter.getParam('code');
         let segmentLang = FlowRouter.getQueryParam('sLang');
@@ -148,18 +159,22 @@ Template.pageCreate.helpers({
 
         context.schemaName = 'Pages_default';
         context.schema = Skeletor.Schemas.Pages_default;
+        context.skeleSubsReady = instance.skeleSubsReady;
 
         return context;
     }
 });
 
+
 // Menus
 Template.menusList.helpers({
     data: function() {
+        const instance = Template.instance();
         let context = {};
 
         context.schemaName = 'Menus_default';
         context.schema = Skeletor.Schemas.Menus_default;
+        context.skeleSubsReady = instance.skeleSubsReady;
 
         return context;
     }
@@ -167,6 +182,7 @@ Template.menusList.helpers({
 
 Template.menuCreate.helpers({
     data: function() {
+        const instance = Template.instance();
         let context = {};
         let code = FlowRouter.getParam('code');
         let segmentLang = FlowRouter.getQueryParam('sLang');
@@ -188,6 +204,7 @@ Template.menuCreate.helpers({
 
         context.schemaName = 'Menus_default';
         context.schema = Skeletor.Schemas.Menus_default;
+        context.skeleSubsReady = instance.skeleSubsReady;
 
         return context;
     }

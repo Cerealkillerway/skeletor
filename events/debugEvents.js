@@ -40,7 +40,10 @@ Template.debugToolbar.events({
 });
 
 Template.debugToolbar.rendered = function() {
-    this.$('.tooltipped').ckTooltip({delay: 10, container: this.$('#debugActionsContainer')});
+    this.$('.tooltipped').tooltip({delay: 10, container: this.$('#debugActionsContainer')});
 
     if (localStorage.getItem('debugBarOpen') !== 'true') $('#debugOpen').trigger('click');
 };
+Template.debugToolbar.onDestroyed(function() {
+    this.$('.tooltipped').tooltip('remove');
+});
