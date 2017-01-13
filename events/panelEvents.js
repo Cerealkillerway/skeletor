@@ -77,10 +77,13 @@ Template.usersList.onCreated(function() {
 
     this.autorun(() => {
         let usersList = Skeletor.subsManagers.usersSubs.subscribe('findDocuments', 'Users', {}, userOptions);
-        let rolesList = Skeletor.subsManagers.usersSubs.subscribe('findDocuments', 'Roles', {}, rolesOptions);
+        let rolesList = Skeletor.subsManagers.rolesSubs.subscribe('findDocuments', 'Roles', {}, rolesOptions);
 
         // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(Skeletor.subsManagers.usersSubs.ready());
+        this.skeleSubsReady.set(
+            Skeletor.subsManagers.usersSubs.ready() &&
+            Skeletor.subsManagers.rolesSubs.ready()
+        );
     });
 });
 
