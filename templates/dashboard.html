@@ -6,36 +6,46 @@
 
         <div id="dashboardCustom"></div>
 
-        <h4>{{_ "websiteButtons_text"}}</h4>
-        <div class="buttonsContainer">
-            <a href="/{{defaultLang}}/home" target="_blank" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "openWebsite_tooltip"}}">
-                <i class="material-icons large">public</i>
-                <div>{{_ "openWebsite_btn"}}</div>
-            </a>
-            <a href="/panel/sections/{{defaultLang}}{{currentLangLink}}{{isPaginated "Sections_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "sections_tooltip"}}">
-                <i class="material-icons">assignment</i>
-                <div>{{_ "sections_btn"}}</div>
-            </a>
-            <a href="/panel/pages/{{defaultLang}}{{currentLangLink}}{{isPaginated "Pages_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "pages_tooltip"}}">
-                <i class="material-icons">find_in_page</i>
-                <div>{{_ "pages_btn"}}</div>
-            </a>
-            <a href="/panel/menus/{{defaultLang}}{{currentLangLink}}{{isPaginated "Sections_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "menus_tooltip"}}">
-                <i class="material-icons">menu</i>
-                <div>{{_ "menus_btn"}}</div>
-            </a>
-        </div>
+        {{> dashboardWesiteButtons}}
 
-        <h4>{{_ "aclButtons_text"}}</h4>
-        <div class="buttonsContainer">
-            <a href="/panel/users{{currentLangLink}}{{isPaginated "Users_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "users_tooltip"}}">
-                <i class="material-icons">person</i>
-                <div>{{_ "users_btn"}}</div>
-            </a>
-            <a href="/panel/roles{{currentLangLink}}{{isPaginated "Roles_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "roles_tooltip"}}">
-                <i class="material-icons">beenhere</i>
-                <div>{{_ "roles_btn"}}</div>
-            </a>
-        </div>
+        {{> dashboardAclButtons}}
+    </div>
+</template>
+
+<template name="dashboardWesiteButtons">
+    <h4>{{_ "websiteButtons_text"}}</h4>
+
+    <div class="buttonsContainer">
+        <a href="/{{defaultLang}}/home" target="_blank" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "openWebsite_tooltip"}}">
+            <i class="material-icons large">public</i>
+            <div>{{_ "openWebsite_btn"}}</div>
+        </a>
+        <a href="/panel/sections/{{defaultLang}}{{currentLangLink}}{{isPaginated "Sections_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "sections_tooltip"}}">
+            <i class="material-icons">assignment</i>
+            <div>{{_ "sections_btn"}}</div>
+        </a>
+        <a href="/panel/pages/{{defaultLang}}{{currentLangLink}}{{isPaginated "Pages_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "pages_tooltip"}}">
+            <i class="material-icons">find_in_page</i>
+            <div>{{_ "pages_btn"}}</div>
+        </a>
+        <a href="/panel/menus/{{defaultLang}}{{currentLangLink}}{{isPaginated "Sections_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "menus_tooltip"}}">
+            <i class="material-icons">menu</i>
+            <div>{{_ "menus_btn"}}</div>
+        </a>
+    </div>
+</template>
+
+<template name="dashboardAclButtons">
+    <h4>{{_ "aclButtons_text"}}</h4>
+    
+    <div class="buttonsContainer">
+        <a href="/panel/users{{currentLangLink}}{{isPaginated "Users_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "users_tooltip"}}">
+            <i class="material-icons">person</i>
+            <div>{{_ "users_btn"}}</div>
+        </a>
+        <a href="/panel/roles{{currentLangLink}}{{isPaginated "Roles_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "roles_tooltip"}}">
+            <i class="material-icons">beenhere</i>
+            <div>{{_ "roles_btn"}}</div>
+        </a>
     </div>
 </template>
