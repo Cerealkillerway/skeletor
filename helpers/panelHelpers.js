@@ -32,7 +32,7 @@ Template.userCreate.helpers({
 
         context.schemaName = 'Users_default';
         context.schema = Skeletor.Schemas.Users_default;
-        context.method = {
+        context.methods = {
             insert: 'insertUser',
             update: 'updateUser'
         };

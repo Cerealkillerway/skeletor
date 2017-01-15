@@ -247,7 +247,7 @@ Template.pagesList.onCreated(function() {
     this.autorun(() => {
         let currentLang = FlowRouter.getParam('itemLang');
 
-        pagesOptions.fields[currentLang + '---code'] = 1;
+        pagesOptions.fields[currentLang + '---title'] = 1;
         pagesOptions.fields[currentLang + '---published'] = 1;
 
         sectionOptions.fields[currentLang + '---code'] = 1;
