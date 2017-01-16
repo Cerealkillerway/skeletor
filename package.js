@@ -51,6 +51,8 @@ Package.onUse(function(api) {
     api.addFiles('templates/login.html', 'client');
     api.addFiles('templates/panelLayouts.html', 'client');
 
+    api.addFiles('templates/elements/skeleTooltip.html', 'client');
+
     api.addFiles(['templates/users/usersList.html', 'templates/users/userCreate.html'], 'client');
     api.addFiles(['templates/roles/rolesList.html', 'templates/roles/roleCreate.html'], 'client');
     api.addFiles(['templates/sections/sectionsList.html', 'templates/sections/sectionCreate.html'], 'client');

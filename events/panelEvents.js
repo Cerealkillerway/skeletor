@@ -44,19 +44,19 @@ Template.login.events({
 
 // Dashboard
 Template.dashboard.onRendered(function() {
-    this.$('.tooltipped').tooltip({delay: 10, container: this.$('#dashboardBtns')});
+    TooltipOnRendered();
 });
 Template.dashboard.onDestroyed(function() {
-    this.$('.tooltipped').tooltip('remove');
+    TooltipOnDestroyed();
 });
 
 
 // Panel footer
 Template.panelFooter.onRendered(function() {
-    this.$('.tooltipped').tooltip({delay: 10, container: this.$('#panelFooter')});
+    TooltipOnRendered();
 });
 Template.panelFooter.onDestroyed(function() {
-    this.$('.tooltipped').tooltip('remove');
+    TooltipOnDestroyed();
 });
 
 
@@ -374,4 +374,22 @@ Template.menuCreate.onCreated(function() {
         // set reactive var for all subscriptions ready
         this.skeleSubsReady.set(Skeletor.subsManagers.menusSubs.ready());
     });
+});
+
+TooltipOnRendered = function() {
+    Tracker.autorun(function() {
+        let currentLang = TAPi18n.getLanguage();
+
+        this.$('.tooltipped').tooltip('remove');
+        this.$('.tooltipped').tooltip({delay: 50});
+    });
+}
+TooltipOnDestroyed = function() {
+    this.$('.tooltipped').tooltip('remove');
+}
+Template.skeleTooltip.onRendered(function() {
+    TooltipOnRendered();
+});
+Template.skeleTooltip.onDestroyed(function() {
+    TooltipOnDestroyed();
 });
