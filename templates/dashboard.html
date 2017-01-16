@@ -6,9 +6,13 @@
 
         <div id="dashboardCustom"></div>
 
-        {{> dashboardWesiteButtons}}
+        {{#if (checkPermissions "allowAcl")}}
+            {{> dashboardAclButtons}}
+        {{/if}}
 
-        {{> dashboardAclButtons}}
+        {{#if (checkPermissions "allowAcl")}}
+            {{> dashboardWesiteButtons}}
+        {{/if}}
     </div>
 </template>
 
@@ -37,7 +41,7 @@
 
 <template name="dashboardAclButtons">
     <h4>{{_ "aclButtons_text"}}</h4>
-    
+
     <div class="buttonsContainer">
         <a href="/panel/users{{currentLangLink}}{{isPaginated "Users_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "users_tooltip"}}">
             <i class="material-icons">person</i>

@@ -261,6 +261,13 @@
     "description_lbl": "Descrizione",
     "yes_lbl": "Sì",
     "no_lbl": "No",
+    "aclManagement_lbl": "Gestione utenti e Ruoli",
+    "allowAcl_lbl": "Permetti",
+    "pagesManagement_lbl": "Gestione pagine e menu",
+    "allowPages_lbl": "Permetti",
+    "shopsManagement_lbl": "Gestione negozi",
+    "allowShops_lbl": "Permetti",
+    "selfShop_lbl": "Permetti solo il proprio negozio",
 
     "administrator_role": "Amministratore",
     "administratorLong_role": "Amministratore di Sistema",
