@@ -27,7 +27,7 @@ Package.onUse(function(api) {
     api.use('fourseven:scss@3.2.0', 'client');
     api.use('tap:i18n@1.7.0');
     api.use('momentjs:moment@2.10.6');
-    api.use('materialize:materialize@0.97.7', 'client');  // force 0.97.7 since 0.97.8 is buggy
+    api.use('materialize:materialize@0.97.7', 'client');
     api.use('cerealkiller:skeleutils@1.0.0');
     // need skeleform, but allow it to be loaded last
     api.use('cerealkiller:skeleform@0.0.3', {unordered: true});
