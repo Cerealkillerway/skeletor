@@ -383,10 +383,11 @@ TooltipOnRendered = function() {
         this.$('.tooltipped').tooltip('remove');
         this.$('.tooltipped').tooltip({delay: 50});
     });
-}
+};
 TooltipOnDestroyed = function() {
     this.$('.tooltipped').tooltip('remove');
-}
+};
+
 Template.skeleTooltip.onRendered(function() {
     TooltipOnRendered();
 });
