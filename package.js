@@ -47,9 +47,9 @@ Package.onUse(function(api) {
 
     // templates
     api.addFiles('templates/commonAssets.html', 'client');
-    api.addFiles('templates/dashboard.html', 'client');
-    api.addFiles('templates/login.html', 'client');
-    api.addFiles('templates/panelLayouts.html', 'client');
+    api.addFiles('templates/skelePanelDashboard.html', 'client');
+    api.addFiles('templates/skeleLogin.html', 'client');
+    api.addFiles('templates/skelePanelLayouts.html', 'client');
 
     api.addFiles('templates/elements/skeleTooltip.html', 'client');
 

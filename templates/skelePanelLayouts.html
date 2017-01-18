@@ -1,49 +1,93 @@
-<template name="panelLayout">
-    <nav class="firstColor">
-        <div class="nav-wrapper">
-            <div id="logout" class="bold upperCase left">
-                <i class="mdi-action-exit-to-app small left"></i>
-                {{_ "menu_logout"}}
+<template name="skelePanelLayout">
+    {{#if (skeleCheckPermissions "allowPanelAccess" false)}}
+        <nav class="firstColor">
+            <div class="nav-wrapper">
+                <div id="logout" class="skeleBold upperCase left">
+                    <i class="mdi-action-exit-to-app small left"></i>
+                    {{_ "menu_logout"}}
+                </div>
+                <a href="#" data-activates="mainMenuMobile" class="button-collapse right hSpaced"><i class="mdi-navigation-menu"></i></a>
+                <ul class="right hide-on-med-and-down iconSwing">
+                    {{> panelMainMenu}}
+                </ul>
+                <ul class="side-nav firstColor" id="mainMenuMobile">
+                    {{> panelMainMenu}}
+                </ul>
             </div>
-            <a href="#" data-activates="mainMenuMobile" class="button-collapse right hSpaced"><i class="mdi-navigation-menu"></i></a>
-            <ul class="right hide-on-med-and-down iconSwing">
-                {{> panelMainMenu}}
-            </ul>
-            <ul class="side-nav firstColor" id="mainMenuMobile">
-                {{> panelMainMenu}}
-            </ul>
-        </div>
-    </nav>
+        </nav>
 
+        <main>
+            <div class="skeleCentralBody">
+                <div class="row vSpaced">
+                    <div class="col s12 m6 l8 left-align">
+                        <div class="card-panel thirdColor langBar">
+                            {{> langBar}}
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l4 right-align">
+                        <div class="card-panel secondColor">
+                            <i class="material-icons small left relative1">perm_identity</i>{{_ "currentLoggedUser_msg"}} {{currentUser.username}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skeleCentralBody">
+                    {{> Template.dynamic template=main}}
+                </div>
+            </div>
+
+            {{> statusBar}}
+        </main>
+
+        <footer>
+            {{> panelFooter}}
+            {{#if debug}}
+                {{> debugToolbar}}
+            {{/if}}
+        </footer>
+    {{else}}
+        {{> skeleUnauthorized}}
+    {{/if}}
+</template>
+
+
+<template name="skelePanelNudeLayout">
     <main>
-        <div class="centralBody">
-            <div class="row vSpaced">
-                <div class="col s12 m6 l8 left-align">
-                    <div class="card-panel thirdColor langBar">
-                        {{> langBar}}
-                    </div>
-                </div>
-                <div class="col s12 m6 l4 right-align">
-                    <div class="card-panel secondColor">
-                        <i class="material-icons small left relative1">perm_identity</i>{{_ "currentLoggedUser_msg"}} {{currentUser.username}}
-                    </div>
-                </div>
-            </div>
-
-            <div class="centralBody">
+        <div class="skeleCentralBody">
+            <div class="skeleCentralBody">
                 {{> Template.dynamic template=main}}
             </div>
         </div>
-
-        {{> statusBar}}
     </main>
+</template>
 
-    <footer>
-        {{> panelFooter}}
-        {{#if debug}}
-            {{> debugToolbar}}
-        {{/if}}
-    </footer>
+
+<template name="skeleUnauthorized">
+    <main>
+        <div class="skeleCentralBody">
+            <div class="skeleCentralBody">
+                <div class="skelePanel">
+                    <div class="valign-wrapper">
+                        <i class="material-icons large">&#xE925;</i>
+                        <h4 class="valign">
+                            {{_ "permissionDenied_title"}}
+                        </h4>
+                    </div>
+
+                    <div class="topSpaced">
+                        {{_ "unauthorized_text"}}
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <a id="backToLogin" class="secondColor vSpaced waves-effect waves-light btn">
+                                <i class="material-icons left">perm_identity</i>{{_ "backTogin_btn"}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </template>
 
 
@@ -110,7 +154,7 @@
                 <div class="col l6 s12">
                     <h5>{{conf "name"}}</h5>
                     <p>
-                        <span class="bold">{{conf "appName"}}</span><br>
+                        <span class="skeleBold">{{conf "appName"}}</span><br>
                         {{_ "adminPanel_msg"}}<br><br>
 
                         {{_ "support_msg"}} <a href="mailto:{{conf "webmasterEmail"}}">{{conf "webmasterEmail"}}</a>

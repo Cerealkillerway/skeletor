@@ -3,15 +3,15 @@ body {
 }
 
 /* --- utilitiy classes --- */
-.centralBodyFlex {
+.skeleCentralBodyFlex {
     max-width: 1100px;
     margin: 0 auto 0 auto;
 }
-.centralBody {
-    @extend .centralBodyFlex;
+.skeleCentralBody {
+    @extend .skeleCentralBodyFlex;
     width: 100%;
 }
-.panel {
+.skelePanel {
     background: $firstBackgroundColor;
     margin: 0 auto 35px auto;
     padding: 35px 35px 55px 35px;
@@ -51,7 +51,7 @@ body {
 .divider {
     background-color: lighten($firstTextColor, 30%) !important;
 }
-.bold {
+.skeleBold {
     font-weight: 500;
 }
 .upperCase {
@@ -65,7 +65,7 @@ body {
 
 
 /* --- panel styles --- */
-body.panelBody {
+body.skelePanelBody {
     background-image: url(/images/backgrounds/panel.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -291,14 +291,14 @@ body.panelBody {
 #skeleformLoading {
     clear: both;
 
-    .panel {
+    .skelePanel {
         max-width: 450px;
         margin: 70px auto 30px auto;
         z-index: 3000;
     }
 }
 
-#dashboardBtns {
+.skeleDashboard {
     .buttonsContainer {
         a:nth-child(odd) {
             @extend .firstColor;

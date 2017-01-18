@@ -1,19 +1,21 @@
 // Panel layout
-Template.panelLayout.onCreated(function() {
+Template.skelePanelLayout.onCreated(function() {
     Skeletor.appRendered = new ReactiveVar(false);
 });
-Template.panelLayout.onRendered(function() {
-    setPanelBackground();
+
+Template.skelePanelLayout.onRendered(function() {
+    Skeletor.Utilities.skeleSetPanelBackground();
     $('.button-collapse').sideNav({
         closeOnClick: true,
         edge: 'right'
     });
-    ckSwingMenu(this, '.iconSwing');
+    Skeletor.Utilities.skeleSwingMenu(this, '.iconSwing');
 
     // used by skeleform to understand when all templates are rendered (ex. to init staticbar)
     Skeletor.appRendered.set(true);
 });
-Template.panelLayout.events({
+
+Template.skelePanelLayout.events({
     'click #logout': function(event) {
         Meteor.logout(function(error) {
             FlowRouter.go(Skeletor.configuration.login.defaultLogoutPath, {}, {lang: FlowRouter.current().queryParams.lang});
@@ -25,28 +27,51 @@ Template.panelLayout.events({
 });
 
 
-// Login
-Template.login.onRendered(function() {
-    setPanelBackground();
-    $('#email').focus();
+// Panel nude layout
+Template.skelePanelNudeLayout.onCreated(function() {
+    Skeletor.appRendered = new ReactiveVar(false);
 });
-Template.login.events({
-    'keypress': function(event) {
+Template.skelePanelNudeLayout.onRendered(function() {
+    Skeletor.Utilities.skeleSetPanelBackground();
+    Skeletor.appRendered.set(true);
+});
+
+
+// unauthorized
+Template.skeleUnauthorized.events({
+    'click #backToLogin': function() {
+        FlowRouter.go(Skeletor.configuration.login.defaultLoginPath, {}, {lang: FlowRouter.current().queryParams.lang});
+    }
+});
+
+
+// Login
+Template.skeleLogin.onRendered(function() {
+    this.$('#email').focus();
+});
+Template.skeleLogin.events({
+    'keypress': function(event, instance) {
+        let email = instance.$('#email').val();
+        let password = instance.$('#password').val();
+
         if (event.charCode === 13) {
-            login();
+            Skeletor.Utilities.loginWithPassword(email, password);
         }
     },
-    'click #login': function(event) {
-        login();
+    'click #login': function(event, instance) {
+        let email = instance.$('#email').val();
+        let password = instance.$('#password').val();
+
+        Skeletor.Utilities.loginWithPassword(email, password);
     }
 });
 
 
 // Dashboard
-Template.dashboard.onRendered(function() {
+Template.skelePanelDashboard.onRendered(function() {
     TooltipOnRendered();
 });
-Template.dashboard.onDestroyed(function() {
+Template.skelePanelDashboard.onDestroyed(function() {
     TooltipOnDestroyed();
 });
 

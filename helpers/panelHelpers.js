@@ -1,7 +1,5 @@
-// outputs the defaultLang
-Template.registerHelper('defaultLang', function() {
-    return Skeletor.configuration.lang.default;
-});
+// Panel layouts
+Template.skelePanelLayout.helpers(Skeletor.generalHelpers);
 
 
 // Users

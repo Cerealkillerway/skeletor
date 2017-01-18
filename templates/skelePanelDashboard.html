@@ -1,5 +1,5 @@
-<template name="dashboard">
-    <div id="dashboardBtns" class="panel center-align">
+<template name="skelePanelDashboard">
+    <div class="skelePanel skeleDashboard center-align">
         <h2>
             {{{_ "adminTools_text"}}}
         </h2>
@@ -7,16 +7,16 @@
         <div id="dashboardCustom"></div>
 
         {{#if (checkPermissions "allowAcl")}}
-            {{> dashboardAclButtons}}
+            {{> skeleDashboardAclButtons}}
         {{/if}}
 
         {{#if (checkPermissions "allowAcl")}}
-            {{> dashboardWesiteButtons}}
+            {{> skeleDashboardWesiteButtons}}
         {{/if}}
     </div>
 </template>
 
-<template name="dashboardWesiteButtons">
+<template name="skeleDashboardWesiteButtons">
     <h4>{{_ "websiteButtons_text"}}</h4>
 
     <div class="buttonsContainer">
@@ -39,7 +39,7 @@
     </div>
 </template>
 
-<template name="dashboardAclButtons">
+<template name="skeleDashboardAclButtons">
     <h4>{{_ "aclButtons_text"}}</h4>
 
     <div class="buttonsContainer">

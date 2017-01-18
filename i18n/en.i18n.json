@@ -18,6 +18,7 @@
 
     "publish_title": "Publish options",
     "menuItem_title": "Menu item",
+    "permissionDenied_title": "Permesso negato",
 
     "logged_bar_msg": "You are logged in as:",
     "panelAccess_msg": "Management portal",
@@ -62,7 +63,7 @@
     "workInProgress_text": "This page is a work in progress...",
     "404Title_text": "404: Not found!",
     "404Subtitle_text": "This is not the page you are looking for...",
-    "404Detail_text": "Sorry, this page does not exist!<br>You are here beacause one of the followings:<br><br> <ul class=\"normalSection\"><li>A wrong url</li><li>An outdated bookmark</li><li>A subspatial interference, caused by a vehicle with warp drive</li></ul>",
+    "404Detail_text": "Sorry, this page does not exist!<br>You are here beacause one of the followings:<br><br> <ul class=\"\"><li>A wrong url</li><li>An outdated bookmark</li><li>A subspatial interference, caused by a vehicle with warp drive</li></ul>",
     "unpublishedTitle_text": "403: Unpublished!",
     "unpublishedSubtitle_text": "This page has been unpublished...",
     "unpublishedDetail_text": "Sorry, this page is not visible<br>You are here because<br>an administrator has removed the page from the published list<br><br>Normally this is a temporary situation...",
@@ -98,6 +99,7 @@
     "aclButtons_text": "Users and roles",
     "designedBy_text": "Designed by",
     "for_text": "for",
+    "unauthorized_text": "You are not authorized to see this resource!",
 
     "general_insert_error": "You have inserted something wrong",
     "general_noEmpty_error": "It is not possible to leave it empty!",
@@ -151,6 +153,7 @@
     "loadFile_btn": "Load file...",
     "imageUploader_btn": "Insert image",
     "videoEmbeed_btn": "Embeed video",
+    "backTogin_btn": "Back to login",
 
     "openWebsite_tooltip": "Open website in a new window",
     "users_tooltip": "Go to user management",
@@ -270,6 +273,11 @@
     "selfShop_lbl": "Allow only user' store",
     "panelAccess_lbl": "Panel access",
     "allowPanelAccess_lbl": "Allow",
+    "configManagement_lbl": "Configuration options",
+    "debugManagement_lbl": "Debug tools",
+    "allowConfig_lbl": "Allow",
+    "allowDebug_lbl": "Allow",
+    "mainFunctions_lbl": "Main functions:",
 
     "administrator_role": "Administrator",
     "administratorLong_role": "System Administrator",

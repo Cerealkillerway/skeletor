@@ -18,6 +18,7 @@
 
     "publish_title": "Pubblicazione",
     "menuItem_title": "Voce di menu",
+    "permissionDenied_title": "Permesso negato",
 
     "logged_bar_msg": "Sei loggato come:",
     "panelAccess_msg": "Portale di gestione",
@@ -62,7 +63,7 @@
     "workInProgress_text": "Questa pagina è in costruzione...",
     "404Title_text": "404: Non trovato!",
     "404Subtitle_text": "Questa non è la pagina che stai cercando...",
-    "404Detail_text": "Siamo spiacenti, la pagina che stai cercando non esiste!<br>Stai vedendo questo messaggio per uno dei seguenti motivi:<br><br> <ul class=\"normalSection\"><li>Hai digitato un url sbagliato</li><li>A causa di un preferito scaduto</li><li>Un'interferenza subspaziale causata da un veicolo con propulsione a curvatura</li></ul>",
+    "404Detail_text": "Siamo spiacenti, la pagina che stai cercando non esiste!<br>Stai vedendo questo messaggio per uno dei seguenti motivi:<br><br> <ul class=\"\"><li>Hai digitato un url sbagliato</li><li>A causa di un preferito scaduto</li><li>Un'interferenza subspaziale causata da un veicolo con propulsione a curvatura</li></ul>",
     "unpublishedTitle_text": "403: Non pubblicato!",
     "unpublishedSubtitle_text": "Questa pagina è stata resa non pubblica...",
     "unpublishedDetail_text": "Siamo spiacenti, la pagina che stai cercando non è visibile!<br>Stai vedendo questo messaggio per uno dei seguenti perché<br>un amministratore ha rimosso la pagina dall'elenco di quelle pubblicate<br><br>La situazione è di norma temporanea, ma non sono forniti dati riguardo la ri-pubblicazione",
@@ -98,6 +99,7 @@
     "aclButtons_text": "Utenti e ruoli",
     "designedBy_text": "Progettato da",
     "for_text": "per",
+    "unauthorized_text": "Non sei autorizzato a vedere questa risorsa!",
 
     "general_insert_error": "Hai inserito qualcosa che non va",
     "general_noEmpty_error": "Non puoi lasciarlo vuoto!",
@@ -151,6 +153,7 @@
     "loadFile_btn": "Carica file...",
     "imageUploader_btn": "Inserisci immagine",
     "videoEmbeed_btn": "Incorpora video",
+    "backTogin_btn": "Torna al login",
 
     "openWebsite_tooltip": "Apri il sito in una nuova scheda",
     "users_tooltip": "Vai alla gestione utenti",
@@ -270,6 +273,11 @@
     "selfShop_lbl": "Permetti solo il proprio negozio",
     "panelAccess_lbl": "Accesso al pannello",
     "allowPanelAccess_lbl": "Permetti",
+    "configManagement_lbl": "Opzioni di configurazione",
+    "debugManagement_lbl": "Strumenti di debug",
+    "allowConfig_lbl": "Permetti",
+    "allowDebug_lbl": "Permetti",
+    "mainFunctions_lbl": "Funzioni principali:",
 
     "administrator_role": "Amministratore",
     "administratorLong_role": "Amministratore di Sistema",
