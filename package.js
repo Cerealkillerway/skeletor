@@ -74,11 +74,9 @@ Package.onUse(function(api) {
     api.addFiles('lib/routerPanel.js');
     api.addFiles('lib/methods.js');
     api.addFiles('lib/methodsServer.js', 'server');
-    api.addFiles('lib/permissions.js');
     api.addFiles('lib/clientUtilities.js', 'client');
     api.addFiles('events/debugEvents.js', 'client');
 
-    api.addFiles('helpers/generalHelpers.js', 'client');
     api.addFiles('helpers/panelHelpers.js', 'client');
     api.addFiles('helpers/commonAssetsHelpers.js', 'client');
 

@@ -17,9 +17,7 @@ Template.skelePanelLayout.onRendered(function() {
 
 Template.skelePanelLayout.events({
     'click #logout': function(event) {
-        Meteor.logout(function(error) {
-            FlowRouter.go(Skeletor.configuration.login.defaultLogoutPath, {}, {lang: FlowRouter.current().queryParams.lang});
-        });
+        Skeletor.Utilities.logout();
     },
     'click .backTop': function(event) {
         skeleUtils.globalUtilities.scrollTo(0, Skeletor.configuration.animations.scrollTop);

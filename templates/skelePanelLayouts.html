@@ -1,5 +1,5 @@
 <template name="skelePanelLayout">
-    {{#if (skeleCheckPermissions "allowPanelAccess" false)}}
+    {{#if (skeleCheckPermissions "allowPanelAccess")}}
         <nav class="firstColor">
             <div class="nav-wrapper">
                 <div id="logout" class="skeleBold upperCase left">
@@ -93,7 +93,7 @@
 
 <template name="panelMainMenu">
     <li>
-        <a href="/panel/dashboard{{currentLangLink}}">
+        <a href="/panel/dashboard{{skeleCurrentLangLink}}">
             <i class="material-icons small left">dashboard</i>
             <div class="navItemName">{{_ "menu_dashboard"}}</div>
         </a>
@@ -106,32 +106,32 @@
         </a>
     </li>
     <li>
-        <a href="/panel/sections/{{defaultLang}}{{currentLangLink}}{{isPaginated "Sections_default"}}">
+        <a href="/panel/sections/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Sections_default"}}">
             <i class="material-icons small left">assignment</i>
             <div class="navItemName">{{_ "menu_sections"}}</div>
         </a>
     </li>
     <li>
-        <a href="/panel/pages/{{defaultLang}}{{currentLangLink}}{{isPaginated "Pages_default"}}">
+        <a href="/panel/pages/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Pages_default"}}">
             <i class="material-icons small left">find_in_page</i>
             <div class="navItemName">{{_ "menu_pages"}}</div>
         </a>
     </li>
     <li>
-        <a href="/panel/menus/{{defaultLang}}{{currentLangLink}}{{isPaginated "Menus_default"}}">
+        <a href="/panel/menus/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Menus_default"}}">
             <i class="material-icons small left">menu</i>
             <div class="navItemName">{{_ "menu_menus"}}</div>
         </a>
     </li>
     <div class="separator darken"></div>
     <li>
-        <a href="/panel/roles{{currentLangLink}}{{isPaginated "Roles_default"}}">
+        <a href="/panel/roles{{skeleCurrentLangLink}}{{isPaginated "Roles_default"}}">
             <i class="material-icons small left">beenhere</i>
             <div class="navItemName">{{_ "menu_roles"}}</div>
         </a>
     </li>
     <li>
-        <a href="/panel/users{{currentLangLink}}{{isPaginated "Users_default"}}">
+        <a href="/panel/users{{skeleCurrentLangLink}}{{isPaginated "Users_default"}}">
             <i class="material-icons small left">person</i>
             <div class="navItemName">{{_ "menu_users"}}</div>
         </a>

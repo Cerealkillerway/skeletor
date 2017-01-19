@@ -1,9 +1,4 @@
-// Panel layouts
-Template.skelePanelLayout.helpers(Skeletor.generalHelpers);
-
-
 // Users
-Template.usersList.helpers(Skeletor.generalHelpers);
 Template.usersList.helpers({
     data: function() {
         const instance = Template.instance();
