@@ -19,13 +19,14 @@ Package.onUse(function(api) {
     api.use('session');
     api.use('jquery', 'client');
     api.use('blaze-html-templates', 'client');
+    api.use('ecmascript');
+    api.use('tap:i18n@1.8.1');
     api.use('underscore@1.0.0');
     api.use('kadira:flow-router@2.8.0');
     api.use('kadira:blaze-layout@2.2.0', 'client');
     api.use('meteorhacks:subs-manager@1.6.2');
     api.use('meteorhacks:fast-render@2.10.0');
     api.use('fourseven:scss@3.2.0', 'client');
-    api.use('tap:i18n@1.7.0');
     api.use('momentjs:moment@2.10.6');
     api.use('materialize:materialize@0.97.7', 'client');
     api.use('cerealkiller:skeleutils@1.0.0');
@@ -63,6 +64,7 @@ Package.onUse(function(api) {
 
 
     // i18n
+    api.addFiles('package-tap.i18n');
     api.addFiles('i18n/it.i18n.json');
     api.addFiles('i18n/en.i18n.json');
 
