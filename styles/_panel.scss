@@ -186,6 +186,10 @@ body.skelePanelBody {
         }
     }
 
+    .card-panel, .btn {
+        border-radius: 0;
+    }
+
     // dialogs
     #toast-container {
         z-index: 3007 !important;
@@ -213,6 +217,10 @@ body.skelePanelBody {
         .langSpacer {
             float: left;
             margin: auto 15px;
+        }
+
+        .langFlagsWrapper {
+            float: right;
         }
 
         .langFlag, .socialIcon {

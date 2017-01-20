@@ -67,19 +67,19 @@ Template.skeleLogin.events({
 
 // Dashboard
 Template.skelePanelDashboard.onRendered(function() {
-    TooltipOnRendered();
+    skeleUtils.globalEvents.TooltipOnRendered(this);
 });
 Template.skelePanelDashboard.onDestroyed(function() {
-    TooltipOnDestroyed();
+    skeleUtils.globalEvents.TooltipOnDestroyed(this);
 });
 
 
 // Panel footer
 Template.panelFooter.onRendered(function() {
-    TooltipOnRendered();
+    skeleUtils.globalEvents.TooltipOnRendered(this);
 });
 Template.panelFooter.onDestroyed(function() {
-    TooltipOnDestroyed();
+    skeleUtils.globalEvents.TooltipOnDestroyed(this);
 });
 
 
@@ -399,21 +399,11 @@ Template.menuCreate.onCreated(function() {
     });
 });
 
-TooltipOnRendered = function() {
-    Tracker.autorun(function() {
-        let currentLang = TAPi18n.getLanguage();
 
-        this.$('.tooltipped').tooltip('remove');
-        this.$('.tooltipped').tooltip({delay: 50});
-    });
-};
-TooltipOnDestroyed = function() {
-    this.$('.tooltipped').tooltip('remove');
-};
 
 Template.skeleTooltip.onRendered(function() {
-    TooltipOnRendered();
+    skeleUtils.globalEvents.TooltipOnRendered(this);
 });
 Template.skeleTooltip.onDestroyed(function() {
-    TooltipOnDestroyed();
+    skeleUtils.globalEvents.TooltipOnDestroyed(this);
 });

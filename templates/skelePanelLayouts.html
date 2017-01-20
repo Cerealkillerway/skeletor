@@ -91,6 +91,7 @@
 </template>
 
 
+<!-- panel main menu -->
 <template name="panelMainMenu">
     <li>
         <a href="/panel/dashboard{{skeleCurrentLangLink}}">
@@ -105,6 +106,17 @@
             <div class="navItemName">{{_ "menu_website"}}</div>
         </a>
     </li>
+    {{#if (skeleCheckPermissions "allowPages")}}
+        {{> panelMainMenuPages}}
+    {{/if}}
+    {{#if (skeleCheckPermissions "allowAcl")}}
+        <div class="separator darken"></div>
+        {{> panelMainMenuAcl}}
+    {{/if}}
+</template>
+
+<!-- panel main menu items for pages management -->
+<template name="panelMainMenuPages">
     <li>
         <a href="/panel/sections/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Sections_default"}}">
             <i class="material-icons small left">assignment</i>
@@ -123,7 +135,10 @@
             <div class="navItemName">{{_ "menu_menus"}}</div>
         </a>
     </li>
-    <div class="separator darken"></div>
+</template>
+
+<!-- panel main menu items for ACL management -->
+<template name="panelMainMenuAcl">
     <li>
         <a href="/panel/roles{{skeleCurrentLangLink}}{{isPaginated "Roles_default"}}">
             <i class="material-icons small left">beenhere</i>
