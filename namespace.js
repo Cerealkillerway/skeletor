@@ -1,4 +1,4 @@
 Skeletor = {
     Utilities: {},
-    skeleUtils: skeleUtils
+    SkeleUtils: SkeleUtils
 };

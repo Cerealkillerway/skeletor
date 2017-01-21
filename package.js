@@ -1,12 +1,9 @@
 Package.describe({
     name: 'cerealkiller:skeletor',
-    version: '0.32.7',
-    // Brief, one-line summary of the package.
+    version: '3.13.7',
     summary: 'CRUD app skeleton!',
     // URL to the Git repository containing the source code for this package.
     git: '',
-    // By default, Meteor will default to using README.md for documentation.
-    // To avoid submitting documentation, set this field to null.
     documentation: 'README.md'
 });
 
@@ -15,53 +12,66 @@ Package.onUse(function(api) {
     api.addFiles('namespace.js');
 
     // packages
-    api.use('mongo');
-    api.use('session');
-    api.use('jquery', 'client');
-    api.use('blaze-html-templates', 'client');
-    api.use('ecmascript');
-    api.use('tap:i18n@1.8.1');
-    api.use('underscore@1.0.0');
-    api.use('kadira:flow-router@2.8.0');
-    api.use('kadira:blaze-layout@2.2.0', 'client');
-    api.use('meteorhacks:subs-manager@1.6.2');
-    api.use('meteorhacks:fast-render@2.10.0');
-    api.use('fourseven:scss@3.2.0', 'client');
-    api.use('momentjs:moment@2.10.6');
-    api.use('materialize:materialize@0.97.7', 'client');
-    api.use('cerealkiller:skeleutils@1.0.0');
+    api.use([
+        'jquery',
+        'blaze-html-templates',
+        'kadira:blaze-layout@2.2.0',
+        'fourseven:scss@3.2.0',
+        'materialize:materialize@0.97.8'
+    ],
+    ['client']);
+
+    api.use([
+        'mongo',
+        'session',
+        'ecmascript',
+        'tap:i18n@1.8.1',
+        'underscore@1.0.0',
+        'kadira:flow-router@2.8.0',
+        'meteorhacks:subs-manager@1.6.2',
+        'meteorhacks:fast-render@2.10.0',
+        'momentjs:moment@2.10.6',
+        'cerealkiller:skeleutils@1.0.0'
+    ],
+    ['client', 'server']);
+
     // need skeleform, but allow it to be loaded last
-    api.use('cerealkiller:skeleform@0.0.3', {unordered: true});
-    api.use('cerealkiller:skelelist@0.0.2', {unordered: true});
-    api.use('cerealkiller:skelesite@0.0.1', {unordered: true});
-
-
-    // exports
-    api.export('Skeletor');   // package namespace
+    api.use([
+        'cerealkiller:skeleform',
+        'cerealkiller:skelelist',
+        'cerealkiller:skelesite'
+    ],
+    {unordered: true});
 
     // styles
-    api.addFiles('styles/skeletor.scss', 'client');
-    api.addFiles('styles/_panel.scss', 'client');
-    api.addFiles('styles/_responsive.scss', 'client');
-    api.addFiles('styles/gearLoader.scss', 'client');
-
+    api.addFiles([
+        'styles/skeletor.scss',
+        'styles/_panel.scss',
+        'styles/_responsive.scss',
+        'styles/gearLoader.scss'
+    ],
+    ['client']);
 
     // templates
-    api.addFiles('templates/commonAssets.html', 'client');
-    api.addFiles('templates/skelePanelDashboard.html', 'client');
-    api.addFiles('templates/skeleLogin.html', 'client');
-    api.addFiles('templates/skelePanelLayouts.html', 'client');
-
-    api.addFiles('templates/elements/skeleTooltip.html', 'client');
-
-    api.addFiles(['templates/users/usersList.html', 'templates/users/userCreate.html'], 'client');
-    api.addFiles(['templates/roles/rolesList.html', 'templates/roles/roleCreate.html'], 'client');
-    api.addFiles(['templates/sections/sectionsList.html', 'templates/sections/sectionCreate.html'], 'client');
-    api.addFiles(['templates/pages/pagesList.html', 'templates/pages/pageCreate.html'], 'client');
-    api.addFiles(['templates/menus/menusList.html', 'templates/menus/menuCreate.html'], 'client');
-
-    api.addFiles('templates/debug.html', 'client');
-
+    api.addFiles([
+        'templates/commonAssets.html',
+        'templates/skelePanelDashboard.html',
+        'templates/skeleLogin.html',
+        'templates/skelePanelLayouts.html',
+        'templates/elements/skeleTooltip.html',
+        'templates/users/usersList.html',
+        'templates/users/userCreate.html',
+        'templates/roles/rolesList.html',
+        'templates/roles/roleCreate.html',
+        'templates/sections/sectionsList.html',
+        'templates/sections/sectionCreate.html',
+        'templates/pages/pagesList.html',
+        'templates/pages/pageCreate.html',
+        'templates/menus/menusList.html',
+        'templates/menus/menuCreate.html',
+        'templates/debug.html'
+    ],
+    ['client']);
 
     // i18n
     api.addFiles('package-tap.i18n');
@@ -70,26 +80,40 @@ Package.onUse(function(api) {
 
 
     // libraries
-    api.addFiles('lib/publish.js', 'server');
-    api.addFiles('lib/main-init.js');
-    api.addFiles('lib/collections.js');
-    api.addFiles('lib/routerPanel.js');
-    api.addFiles('lib/methods.js');
-    api.addFiles('lib/methodsServer.js', 'server');
-    api.addFiles('lib/clientUtilities.js', 'client');
-    api.addFiles('events/debugEvents.js', 'client');
+    api.addFiles([
+        'lib/publish.js',
+        'lib/methodsServer.js'
+    ],
+    ['server']);
 
-    api.addFiles('helpers/panelHelpers.js', 'client');
-    api.addFiles('helpers/commonAssetsHelpers.js', 'client');
+    api.addFiles([
+        'events/debugEvents.js',
+        'helpers/panelHelpers.js',
+        'helpers/commonAssetsHelpers.js',
+        'events/panelEvents.js',
+        'events/commonAssetsEvents.js'
+    ],
+    ['client']);
 
-    api.addFiles('events/panelEvents.js', 'client');
-    api.addFiles('events/commonAssetsEvents.js', 'client');
+    api.addFiles([
+        'lib/main-init.js',
+        'lib/collections.js',
+        'lib/routerPanel.js',
+        'lib/methods.js'
+    ],
+    ['client', 'server']);
 
+
+    // exports
+    api.export(['Skeletor']);
 });
 
 Package.onTest(function(api) {
-    api.use('tinytest');
-    api.use('cerealkiller:skeletor');
+    api.use([
+        'tinytest',
+        'cerealkiller:skeletor'
+    ]);
+
     api.addFiles('skeletor-tests.js');
 });
 

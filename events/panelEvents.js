@@ -4,12 +4,12 @@ Template.skelePanelLayout.onCreated(function() {
 });
 
 Template.skelePanelLayout.onRendered(function() {
-    Skeletor.Utilities.skeleSetPanelBackground();
+    SkeleUtils.GlobalUtilities.skeleSetPanelBackground();
     $('.button-collapse').sideNav({
         closeOnClick: true,
         edge: 'right'
     });
-    Skeletor.Utilities.skeleSwingMenu(this, '.iconSwing');
+    SkeleUtils.GlobalUtilities.skeleSwingMenu(this, '.iconSwing');
 
     // used by skeleform to understand when all templates are rendered (ex. to init staticbar)
     Skeletor.appRendered.set(true);
@@ -17,10 +17,10 @@ Template.skelePanelLayout.onRendered(function() {
 
 Template.skelePanelLayout.events({
     'click #logout': function(event) {
-        Skeletor.Utilities.logout();
+        SkeleUtils.Accounts.logout();
     },
     'click .backTop': function(event) {
-        skeleUtils.globalUtilities.scrollTo(0, Skeletor.configuration.animations.scrollTop);
+        SkeleUtils.GlobalUtilities.scrollTo(0, Skeletor.configuration.animations.scrollTop);
     }
 });
 
@@ -30,7 +30,7 @@ Template.skelePanelNudeLayout.onCreated(function() {
     Skeletor.appRendered = new ReactiveVar(false);
 });
 Template.skelePanelNudeLayout.onRendered(function() {
-    Skeletor.Utilities.skeleSetPanelBackground();
+    SkeleUtils.GlobalUtilities.skeleSetPanelBackground();
     Skeletor.appRendered.set(true);
 });
 
@@ -53,33 +53,33 @@ Template.skeleLogin.events({
         let password = instance.$('#password').val();
 
         if (event.charCode === 13) {
-            Skeletor.Utilities.loginWithPassword(email, password);
+            SkeleUtils.Accounts.loginWithPassword(email, password);
         }
     },
     'click #login': function(event, instance) {
         let email = instance.$('#email').val();
         let password = instance.$('#password').val();
 
-        Skeletor.Utilities.loginWithPassword(email, password);
+        SkeleUtils.Accounts.loginWithPassword(email, password);
     }
 });
 
 
 // Dashboard
 Template.skelePanelDashboard.onRendered(function() {
-    skeleUtils.globalEvents.TooltipOnRendered(this);
+    SkeleUtils.GlobalEvents.TooltipOnRendered(this);
 });
 Template.skelePanelDashboard.onDestroyed(function() {
-    skeleUtils.globalEvents.TooltipOnDestroyed(this);
+    SkeleUtils.GlobalEvents.TooltipOnDestroyed(this);
 });
 
 
 // Panel footer
 Template.panelFooter.onRendered(function() {
-    skeleUtils.globalEvents.TooltipOnRendered(this);
+    SkeleUtils.GlobalEvents.TooltipOnRendered(this);
 });
 Template.panelFooter.onDestroyed(function() {
-    skeleUtils.globalEvents.TooltipOnDestroyed(this);
+    SkeleUtils.GlobalEvents.TooltipOnDestroyed(this);
 });
 
 
@@ -402,8 +402,8 @@ Template.menuCreate.onCreated(function() {
 
 
 Template.skeleTooltip.onRendered(function() {
-    skeleUtils.globalEvents.TooltipOnRendered(this);
+    SkeleUtils.GlobalEvents.TooltipOnRendered(this);
 });
 Template.skeleTooltip.onDestroyed(function() {
-    skeleUtils.globalEvents.TooltipOnDestroyed(this);
+    SkeleUtils.GlobalEvents.TooltipOnDestroyed(this);
 });
