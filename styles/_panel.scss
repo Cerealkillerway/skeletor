@@ -84,13 +84,13 @@ body.skelePanelBody {
         width: 17px;
     }
     &::-webkit-scrollbar-track {
-        background-color: $firstColor;
+        background-color: $firstPanelColor;
     }
     &::-webkit-scrollbar-thumb {
-        background-color: lighten($firstColor, 20%);
+        background-color: lighten($firstPanelColor, 20%);
     }
     &::-webkit-scrollbar-thumb:hover {
-        background-color: lighten($firstColor, 30%);
+        background-color: lighten($firstPanelColor, 30%);
     }
     &::-webkit-scrollbar-button {
         display: none !important;
@@ -165,7 +165,7 @@ body.skelePanelBody {
             }
             .menuItemName {
                 text-transform: uppercase;
-                color: $firstColorLinkHover;
+                color: $firstPanelColorLinkHover;
                 position: relative;
                 left: -35px;
                 font-weight: bold;
@@ -183,6 +183,45 @@ body.skelePanelBody {
         #logout {
             margin-left: 20px;
             cursor: pointer;
+        }
+    }
+
+    .skeleDashboard {
+        .buttonsContainer {
+            a:nth-child(odd) {
+                @extend .firstColor;
+
+                &:hover {
+                    background-color: darken($firstPanelColor, 30%) !important;
+                }
+            }
+
+            a:nth-child(even) {
+                @extend .secondColor;
+
+                &:hover {
+                    background-color: lighten($secondPanelColor, 15%) !important;
+                }
+            }
+
+            .dashboardBtn {
+                width: 172px !important;
+                height: 172px !important;
+                margin: 15px !important;
+                padding-top: 15px !important;
+                line-height: 1.5 !important;
+
+                & i {
+                    font-size: 6rem !important;
+                    position: relative;
+                    margin-bottom: 50px;
+                    top: -20px;
+                }
+                & div {
+                    position: relative;
+                    bottom: 35px;
+                }
+            }
         }
     }
 
@@ -230,7 +269,7 @@ body.skelePanelBody {
 
             img {
                 max-height: 30px;
-                border: solid 3px $thirdColorBorder;
+                border: solid 3px $thirdPanelColorBorder;
                 margin-right: 5px;
                 margin-top: -3px;
                 cursor: pointer !important;
@@ -245,48 +284,49 @@ body.skelePanelBody {
     }
 
     .modal {
+        color:$firstTextColor;
         z-index: 3003 !important;
         background-color: $firstBackgroundColor;
         border-radius: 0;
         backface-visibility: hidden;
 
         /*.input-field input:not([readonly]), .input-field input.datepicker {
-            border-color: $firstColorText !important;
+            border-color: $firstPanelColorText !important;
         }
         .input-field input:focus:not([readonly]), .input-field input.datepicker:focus, textarea.materialize-textarea:focus:not([readonly]) {
             box-shadow: 0 1px 0 0 $firstFocusColor !important;
             border-color: $firstFocusColor !important;
         }
         label, .input-field input:not([readonly]) + label, .input-field input.datepicker + label, .input-field .prefix, .note-editor + label {
-            color: $firstColorText !important;
+            color: $firstPanelColorText !important;
         }
         .input-field input:focus:not([readonly]) + label, .input-field input.datepicker:focus + label, .input-field .prefix.active, textarea.materialize-textarea:focus:not([readonly]) + label {
             color: $firstFocusColor !important;
         }*/
 
         .btn {
-            background-color: $secondColor;
+            background-color: $secondPanelColor;
             margin-right: 15px;
         }
         .btn:hover {
-            background-color: lighten($secondColor, 10%) !important;
+            background-color: lighten($secondPanelColor, 10%) !important;
         }
 
         .btn.disabled {
-            background-color: darken($secondColor, 15%) !important;
+            background-color: darken($secondPanelColor, 15%) !important;
         }
 
         .modal-footer {
-            background-color: darken($firstColor, 10%);
+            background-color: darken($firstPanelColor, 10%);
             border-radius: 0;
 
             .btnClose {
                 margin-right: 15px;
-                background-color: $thirdColor;
+                background-color: $thirdPanelColor;
             }
 
             .btnClose:hover {
-                background-color: lighten($thirdColor, 10%) !important;
+                background-color: lighten($thirdPanelColor, 10%) !important;
             }
         }
     }
@@ -303,45 +343,6 @@ body.skelePanelBody {
         max-width: 450px;
         margin: 70px auto 30px auto;
         z-index: 3000;
-    }
-}
-
-.skeleDashboard {
-    .buttonsContainer {
-        a:nth-child(odd) {
-            @extend .firstColor;
-
-            &:hover {
-                background-color: darken($firstColor, 30%) !important;
-            }
-        }
-
-        a:nth-child(even) {
-            @extend .secondColor;
-
-            &:hover {
-                background-color: lighten($secondColor, 15%) !important;
-            }
-        }
-
-        .dashboardBtn {
-            width: 172px !important;
-            height: 172px !important;
-            margin: 15px !important;
-            padding-top: 15px !important;
-            line-height: 1.5 !important;
-
-            & i {
-                font-size: 6rem !important;
-                position: relative;
-                margin-bottom: 50px;
-                top: -20px;
-            }
-            & div {
-                position: relative;
-                bottom: 35px;
-            }
-        }
     }
 }
 /* --- end specific rules --- */
@@ -418,7 +419,7 @@ body.skelePanelBody {
     }
     #statusDescription {
         margin-top: -15px;
-        color: $firstColorLinkHover;
+        color: $firstPanelColorLinkHover;
     }
 }
 
