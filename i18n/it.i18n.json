@@ -102,6 +102,7 @@
     "unsupportedLangSubtitle_text": "Traduzione non trovata",
     "unsupportedLangDetail_text": "E' stata richiesta la pagina in una lingua non supportata o non esistente<br>Ti invitiamo a selezionare la lingua tra quelle disponibili...",
     "currentLangNewsWarning_text": "ATTENZIONE:<br>In questa pagina vengono mostrare solo le news nella lingua corrente",
+    "superUserRole_text": "<b>I poteri del super utente:</b> <ul><li>invincibilità: ottiene sempre l'accesso ad ogni sezione dell'applicazione. Passa sempre qualsiasi controllo di sicurezza</li><li>indistruttibilità: è un ruolo non modificabile e non eliminabile</li><li>peristenza sempiterna: deve sempre esserci almeno un super utente, altrimenti alcune funzioni dell'applicazione potrebbero diventare inaccessibili</li></ul><i>Fenomenali poteri cosmici... In un minuscolo vettore di memoria...</i>",
 
     "usersListTitle_text": "Gestione utenti",
     "userTypes_text": "TIPI DI UTENTE:<br><br><ul style=\"list-style: none;\"><li><b>Amministratore</b> -> operazioni di gestione sul panel</li><li><b>Editor</b> -> modifica pagine del sito</li></ul>",

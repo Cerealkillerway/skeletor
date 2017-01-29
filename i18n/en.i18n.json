@@ -102,6 +102,7 @@
     "unsupportedLangSubtitle_text": "Translation not found",
     "unsupportedLangDetail_text": "You requested the page in an unavailable or inexistent language<br>Please select a language from the available ones...",
     "currentLangNewsWarning_text": "ATTENTION:<br>This page will show only the news in the currently selected language",
+    "superUserRole_text": "<b>The super user powers:</b> <ul><li>invincibility: always gain access to every section of the application. Always pass any security check</li><li>indestructibility: this role is not editable nor deletable</li><li>eternal persistence: there must always be at least one super user, otherwise some parts of the application may result inaccessible</li></ul><i>Phenomenal cosmic powers... In a tiny memory array...</i>",
 
     "usersListTitle_text": "Users management",
     "userTypes_text": "TYPE OF USERS:<br><br><ul style=\"list-style: none;\"><li><b>Administrator</b> -> general management</li><li><b>Editor</b> -> update of website's texts</li></ul>",
