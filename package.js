@@ -100,7 +100,8 @@ Package.onUse(function(api) {
         'lib/main-init.js',
         'lib/collections.js',
         'lib/routerPanel.js',
-        'lib/methods.js'
+        'lib/methods.js',
+        'lib/authMatch.js'
     ],
     ['client', 'server']);
 

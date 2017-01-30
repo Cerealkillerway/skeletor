@@ -155,6 +155,7 @@
     "userNotFound_error": "User not found",
     "incorrectPassword_error": "Wrong password",
     "accessDenied_error": "Access denied",
+    "permissions_error": "You don't have the required authorization to perform this operation",
 
     "ok_btn": "Ok",
     "save_btn": "Save",

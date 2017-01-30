@@ -4,7 +4,11 @@
             <i class="material-icons large left">beenhere</i>
             <h4 class="valign">
                 {{#if data.item}}
-                    {{_ "updateRole_text"}} <span class="documentTitle">"{{data.item.name}}"</span>
+                    {{#unless test data.item.name "SUPERUSER"}}
+                        {{_ "updateRole_text"}} <span class="documentTitle">"{{data.item.name}}"</span>
+                    {{else}}
+                        <span class="documentTitle">"{{data.item.name}}"</span>
+                    {{/unless}}
                 {{else}}
                     {{_ "createRole_text"}}
                 {{/if}}

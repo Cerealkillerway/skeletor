@@ -155,6 +155,7 @@
     "userNotFound_error": "Utente inesistente",
     "incorrectPassword_error": "Passwrod errata",
     "accessDenied_error": "Accesso negato",
+    "permissions_error": "Non si dispone dell'autorizzazione necessaria per questa operazione",
 
     "ok_btn": "Ok",
     "save_btn": "Salva",
