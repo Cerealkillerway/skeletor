@@ -5,11 +5,6 @@ Template.skelePanelLayout.onCreated(function() {
 
 Template.skelePanelLayout.onRendered(function() {
     SkeleUtils.GlobalUtilities.skeleSetPanelBackground();
-    $('.button-collapse').sideNav({
-        closeOnClick: true,
-        edge: 'right'
-    });
-    SkeleUtils.GlobalUtilities.skeleSwingMenu(this, '.iconSwing');
 
     // used by skeleform to understand when all templates are rendered (ex. to init staticbar)
     Skeletor.appRendered.set(true);
@@ -22,6 +17,17 @@ Template.skelePanelLayout.events({
     'click .backTop': function(event) {
         SkeleUtils.GlobalUtilities.scrollTo(0, Skeletor.configuration.animations.scrollTop);
     }
+});
+
+
+// Panel main menu
+Template.panelMainMenu.onRendered(function() {
+    this.$('.button-collapse').sideNav({
+        closeOnClick: true,
+        edge: 'right'
+    });
+
+    SkeleUtils.GlobalUtilities.skeleSwingMenu(this.$('.iconSwing'));
 });
 
 

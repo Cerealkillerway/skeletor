@@ -31,7 +31,7 @@ Template.langBar.helpers({
         }
     },
     isActiveLang: function(buttonLang) {
-        if (FlowRouter.getQueryParam('lang') === buttonLang) {
+        if (TAPi18n.getLanguage() === buttonLang) {
             return 'active';
         }
     }

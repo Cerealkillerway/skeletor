@@ -1,20 +1,6 @@
 <template name="skelePanelLayout">
     {{#if (skeleCheckPermissions "allowPanelAccess")}}
-        <nav class="firstColor">
-            <div class="nav-wrapper">
-                <div id="logout" class="skeleBold upperCase left">
-                    <i class="mdi-action-exit-to-app small left"></i>
-                    {{_ "menu_logout"}}
-                </div>
-                <a href="#" data-activates="mainMenuMobile" class="button-collapse right hSpaced"><i class="mdi-navigation-menu"></i></a>
-                <ul class="right hide-on-med-and-down iconSwing">
-                    {{> panelMainMenu}}
-                </ul>
-                <ul class="side-nav firstColor" id="mainMenuMobile">
-                    {{> panelMainMenu}}
-                </ul>
-            </div>
-        </nav>
+        {{> panelMainMenu}}
 
         <main>
             <div class="skeleCentralBody">
@@ -93,6 +79,25 @@
 
 <!-- panel main menu -->
 <template name="panelMainMenu">
+    <nav class="firstColor">
+        <div class="nav-wrapper">
+            <!--<div id="logout" class="skeleBold upperCase left">
+                <i class="mdi-action-exit-to-app small left"></i>
+                {{_ "menu_logout"}}
+            </div>-->
+            <a href="#" data-activates="mainMenuMobile" class="button-collapse right hSpaced"><i class="mdi-navigation-menu"></i></a>
+            <ul class="right hide-on-med-and-down iconSwing">
+                {{> panelMainMenuList}}
+            </ul>
+            <ul class="side-nav firstColor" id="mainMenuMobile">
+                {{> panelMainMenuList}}
+            </ul>
+        </div>
+    </nav>
+</template>
+
+
+<template name="panelMainMenuList">
     <li>
         <a href="/panel/dashboard{{skeleCurrentLangLink}}">
             <i class="material-icons small left">dashboard</i>
@@ -115,6 +120,7 @@
     {{/if}}
 </template>
 
+
 <!-- panel main menu items for pages management -->
 <template name="panelMainMenuPages">
     <li>
@@ -136,6 +142,7 @@
         </a>
     </li>
 </template>
+
 
 <!-- panel main menu items for ACL management -->
 <template name="panelMainMenuAcl">

@@ -54,10 +54,10 @@ Package.onUse(function(api) {
 
     // templates
     api.addFiles([
-        'templates/commonAssets.html',
         'templates/skelePanelDashboard.html',
         'templates/skeleLogin.html',
         'templates/skelePanelLayouts.html',
+        'templates/elements/commonAssets.html',
         'templates/elements/skeleTooltip.html',
         'templates/elements/superUser.html',
         'templates/users/usersList.html',
