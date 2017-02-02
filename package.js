@@ -15,6 +15,7 @@ Package.onUse(function(api) {
     api.use([
         'jquery',
         'blaze-html-templates',
+        'reactive-var',
         'kadira:blaze-layout@2.2.0',
         'fourseven:scss@3.2.0',
         'materialize:materialize@0.97.8'
