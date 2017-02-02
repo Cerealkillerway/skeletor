@@ -1,3 +1,24 @@
+// settings
+Template.settingCreate.helpers({
+    data: function() {
+        const instance = Template.instance();
+        let context = {};
+        let segmentLang = FlowRouter.getQueryParam('sLang');
+        let query = {};
+
+        query.code = 'publicAppConf';
+
+        context.item = Skeletor.Data.Settings.findOne(query);
+
+        context.schemaName = 'Settings_default';
+        context.schema = Skeletor.Schemas.Settings_default;
+        context.skeleSubsReady = instance.skeleSubsReady;
+
+        return context;
+    }
+});
+
+
 // Users
 Template.usersList.helpers({
     data: function() {

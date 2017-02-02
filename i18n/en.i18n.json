@@ -15,6 +15,7 @@
     "menu_cards": "Types of subscription",
     "menu_entries": "Accesses",
     "menu_times": "Times",
+    "menu_settings": "Settings",
 
     "publish_title": "Publish options",
     "menuItem_title": "Menu item",
@@ -132,6 +133,8 @@
     "designedBy_text": "Designed by",
     "for_text": "for",
     "unauthorized_text": "You are not authorized to see this resource!",
+    "configButtons_text": "App configuration",
+    "updateSetting_text": "Update configuration",
 
     "general_insert_error": "You have inserted something wrong",
     "general_noEmpty_error": "It is not possible to leave it empty!",
@@ -189,6 +192,7 @@
     "backTogin_btn": "Back to login",
     "delete_btn": "Delete",
     "changePassword_btn": "Change password",
+    "settings_btn": "Configuration",
 
     "openWebsite_tooltip": "Open website in a new window",
     "users_tooltip": "Go to user management",
@@ -208,6 +212,7 @@
     "disconnect_tooltip": "Disconnect",
     "setAutohide_tooltip": "Autohide",
     "setFixedMode_tooltip": "Always on top",
+    "settings_tooltip": "Go to App configuration",
 
     "usernameMail_lbl": "Username or email",
     "password_lbl": "Password",
@@ -317,6 +322,13 @@
     "none_lbl": "(none)",
     "yes_lbl": "Yes",
     "no_lbl": "No",
+    "enabledLanguages_lbl": "UI languages enabled",
+    "it_lbl": "Italian",
+    "en_lbl": "English",
+    "fr_lbl": "French",
+    "publicSettingsIntroText_lbl": "This is the application's general public configuration.<br><b>Attention:</b> editing this configuration may change the application's behavior.",
+    "policyBar_lbl": "Policy bar",
+    "displayAlways_lbl": "Display always",
 
     "administrator_role": "Administrator",
     "administratorLong_role": "System Administrator",

@@ -60,6 +60,7 @@ Package.onUse(function(api) {
         'templates/elements/commonAssets.html',
         'templates/elements/skeleTooltip.html',
         'templates/elements/superUser.html',
+        'templates/settings/settingCreate.html',
         'templates/users/usersList.html',
         'templates/users/userCreate.html',
         'templates/roles/rolesList.html',

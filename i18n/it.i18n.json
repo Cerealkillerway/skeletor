@@ -15,6 +15,7 @@
     "menu_cards": "Tipi di abbonamento",
     "menu_entries": "Accessi",
     "menu_times": "Orari",
+    "menu_settings": "Configurazione",
 
     "publish_title": "Pubblicazione",
     "menuItem_title": "Voce di menu",
@@ -132,6 +133,8 @@
     "designedBy_text": "Progettato da",
     "for_text": "per",
     "unauthorized_text": "Non sei autorizzato a vedere questa risorsa!",
+    "configButtons_text": "Configurazione App",
+    "updateSetting_text": "Aggiornamento configurazione",
 
     "general_insert_error": "Hai inserito qualcosa che non va",
     "general_noEmpty_error": "Non puoi lasciarlo vuoto!",
@@ -189,6 +192,7 @@
     "backTogin_btn": "Torna al login",
     "delete_btn": "Elimina",
     "changePassword_btn": "Cambio password",
+    "settings_btn": "Configurazione",
 
     "openWebsite_tooltip": "Apri il sito in una nuova scheda",
     "users_tooltip": "Vai alla gestione utenti",
@@ -208,6 +212,7 @@
     "disconnect_tooltip": "Disconnetti",
     "setAutohide_tooltip": "Nascondi automaticamente",
     "setFixedMode_tooltip": "Sempre in primo piano",
+    "settings_tooltip": "Vai alla configurazione App",
 
     "usernameMail_lbl": "Nome utente o mail",
     "password_lbl": "Password",
@@ -317,6 +322,13 @@
     "none_lbl": "(nessuno/a)",
     "yes_lbl": "Sì",
     "no_lbl": "No",
+    "enabledLanguages_lbl": "Lingue UI abilitate",
+    "it_lbl": "Italiano",
+    "en_lbl": "Inglese",
+    "fr_lbl": "Francese",
+    "publicSettingsIntroText_lbl": "Questa è la configurazione pubblica generale dell'applicazione.<br><b>Attenzione:</b> le modifiche possono alterare il comportamento dell'applicazione.",
+    "policyBar_lbl": "Barra policy",
+    "displayAlways_lbl": "Mostra sempre",
 
     "administrator_role": "Amministratore",
     "administratorLong_role": "Amministratore di Sistema",

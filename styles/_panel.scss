@@ -153,11 +153,6 @@ body.skelePanelBody {
             float: left;
             overflow: hidden;
         }
-        .side-nav {
-            i {
-                margin-top: 15px;
-            }
-        }
         .iconSwing {
             .navItemName {
                 max-width: 0;
@@ -183,6 +178,16 @@ body.skelePanelBody {
         #logout {
             margin-left: 20px;
             cursor: pointer;
+        }
+
+        ul.side-nav {
+            .separator {
+                display: none;
+            }
+
+            .separator + li {
+                border-top: solid 2px;
+            }
         }
     }
 

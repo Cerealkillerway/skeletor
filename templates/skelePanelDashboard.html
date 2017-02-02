@@ -13,6 +13,10 @@
         {{#if (skeleCheckPermissions "allowPages")}}
             {{> skeleDashboardWesiteButtons}}
         {{/if}}
+
+        {{#if (skeleCheckPermissions "allowConfig")}}
+            {{> skeleDashboardConfigButtons}}
+        {{/if}}
     </div>
 </template>
 
@@ -50,6 +54,17 @@
         <a href="/panel/roles{{skeleCurrentLangLink}}{{isPaginated "Roles_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "roles_tooltip"}}">
             <i class="material-icons">beenhere</i>
             <div>{{_ "roles_btn"}}</div>
+        </a>
+    </div>
+</template>
+
+<template name="skeleDashboardConfigButtons">
+    <h4>{{_ "configButtons_text"}}</h4>
+
+    <div class="buttonsContainer">
+        <a href="/panel/settings/update" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "settings_tooltip"}}">
+            <i class="material-icons">&#xE8B8;</i>
+            <div>{{_ "settings_btn"}}</div>
         </a>
     </div>
 </template>

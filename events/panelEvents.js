@@ -80,6 +80,22 @@ Template.skelePanelDashboard.onDestroyed(function() {
 });
 
 
+// Settings
+Template.settingCreate.onCreated(function() {
+    this.skeleSubsReady = new ReactiveVar(false);
+    // subscribe data
+    let settingsQuery = {};
+
+    this.autorun(() => {
+        settingsQuery.code = 'publicAppConf';
+        let currentSetting = Skeletor.subsManagers.settingsSubs.subscribe('findDocuments', 'Settings', settingsQuery, {});
+
+        // set reactive var for all subscriptions ready
+        this.skeleSubsReady.set(Skeletor.subsManagers.settingsSubs.ready());
+    });
+});
+
+
 // Panel footer
 Template.panelFooter.onRendered(function() {
     SkeleUtils.GlobalEvents.TooltipOnRendered(this);
