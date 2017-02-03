@@ -3,6 +3,9 @@ Template.langBar.helpers({
     langs: function() {
         let result = [];
 
+        // register dependency from configuration document
+        Skeletor.Registry.configurationChanged.get();
+
         _.each(Skeletor.configuration.langEnable, function(value, key) {
             if (value) {
                 result.push(key);
