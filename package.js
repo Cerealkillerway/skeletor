@@ -112,6 +112,10 @@ Package.onUse(function(api) {
     api.export(['Skeletor']);
 });
 
+Npm.depends({
+    'numeral': '2.0.4'
+});
+
 Package.onTest(function(api) {
     api.use([
         'tinytest',

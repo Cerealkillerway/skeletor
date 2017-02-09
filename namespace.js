@@ -1,5 +1,31 @@
+// numeral.js
+import numeral from 'numeral';
+
+numeral.register('locale', 'it', {
+        delimiters: {
+            thousands: '.',
+            decimal: ','
+        },
+        abbreviations: {
+            thousand: 'mila',
+            million: 'mil',
+            billion: 'b',
+            trillion: 't'
+        },
+        ordinal: function (number) {
+            return 'º';
+        },
+        currency: {
+            symbol: '€'
+        }
+    });
+numeral.locale('it');
+
+
+// exported object
 Skeletor = {
     Utilities: {},
     SkeleUtils: SkeleUtils,
-    private: {}
+    private: {},
+    numeral: numeral
 };

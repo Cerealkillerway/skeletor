@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "numeral": {
+      "version": "2.0.4",
+      "resolved": "https://registry.npmjs.org/numeral/-/numeral-2.0.4.tgz",
+      "from": "numeral@2.0.4"
+    }
+  }
+}
