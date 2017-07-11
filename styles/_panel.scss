@@ -335,6 +335,20 @@ body.skelePanelBody {
             }
         }
     }
+
+
+    /* footer */
+    footer {
+        .page-footer {
+            .footer-copyright {
+                padding: 0;
+
+                .container {
+                    line-height: 60px;
+                }
+            }
+        }
+    }
 }
 /* --- end panel styles --- */
 

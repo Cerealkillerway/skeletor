@@ -1,17 +1,17 @@
 <template name="skelePanelDashboard">
     <div class="skelePanel skeleDashboard center-align">
-        <h2>
-            {{{_ "adminTools_text"}}}
-        </h2>
+        <h4>
+            <b>{{conf "appName"}} {{_ "adminTools_text"}}</b>
+        </h4>
 
         <div id="dashboardCustom"></div>
 
-        {{#if (skeleCheckPermissions "allowAcl")}}
-            {{> skeleDashboardAclButtons}}
-        {{/if}}
-
         {{#if (skeleCheckPermissions "allowPages")}}
             {{> skeleDashboardWesiteButtons}}
+        {{/if}}
+
+        {{#if (skeleCheckPermissions "allowAcl")}}
+            {{> skeleDashboardAclButtons}}
         {{/if}}
 
         {{#if (skeleCheckPermissions "allowConfig")}}

@@ -26,7 +26,7 @@ Package.onUse(function(api) {
         'mongo',
         'session',
         'ecmascript',
-        'tap:i18n@1.8.1',
+        'tap:i18n@1.8.2',
         'underscore@1.0.0',
         'kadira:flow-router@2.8.0',
         'meteorhacks:subs-manager@1.6.2',
@@ -43,6 +43,9 @@ Package.onUse(function(api) {
         'cerealkiller:skelesite'
     ],
     {unordered: true});
+
+    // i18n settings
+    api.addFiles('package-tap.i18n', ['client', 'server']);
 
     // styles
     api.addFiles([
@@ -77,9 +80,10 @@ Package.onUse(function(api) {
     ['client']);
 
     // i18n
-    api.addFiles('package-tap.i18n');
-    api.addFiles('i18n/it.i18n.json');
-    api.addFiles('i18n/en.i18n.json');
+    api.addFiles([
+        'i18n/en.i18n.json',
+        'i18n/it.i18n.json'
+    ], ['client', 'server']);
 
 
     // libraries
