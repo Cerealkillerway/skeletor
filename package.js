@@ -16,8 +16,8 @@ Package.onUse(function(api) {
         'jquery',
         'blaze-html-templates',
         'reactive-var',
-        'kadira:blaze-layout@2.2.0',
-        'fourseven:scss@3.2.0',
+        'kadira:blaze-layout@2.3.0',
+        'fourseven:scss',
         'materialize:materialize@0.97.8'
     ],
     ['client']);
@@ -28,11 +28,11 @@ Package.onUse(function(api) {
         'ecmascript',
         'tap:i18n@1.8.2',
         'underscore@1.0.0',
-        'kadira:flow-router@2.8.0',
-        'meteorhacks:subs-manager@1.6.2',
-        'meteorhacks:fast-render@2.10.0',
-        'momentjs:moment@2.10.6',
-        'cerealkiller:skeleutils@1.0.0'
+        'meteorhacks:subs-manager@1.6.4',
+        'staringatlights:flow-router@2.12.1',
+        'staringatlights:fast-render@2.16.0',
+        'momentjs:moment@2.19.2',
+        'cerealkiller:skeleutils@1.6.0'
     ],
     ['client', 'server']);
 
@@ -128,46 +128,3 @@ Package.onTest(function(api) {
 
     api.addFiles('skeletor-tests.js');
 });
-
-
-
-
-// UTILITIES
-// get list of all files in a folder
-function getFilesFromFolder(packageName, folder){
-    // local imports
-    var _ = Npm.require("underscore");
-    var fs = Npm.require("fs");
-    var path = Npm.require("path");
-    // helper function, walks recursively inside nested folders and return absolute filenames
-    function walk(folder){
-        var filenames = [];
-        // get relative filenames from folder
-        var folderContent=fs.readdirSync(folder);
-        // iterate over the folder content to handle nested folders
-        _.each(folderContent,function(filename){
-            // build absolute filename
-            var absoluteFilename=folder + path.sep + filename;
-            // get file stats
-            var stat=fs.statSync(absoluteFilename);
-            if (stat.isDirectory()){
-                // directory case => add filenames fetched from recursive call
-                filenames=filenames.concat(walk(absoluteFilename));
-            }
-            else {
-                // file case => simply add it
-                filenames.push(absoluteFilename);
-            }
-        });
-        return filenames;
-    }
-    // save current working directory (something like "/home/user/projects/my-project")
-    var cwd = process.cwd();
-    // chdir to our package directory
-    process.chdir("packages" + path.sep + packageName);
-    // launch initial walk
-    var result = walk(folder);
-    // restore previous cwd
-    process.chdir(cwd);
-    return result;
-}
