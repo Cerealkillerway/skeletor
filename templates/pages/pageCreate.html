@@ -4,12 +4,15 @@
             <i class="material-icons large left">find_in_page</i>
             <h4 class="valign">
                 {{#if data.item}}
-                    {{_ "updatePage_text"}} <span class="documentTitle">"{{skeleLangAttribute data.item "code" "skeletorDefault"}}"</span>
+                    {{_ "updatePage_text"}}
                 {{else}}
                     {{_ "createPage_text"}}
                 {{/if}} [{{currentLang}}]
             </h4>
         </div>
+        {{#if data.item}}
+            <div class="skeleDocumentTitle">{{skeleLangAttribute data.item "code" "skeletorDefault"}}</div>
+        {{/if}}
 
         <div class="skeleformWrapper">
             {{> skeleform data}}

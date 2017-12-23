@@ -4,12 +4,15 @@
             <i class="material-icons large left">menu</i>
             <h4 class="valign">
                 {{#if data.item}}
-                    {{_ "updateMenu_text"}} <span class="documentTitle">"{{skeleLangAttribute data.item "name" "skeletorDefault"}}"</span>
+                    {{_ "updateMenu_text"}}
                 {{else}}
                     {{_ "createMenu_text"}}
                 {{/if}} [{{currentLang}}]
             </h4>
         </div>
+        {{#if data.item}}
+            <div class="skeleDocumentTitle">{{skeleLangAttribute data.item "name" "skeletorDefault"}}</div>
+        {{/if}}
 
         <div class="skeleformWrapper">
             {{> skeleform data}}

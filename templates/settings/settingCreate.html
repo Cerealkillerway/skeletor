@@ -3,9 +3,12 @@
         <div class="valign-wrapper">
             <i class="material-icons large left">&#xE8B8;</i>
             <h4 class="valign">
-                {{_ "updateSetting_text"}} <span class="documentTitle">"{{data.item.code}}"</span>
+                {{_ "updateSetting_text"}}
             </h4>
         </div>
+        {{#if data.item}}
+            <div class="skeleDocumentTitle">{{data.item.code}}</div>
+        {{/if}}
 
         <div class="skeleformWrapper">
             {{> skeleform data}}

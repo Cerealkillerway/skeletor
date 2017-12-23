@@ -18,7 +18,7 @@ Package.onUse(function(api) {
         'reactive-var',
         'kadira:blaze-layout@2.3.0',
         'fourseven:scss',
-        'materialize:materialize@0.97.8'
+        'materialize:materialize@0.100.2'
     ],
     ['client']);
 
@@ -32,7 +32,8 @@ Package.onUse(function(api) {
         'staringatlights:flow-router@2.12.1',
         'staringatlights:fast-render@2.16.0',
         'momentjs:moment@2.19.2',
-        'cerealkiller:skeleutils@1.6.0'
+        'cerealkiller:skeleutils@1.6.0',
+        'gfk:underscore-deep'
     ],
     ['client', 'server']);
 
@@ -117,7 +118,8 @@ Package.onUse(function(api) {
 });
 
 Npm.depends({
-    'numeral': '2.0.4'
+    'numeral': '2.0.4',
+    'nested-property': '0.0.7'
 });
 
 Package.onTest(function(api) {

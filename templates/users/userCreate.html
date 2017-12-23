@@ -4,12 +4,15 @@
             <i class="material-icons large left">person</i>
             <h4 class="valign">
                 {{#if data.item}}
-                    {{_ "updateUser_text"}} <span class="documentTitle">"{{data.item.username}}"</span>
+                    {{_ "updateUser_text"}}
                 {{else}}
                     {{_ "createUser_text"}}
                 {{/if}}
             </h4>
         </div>
+        {{#if data.item}}
+            <div class="skeleDocumentTitle">{{data.item.username}}</div>
+        {{/if}}
 
         <div class="skeleformWrapper">
             {{> skeleform data}}
