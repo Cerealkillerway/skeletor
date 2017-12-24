@@ -105,10 +105,16 @@ Package.onUse(function(api) {
 
     api.addFiles([
         'lib/main-init.js',
-        'lib/collections.js',
         'lib/routerPanel.js',
         'lib/methods.js',
-        'lib/authMatch.js'
+        'lib/authMatch.js',
+        'lib/collections/collections.js',
+        'lib/collections/menus.js',
+        'lib/collections/pages.js',
+        'lib/collections/roles.js',
+        'lib/collections/sections.js',
+        'lib/collections/settings.js',
+        'lib/collections/users.js',
     ],
     ['client', 'server']);
 
