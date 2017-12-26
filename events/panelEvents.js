@@ -231,6 +231,11 @@ Template.sectionsList.onCreated(function() {
         sectionsOptions.fields[currentLang + '---code'] = 1;
         sectionsOptions.fields[currentLang + '---name'] = 1;
 
+        if (currentLang !== defaultLang) {
+            sectionsOptions.fields[defaultLang + '---code'] = 1;
+            sectionsOptions.fields[defaultLang + '---name'] = 1;
+        }
+
         let sectionsList = Skeletor.subsManagers.sectionsSubs.subscribe('findDocuments', 'Sections', {}, sectionsOptions);
 
         // set reactive var for all subscriptions ready
@@ -301,6 +306,18 @@ Template.pagesList.onCreated(function() {
 
         menuOptions.fields[currentLang + '---code'] = 1;
         menuOptions.fields[currentLang + '---name'] = 1;
+
+        if (currentLang !== defaultLang) {
+            pagesOptions.fields[defaultLang + '---title'] = 1;
+            pagesOptions.fields[defaultLang + '---code'] = 1;
+            pagesOptions.fields[defaultLang + '---published'] = 1;
+
+            sectionOptions.fields[defaultLang + '---code'] = 1;
+            sectionOptions.fields[defaultLang + '---name'] = 1;
+
+            menuOptions.fields[defaultLang + '---code'] = 1;
+            menuOptions.fields[defaultLang + '---name'] = 1;
+        }
 
 
         let pagesList = Skeletor.subsManagers.pagesSubs.subscribe('findDocuments', 'Pages', {}, pagesOptions);
@@ -383,6 +400,11 @@ Template.menusList.onCreated(function() {
 
         menusOptions.fields[currentLang + '---code'] = 1;
         menusOptions.fields[currentLang + '---name'] = 1;
+
+        if (currentLang !== defaultLang) {
+            menusOptions.fields[defaultLang + '---code'] = 1;
+            menusOptions.fields[defaultLang + '---name'] = 1;
+        }
 
         let menusList = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', {}, menusOptions);
 
