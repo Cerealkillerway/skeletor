@@ -350,6 +350,7 @@ Template.pageCreate.onCreated(function() {
     this.autorun(() => {
         let currentLang = FlowRouter.getParam('itemLang');
         let segmentLang = FlowRouter.getQueryParam('sLang');
+        let defaultLang = Skeletor.configuration.lang.default;
         let code = FlowRouter.getParam('code');
 
         // needed for both update and creation
@@ -363,6 +364,14 @@ Template.pageCreate.onCreated(function() {
 
         menuOptions.fields[currentLang + '---code'] = 1;
         menuOptions.fields[currentLang + '---name'] = 1;
+
+        if (defaultLang !== currentLang) {
+            sectionOptions.fields[defaultLang + '---code'] = 1;
+            sectionOptions.fields[defaultLang + '---name'] = 1;
+
+            menuOptions.fields[defaultLang + '---code'] = 1;
+            menuOptions.fields[defaultLang + '---name'] = 1;
+        }
 
         let sectionCodes = Skeletor.subsManagers.sectionsSubs.subscribe('findDocuments', 'Sections', {}, sectionOptions);
         let menuCodes = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', {}, menuOptions);
@@ -429,13 +438,13 @@ Template.menuCreate.onCreated(function() {
         // needed for both update and creation
         menusOptions.fields[currentLang + '---code'] = 1;
 
-        let menusList = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Sections', {}, menusOptions);
+        let menusList = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', {}, menusOptions);
 
         // case updating record
         if (code) {
             menuQuery[segmentLang + '---code'] = code;
 
-            let currentMenu = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Sections', menuQuery, {});
+            let currentMenu = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', menuQuery, {});
         }
 
         // set reactive var for all subscriptions ready
