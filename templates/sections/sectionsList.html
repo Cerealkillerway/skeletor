@@ -5,12 +5,14 @@
             {{_ "sectionsListTitle_text"}}
         </h2>
 
-        <div style="margin-bottom: 35px">
-            <a href="/panel/sections/{{defaultLang}}/create{{skeleCurrentLangLink}}" class="waves-effect waves-light btn thirdColor">
-                <i class="material-icons small left">add_box</i>
-                {{_ "sectionsCreate_btn"}}
-            </a>
-        </div>
+        {{#if (skeleCheckPermissions "allowSectionsCreate")}}
+            <div style="margin-bottom: 35px">
+                <a href="/panel/sections/{{defaultLang}}/create{{skeleCurrentLangLink}}" class="waves-effect waves-light btn thirdColor">
+                    <i class="material-icons small left">add_box</i>
+                    {{_ "sectionsCreate_btn"}}
+                </a>
+            </div>
+        {{/if}}
 
         {{> skelelist data}}
     </div>

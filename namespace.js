@@ -27,5 +27,12 @@ Skeletor = {
     Utilities: {},
     SkeleUtils: SkeleUtils,
     private: {},
-    numeral: numeral
+    numeral: numeral,
+
+    // to be used for application's defined callbacks on skeletor's templates
+    customCallbacks: {
+        skelePanelLayout: {
+            onRendered: undefined
+        }
+    }
 };

@@ -5,12 +5,14 @@
             {{_ "menusListTitle_text"}}
         </h2>
 
-        <div style="margin-bottom: 35px">
-            <a href="/panel/menus/{{defaultLang}}/create{{skeleCurrentLangLink}}" class="waves-effect waves-light btn thirdColor">
-                <i class="material-icons small left">add_box</i>
-                {{_ "menusCreate_btn"}}
-            </a>
-        </div>
+        {{#if (skeleCheckPermissions "allowMenusCreate")}}
+            <div style="margin-bottom: 35px">
+                <a href="/panel/menus/{{defaultLang}}/create{{skeleCurrentLangLink}}" class="waves-effect waves-light btn thirdColor">
+                    <i class="material-icons small left">add_box</i>
+                    {{_ "menusCreate_btn"}}
+                </a>
+            </div>
+        {{/if}}
 
         {{> skelelist data}}
     </div>

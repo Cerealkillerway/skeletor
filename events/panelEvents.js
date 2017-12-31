@@ -4,6 +4,11 @@ Template.skelePanelLayout.onCreated(function() {
 });
 
 Template.skelePanelLayout.onRendered(function() {
+    // if defined, call custom callback
+    if (Skeletor.customCallbacks.skelePanelLayout.onRendered) {
+        Skeletor.customCallbacks.skelePanelLayout.onRendered();
+    }
+    
     SkeleUtils.GlobalUtilities.skeleSetPanelBackground();
 
     // used by skeleform to understand when all templates are rendered (ex. to init staticbar)
