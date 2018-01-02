@@ -37,7 +37,7 @@ Package.onUse(function(api) {
     ],
     ['client', 'server']);
 
-    // need skeleform, but allow it to be loaded last
+    // need skeleform, skelelist and skelesite, but allow them to be loaded last
     api.use([
         'cerealkiller:skeleform',
         'cerealkiller:skelelist',
