@@ -8,7 +8,7 @@ Template.skelePanelLayout.onRendered(function() {
     if (Skeletor.customCallbacks.skelePanelLayout.onRendered) {
         Skeletor.customCallbacks.skelePanelLayout.onRendered();
     }
-    
+
     SkeleUtils.GlobalUtilities.skeleSetPanelBackground();
 
     // used by skeleform to understand when all templates are rendered (ex. to init staticbar)
@@ -162,14 +162,22 @@ Template.userCreate.onCreated(function() {
         if (username) {
             userQuery.username = username;
 
-            let currentUser = Skeletor.subsManagers.usersSubs.subscribe('findDocuments', 'Users', userQuery, {});
-        }
+            let currentUser = Meteor.subscribe('findDocuments', 'Users', userQuery, {});
 
-        // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(
-            Skeletor.subsManagers.usersSubs.ready() &&
-            Skeletor.subsManagers.rolesSubs.ready()
-        );
+            // set reactive var for all subscriptions ready
+            this.skeleSubsReady.set(
+                Skeletor.subsManagers.usersSubs.ready() &&
+                Skeletor.subsManagers.rolesSubs.ready() &&
+                currentUser.ready()
+            );
+        }
+        else {
+            // set reactive var for all subscriptions ready
+            this.skeleSubsReady.set(
+                Skeletor.subsManagers.usersSubs.ready() &&
+                Skeletor.subsManagers.rolesSubs.ready()
+            );
+        }
     });
 });
 
@@ -212,11 +220,19 @@ Template.roleCreate.onCreated(function() {
         if (name) {
             roleQuery.name = name;
 
-            let currentRole = Skeletor.subsManagers.usersSubs.subscribe('findDocuments', 'Roles', roleQuery, {});
-        }
+            let currentRole = Meteor.subscribe('findDocuments', 'Roles', roleQuery, {});
 
-        // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(Skeletor.subsManagers.usersSubs.ready() && Skeletor.subsManagers.rolesSubs.ready());
+            // set reactive var for all subscriptions ready
+            this.skeleSubsReady.set(
+                Skeletor.subsManagers.usersSubs.ready() &&
+                Skeletor.subsManagers.rolesSubs.ready() &&
+                currentRole.ready()
+            );
+        }
+        else {
+            // set reactive var for all subscriptions ready
+            this.skeleSubsReady.set(Skeletor.subsManagers.usersSubs.ready() && Skeletor.subsManagers.rolesSubs.ready());
+        }
     });
 });
 
@@ -270,11 +286,18 @@ Template.sectionCreate.onCreated(function() {
         if (code) {
             sectionQuery[segmentLang + '---code'] = code;
 
-            let currentSection = Skeletor.subsManagers.sectionsSubs.subscribe('findDocuments', 'Sections', sectionQuery, {});
-        }
+            let currentSection = Meteor.subscribe('findDocuments', 'Sections', sectionQuery, {});
 
-        // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(Skeletor.subsManagers.sectionsSubs.ready());
+            // set reactive var for all subscriptions ready
+            this.skeleSubsReady.set(
+                Skeletor.subsManagers.sectionsSubs.ready() &&
+                currentSection.ready()
+            );
+        }
+        else {
+            // set reactive var for all subscriptions ready
+            this.skeleSubsReady.set(Skeletor.subsManagers.sectionsSubs.ready());
+        }
     });
 });
 
@@ -384,18 +407,28 @@ Template.pageCreate.onCreated(function() {
         // case updating record
         if (code) {
             pageQuery[segmentLang + '---code'] = code;
-            let currentPage = Skeletor.subsManagers.pagesSubs.subscribe('findDocuments', 'Pages', pageQuery, {});
+
+            let currentPage = Meteor.subscribe('findDocuments', 'Pages', pageQuery, {});
             let pageCodes = Skeletor.subsManagers.pagesSubs.subscribe('findDocuments', 'Pages', {}, pageOptions);
             let sectionCodes = Skeletor.subsManagers.sectionsSubs.subscribe('findDocuments', 'Sections', {}, sectionOptions);
             let menuCodes = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', {}, menuOptions);
-        }
 
-        // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(
-            Skeletor.subsManagers.pagesSubs.ready() &&
-            Skeletor.subsManagers.sectionsSubs.ready() &&
-            Skeletor.subsManagers.menusSubs.ready()
-        );
+            // set reactive var for all subscriptions ready
+            this.skeleSubsReady.set(
+                Skeletor.subsManagers.pagesSubs.ready() &&
+                Skeletor.subsManagers.sectionsSubs.ready() &&
+                Skeletor.subsManagers.menusSubs.ready() &&
+                currentPage.ready()
+            );
+        }
+        else {
+            // set reactive var for all subscriptions ready
+            this.skeleSubsReady.set(
+                Skeletor.subsManagers.pagesSubs.ready() &&
+                Skeletor.subsManagers.sectionsSubs.ready() &&
+                Skeletor.subsManagers.menusSubs.ready()
+            );
+        }
     });
 });
 
@@ -450,10 +483,17 @@ Template.menuCreate.onCreated(function() {
             menuQuery[segmentLang + '---code'] = code;
 
             let currentMenu = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', menuQuery, {});
-        }
 
-        // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(Skeletor.subsManagers.menusSubs.ready());
+            // set reactive var for all subscriptions ready
+            this.skeleSubsReady.set(
+                Skeletor.subsManagers.menusSubs.ready() &&
+                currentMenu.ready()
+            );
+        }
+        else {
+            // set reactive var for all subscriptions ready
+            this.skeleSubsReady.set(Skeletor.subsManagers.menusSubs.ready());
+        }
     });
 });
 
