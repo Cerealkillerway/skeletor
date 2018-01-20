@@ -224,14 +224,13 @@ Template.roleCreate.onCreated(function() {
 
             // set reactive var for all subscriptions ready
             this.skeleSubsReady.set(
-                Skeletor.subsManagers.usersSubs.ready() &&
                 Skeletor.subsManagers.rolesSubs.ready() &&
                 currentRole.ready()
             );
         }
         else {
             // set reactive var for all subscriptions ready
-            this.skeleSubsReady.set(Skeletor.subsManagers.usersSubs.ready() && Skeletor.subsManagers.rolesSubs.ready());
+            this.skeleSubsReady.set(Skeletor.subsManagers.rolesSubs.ready());
         }
     });
 });

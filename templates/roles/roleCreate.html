@@ -4,7 +4,7 @@
             <i class="material-icons large left">beenhere</i>
             <h4 class="valign">
                 {{#if data.item}}
-                    {{#unless test data.item.name "SUPERUSER"}}
+                    {{#unless skeleformTest data.item.name "SUPERUSER"}}
                         {{_ "updateRole_text"}}
                     {{else}}
                         {{data.item.name}}
@@ -15,7 +15,7 @@
             </h4>
         </div>
         {{#if data.item}}
-            {{#unless test data.item.name "SUPERUSER"}}
+            {{#unless skeleformTest data.item.name "SUPERUSER"}}
                 <div class="skeleDocumentTitle">{{data.item.name}}</div>
             {{/unless}}
         {{/if}}
