@@ -5,8 +5,8 @@
         </h4>
 
         {{#if
-            (test
-                (test
+            (skeleformTest
+                (skeleformTest
                     (skeleCheckPermissions "allowPagesRead")
                     (skeleCheckPermissions "allowSectionsRead")
                     "or")
@@ -17,7 +17,7 @@
         {{/if}}
 
         {{#if
-            (test
+            (skeleformTest
                 (skeleCheckPermissions "allowUsersRead")
                 (skeleCheckPermissions "allowRolesRead")
                 "or")

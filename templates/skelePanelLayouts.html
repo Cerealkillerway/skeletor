@@ -121,8 +121,8 @@
     <div class="separator darken"></div>
 
     {{#if
-        (test
-            (test
+        (skeleformTest
+            (skeleformTest
                 (skeleCheckPermissions "allowPagesRead")
                 (skeleCheckPermissions "allowSectionsRead")
                 "or")
@@ -132,7 +132,7 @@
         {{> panelMainMenuPages}}
     {{/if}}
     {{#if
-        (test
+        (skeleformTest
             (skeleCheckPermissions "allowUsersRead")
             (skeleCheckPermissions "allowRolesRead")
             "or")
