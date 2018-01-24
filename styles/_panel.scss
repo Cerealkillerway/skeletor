@@ -12,7 +12,7 @@ body {
     width: 100%;
 }
 .skelePanel {
-    background: $firstBackgroundColor;
+    background: $panelBackgroundColor;
     margin: 0 auto 35px auto;
     padding: 35px 35px 55px 35px;
 }
@@ -298,7 +298,7 @@ body.skelePanelBody {
     .modal {
         color:$firstTextColor;
         z-index: 3003 !important;
-        background-color: $firstBackgroundColor;
+        background-color: $panelBackgroundColor;
         border-radius: 0;
         backface-visibility: hidden;
 

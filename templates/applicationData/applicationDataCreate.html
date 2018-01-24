@@ -1,0 +1,17 @@
+<template name="applicationDataCreate">
+    <div class="skelePanel">
+        <div class="valign-wrapper">
+            <i class="material-icons large left">fingerprint</i>
+            <h4 class="valign">
+                {{_ "updateApplicationData_text"}}
+            </h4>
+        </div>
+        {{#if data.item}}
+            <div class="skeleDocumentTitle">{{data.item.code}}</div>
+        {{/if}}
+
+        <div class="skeleformWrapper">
+            {{> skeleform data}}
+        </div>
+    </div>
+</template>

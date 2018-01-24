@@ -82,11 +82,16 @@
 <template name="skeleDashboardConfigButtons">
     <h4>{{_ "configButtons_text"}}</h4>
 
-    {{#if (skeleCheckPermissions "allowRolesRead")}}
+    {{#if (skeleCheckPermissions "allowConfigUpdate")}}
         <div class="buttonsContainer">
             <a href="/panel/settings/update" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "settings_tooltip"}}">
                 <i class="material-icons">&#xE8B8;</i>
                 <div>{{_ "settings_btn"}}</div>
+            </a>
+
+            <a href="/panel/application-data/update" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "applicationData_tooltip"}}">
+                <i class="material-icons">fingerprint</i>
+                <div>{{_ "applicationData_btn"}}</div>
             </a>
         </div>
     {{/if}}
