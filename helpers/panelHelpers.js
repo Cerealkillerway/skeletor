@@ -19,6 +19,27 @@ Template.settingCreate.helpers({
 });
 
 
+// application data
+Template.applicationDataCreate.helpers({
+    data: function() {
+        const instance = Template.instance();
+        let context = {};
+        let segmentLang = FlowRouter.getQueryParam('sLang');
+        let query = {};
+
+        query.code = 'applicationData';
+
+        context.item = Skeletor.Data.Settings.findOne(query);
+
+        context.schemaName = 'applicationData_default';
+        context.schema = Skeletor.Schemas.applicationData_default;
+        context.skeleSubsReady = instance.skeleSubsReady;
+
+        return context;
+    }
+});
+
+
 // Users
 Template.usersList.helpers({
     data: function() {

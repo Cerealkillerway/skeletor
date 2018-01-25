@@ -58,6 +58,7 @@ Package.onUse(function(api) {
 
     // templates
     api.addFiles([
+        'templates/skelePanelMainMenu.html',
         'templates/skelePanelDashboard.html',
         'templates/skeleLogin.html',
         'templates/skelePanelLayouts.html',
@@ -114,6 +115,7 @@ Package.onUse(function(api) {
         'lib/collections/roles.js',
         'lib/collections/sections.js',
         'lib/collections/settings.js',
+        'lib/collections/applicationData.js',
         'lib/collections/users.js',
     ],
     ['client', 'server']);

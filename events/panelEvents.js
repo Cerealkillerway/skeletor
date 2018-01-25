@@ -101,6 +101,22 @@ Template.settingCreate.onCreated(function() {
 });
 
 
+// Application data
+Template.applicationDataCreate.onCreated(function() {
+    this.skeleSubsReady = new ReactiveVar(false);
+    // subscribe data
+    let settingsQuery = {};
+
+    this.autorun(() => {
+        settingsQuery.code = 'applicationData';
+        let currentSetting = Skeletor.subsManagers.settingsSubs.subscribe('findDocuments', 'Settings', settingsQuery, {});
+
+        // set reactive var for all subscriptions ready
+        this.skeleSubsReady.set(Skeletor.subsManagers.settingsSubs.ready());
+    });
+});
+
+
 // Panel footer
 Template.panelFooter.onRendered(function() {
     SkeleUtils.GlobalEvents.TooltipOnRendered(this);

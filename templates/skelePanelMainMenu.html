@@ -1,0 +1,127 @@
+<!-- panel main menu -->
+<template name="panelMainMenu">
+    <nav class="firstColor">
+        <div class="nav-wrapper">
+            <div id="logout" class="skeleBold upperCase left">
+                <i class="material-icons small left">&#xE879;</i>
+                {{_ "menu_logout"}}
+            </div>
+            <a href="#" data-activates="mainMenuMobile" class="button-collapse right hSpaced"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down iconSwing">
+                {{> panelMainMenuList}}
+            </ul>
+            <ul class="side-nav firstColor" id="mainMenuMobile">
+                {{> panelMainMenuList}}
+            </ul>
+        </div>
+    </nav>
+</template>
+
+
+<template name="panelMainMenuList">
+    <li>
+        <a href="/panel/dashboard{{skeleCurrentLangLink}}">
+            <i class="material-icons small left">dashboard</i>
+            <div class="navItemName">{{_ "menu_dashboard"}}</div>
+        </a>
+    </li>
+    <li>
+        <a href="/{{defaultLang}}/home" target="_blank">
+            <i class="material-icons small left">public</i>
+            <div class="navItemName">{{_ "menu_website"}}</div>
+        </a>
+    </li>
+
+    {{#if (skeleCheckPermissions "allowConfigRead")}}
+        {{> panelMainMenuSettings}}
+        <div class="separator darken"></div>
+    {{/if}}
+
+    {{#if
+        (skeleformTest
+            (skeleformTest
+                (skeleCheckPermissions "allowPagesRead")
+                (skeleCheckPermissions "allowSectionsRead")
+                "or")
+            (skeleCheckPermissions "allowMenusRead")
+            "or")
+    }}
+        {{> panelMainMenuPages}}
+    {{/if}}
+    {{#if
+        (skeleformTest
+            (skeleCheckPermissions "allowUsersRead")
+            (skeleCheckPermissions "allowRolesRead")
+            "or")
+    }}
+        <div class="separator darken"></div>
+        {{> panelMainMenuAcl}}
+    {{/if}}
+</template>
+
+
+<!-- panel main menu items for pages management -->
+<template name="panelMainMenuSettings">
+    <li>
+        <a href="/panel/settings/update">
+            <i class="material-icons left">&#xE8B8;</i>
+            <div class="navItemName">{{_ "menu_settings"}}</div>
+        </a>
+    </li>
+
+    <li>
+        <a href="/panel/application-data/update">
+            <i class="material-icons left">fingerprint</i>
+            <div class="navItemName">{{_ "menu_applicationData"}}</div>
+        </a>
+    </li>
+</template>
+
+
+<template name="panelMainMenuPages">
+    {{#if (skeleCheckPermissions "allowSectionsRead")}}
+        <li>
+            <a href="/panel/sections/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Sections_default"}}">
+                <i class="material-icons left">assignment</i>
+                <div class="navItemName">{{_ "menu_sections"}}</div>
+            </a>
+        </li>
+    {{/if}}
+    {{#if (skeleCheckPermissions "allowPagesRead")}}
+        <li>
+            <a href="/panel/pages/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Pages_default"}}">
+                <i class="material-icons left">find_in_page</i>
+                <div class="navItemName">{{_ "menu_pages"}}</div>
+            </a>
+        </li>
+    {{/if}}
+    {{#if (skeleCheckPermissions "allowMenusRead")}}
+        <li>
+            <a href="/panel/menus/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Menus_default"}}">
+                <i class="material-icons left">menu</i>
+                <div class="navItemName">{{_ "menu_menus"}}</div>
+            </a>
+        </li>
+    {{/if}}
+</template>
+
+
+<!-- panel main menu items for ACL management -->
+<template name="panelMainMenuAcl">
+    {{#if (skeleCheckPermissions "allowUsersRead")}}
+        <li>
+            <a href="/panel/roles{{skeleCurrentLangLink}}{{isPaginated "Roles_default"}}">
+                <i class="material-icons left">beenhere</i>
+                <div class="navItemName">{{_ "menu_roles"}}</div>
+            </a>
+        </li>
+    {{/if}}
+    {{#if (skeleCheckPermissions "allowRolesRead")}}
+        <li>
+            <a href="/panel/users{{skeleCurrentLangLink}}{{isPaginated "Users_default"}}">
+                <i class="material-icons left">person</i>
+                <div class="navItemName">{{_ "menu_users"}}</div>
+            </a>
+        </li>
+    {{/if}}
+</template>
