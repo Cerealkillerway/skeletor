@@ -124,6 +124,12 @@ Package.onUse(function(api) {
     ['client', 'server']);
 
 
+    // static files
+    /*api.addFiles([
+    ],
+    ['client']);*/
+
+
     // exports
     api.export(['Skeletor']);
 });

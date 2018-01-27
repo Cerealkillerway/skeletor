@@ -1,3 +1,29 @@
+<!-- top bar (>lang-bar, current user, current version) -->
+<template name="skelePanelTopBar">
+    <div class="row vSpaced">
+        {{#if (skeleCheckPermissions "allowConfigRead")}}
+            <div class="col s12 m6 l4 left-align">
+                <div class="card-panel skeleLangBar">
+                    {{> langBar}}
+                </div>
+            </div>
+        {{/if}}
+
+        <div class="col s12 m6 l4 right-align">
+            <div class="card-panel skeleCurrentUserBar">
+                <i class="material-icons small left relative1">perm_identity</i>{{_ "currentLoggedUser_msg"}} {{currentUser.username}}
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4 right-align">
+            <div class="card-panel skeleCurrentVersionBar">
+                <i class="material-icons small left relative1">device_hub</i>{{_ "version"}} {{conf "version"}}
+            </div>
+        </div>
+    </div>
+</template>
+
+
 <!-- language and social bar -->
 <template name="langBar">
     <span class="hide-on-med-and-down langLabel">
@@ -24,32 +50,6 @@
             </div>
         {{/each}}
     {{/if}}
-</template>
-
-
-<!-- top bar (>lang-bar, current user, current version) -->
-<template name="skelePanelTopBar">
-    <div class="row vSpaced">
-        {{#if (skeleCheckPermissions "allowConfigRead")}}
-            <div class="col s12 m6 l4 left-align">
-                <div class="card-panel skeleLangBar">
-                    {{> langBar}}
-                </div>
-            </div>
-        {{/if}}
-
-        <div class="col s12 m6 l4 right-align">
-            <div class="card-panel skeleCurrentUserBar">
-                <i class="material-icons small left relative1">perm_identity</i>{{_ "currentLoggedUser_msg"}} {{currentUser.username}}
-            </div>
-        </div>
-
-        <div class="col s12 m6 l4 right-align">
-            <div class="card-panel skeleCurrentVersionBar">
-                <i class="material-icons small left relative1">device_hub</i>{{_ "version"}} {{conf "version"}}
-            </div>
-        </div>
-    </div>
 </template>
 
 
