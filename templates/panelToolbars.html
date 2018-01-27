@@ -1,0 +1,81 @@
+<!-- language and social bar -->
+<template name="langBar">
+    <span class="hide-on-med-and-down langLabel">
+        {{_ "UILang_lbl"}}
+    </span>
+    <div class="langFlagsWrapper">
+        {{#each langs}}
+            <div class="langFlag {{isActiveLang this}}" data-lang="{{this}}">
+                <img src="/images/icons/lang/{{this}}.jpg">
+            </div>
+        {{/each}}
+    </div>
+
+    {{#if social}}
+        <span class="langSpacer">|</span>
+        <span class="hide-on-med-and-down langLabel">
+            {{_ "social_lbl"}}
+        </span>
+        {{#each social}}
+            <div class="socialIcon" data-type="{{type}}">
+                <a href="{{url}}" target="_blank">
+                    <img src="/images/icons/social/{{type}}.jpg">
+                </a>
+            </div>
+        {{/each}}
+    {{/if}}
+</template>
+
+
+<!-- top bar (>lang-bar, current user, current version) -->
+<template name="skelePanelTopBar">
+    <div class="row vSpaced">
+        {{#if (skeleCheckPermissions "allowConfigRead")}}
+            <div class="col s12 m6 l4 left-align">
+                <div class="card-panel skeleLangBar">
+                    {{> langBar}}
+                </div>
+            </div>
+        {{/if}}
+
+        <div class="col s12 m6 l4 right-align">
+            <div class="card-panel skeleCurrentUserBar">
+                <i class="material-icons small left relative1">perm_identity</i>{{_ "currentLoggedUser_msg"}} {{currentUser.username}}
+            </div>
+        </div>
+
+        <div class="col s12 m6 l4 right-align">
+            <div class="card-panel skeleCurrentVersionBar">
+                <i class="material-icons small left relative1">device_hub</i>{{_ "version"}} {{conf "version"}}
+            </div>
+        </div>
+    </div>
+</template>
+
+
+<!-- status bar -->
+<template name="statusBar">
+    <div id="statusBar">
+        <div class="firstColor">
+            <span class="hide-on-med-and-down langLabel">
+                {{_ "status_lbl"}}
+            </span>
+            <div class="status {{statusColor}}"></div>
+            ({{display "connectionStatus"}})
+
+            <a class="waves-effect waves-light firstColor right statusLabel" id="statusBarVisibility">
+                <i class="small material-icons">star_border</i>
+            </a>
+            <div class="right spacer"></div>
+
+            <a class="waves-effect waves-light firstColor right statusLabel" id="reconnect">
+                <i class="small material-icons">swap_calls</i>
+            </a>
+            <a class="waves-effect waves-light firstColor right statusLabel" id="disconnect">
+                <i class="small material-icons">portable_wifi_off</i>
+            </a>
+            <div class="right" id="statusDescription"></div>
+
+        </div>
+    </div>
+</template>

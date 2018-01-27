@@ -1,0 +1,37 @@
+<template name="skelePanelLayout">
+    {{#if (skeleCheckPermissions "allowPanelAccess")}}
+        {{> panelMainMenu}}
+
+        <main>
+            <div class="skeleCentralBody">
+                {{> skelePanelTopBar}}
+
+                <div class="skeleCentralBody">
+                    {{> Template.dynamic template=main}}
+                </div>
+            </div>
+
+            {{> statusBar}}
+        </main>
+
+        <footer>
+            {{> skelePanelFooter}}
+            {{#if debug}}
+                {{> debugToolbar}}
+            {{/if}}
+        </footer>
+    {{else}}
+        {{> skeleUnauthorized}}
+    {{/if}}
+</template>
+
+
+<template name="skelePanelNudeLayout">
+    <main>
+        <div class="skeleCentralBody">
+            <div class="skeleCentralBody">
+                {{> Template.dynamic template=main}}
+            </div>
+        </div>
+    </main>
+</template>

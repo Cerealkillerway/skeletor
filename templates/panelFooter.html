@@ -1,0 +1,37 @@
+<template name="skelePanelFooter">
+    <footer id="panelFooter" class="page-footer firstColor">
+        <div class="footer-copyright lighten footer-bar-top">
+            <div class="container">
+                {{_ "version"}} {{conf "version"}}
+                <a>
+                    <i class="medium material-icons firstInteractiveColor pointer right backTop waves-effect waves-light tooltipped" data-position="bottom" data-delay="10" data-tooltip="{{_ "backTop_tooltip"}}">arrow_drop_up</i>
+                </a>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5>{{conf "appName"}}</h5>
+                    <p>
+                        <span class="skeleBold">{{conf "appDetail"}}</span><br>
+                        {{_ "adminPanel_msg"}}<br><br>
+
+                        {{_ "support_msg"}} <a href="mailto:{{conf "webmasterEmail"}}">{{conf "webmasterEmail"}}</a>
+                    </p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <img class="panelFooterLogo" src="/images/logos/logo.png" />
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright lighten">
+            <div class="container">
+                © {{display "currentYear"}} {{_ "designedBy_text"}} {{conf "author.name"}} {{_ "for_text"}} {{conf "appName"}}
+                <a class="right" href="{{conf "author.website"}}" target="_blank">
+                    <i class="mdi-social-public small left"></i>
+                    {{conf "author.websiteText"}}
+                </a>
+            </div>
+        </div>
+    </footer>
+</template>

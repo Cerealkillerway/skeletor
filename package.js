@@ -58,10 +58,12 @@ Package.onUse(function(api) {
 
     // templates
     api.addFiles([
-        'templates/skelePanelMainMenu.html',
-        'templates/skelePanelDashboard.html',
-        'templates/skeleLogin.html',
-        'templates/skelePanelLayouts.html',
+        'templates/panelMainMenu.html',
+        'templates/panelDashboard.html',
+        'templates/login.html',
+        'templates/panelLayouts.html',
+        'templates/panelFooter.html',
+        'templates/panelToolbars.html',
         'templates/elements/commonAssets.html',
         'templates/elements/skeleTooltip.html',
         'templates/elements/superUser.html',
@@ -97,10 +99,11 @@ Package.onUse(function(api) {
 
     api.addFiles([
         'events/debugEvents.js',
-        'helpers/panelHelpers.js',
-        'helpers/commonAssetsHelpers.js',
-        'events/panelEvents.js',
-        'events/commonAssetsEvents.js'
+        'events/panelLayoutEvents.js',
+        'events/panelToolbarsEvents.js',
+
+        'helpers/panelLayoutHelpers.js',
+        'helpers/panelToolbarsHelpers.js'
     ],
     ['client']);
 

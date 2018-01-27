@@ -117,15 +117,6 @@ Template.applicationDataCreate.onCreated(function() {
 });
 
 
-// Panel footer
-Template.panelFooter.onRendered(function() {
-    SkeleUtils.GlobalEvents.TooltipOnRendered(this);
-});
-Template.panelFooter.onDestroyed(function() {
-    SkeleUtils.GlobalEvents.TooltipOnDestroyed(this);
-});
-
-
 // Users
 Template.usersList.onCreated(function() {
     this.skeleSubsReady = new ReactiveVar(false);

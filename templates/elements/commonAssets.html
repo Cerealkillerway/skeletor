@@ -1,71 +1,30 @@
-<!-- language and social bar -->
-<template name="langBar">
-    <span class="hide-on-med-and-down langLabel">
-        {{_ "UILang_lbl"}}
-    </span>
-    <div class="langFlagsWrapper">
-        {{#each langs}}
-            <div class="langFlag {{isActiveLang this}}" data-lang="{{this}}">
-                <img src="/images/icons/lang/{{this}}.jpg">
+<template name="skeleUnauthorized">
+    <main>
+        <div class="skeleCentralBody">
+            <div class="skeleCentralBody">
+                <div class="skelePanel">
+                    <div class="valign-wrapper">
+                        <i class="material-icons large">&#xE925;</i>
+                        <h4 class="valign">
+                            {{_ "permissionDenied_title"}}
+                        </h4>
+                    </div>
+
+                    <div class="topSpaced">
+                        {{_ "unauthorized_text"}}
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <a id="backToLogin" class="secondColor vSpaced waves-effect waves-light btn">
+                                <i class="material-icons left">perm_identity</i>{{_ "backTogin_btn"}}
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        {{/each}}
-    </div>
-
-    {{#if social}}
-        <span class="langSpacer">|</span>
-        <span class="hide-on-med-and-down langLabel">
-            {{_ "social_lbl"}}
-        </span>
-        {{#each social}}
-            <div class="socialIcon" data-type="{{type}}">
-                <a href="{{url}}" target="_blank">
-                    <img src="/images/icons/social/{{type}}.jpg">
-                </a>
-            </div>
-        {{/each}}
-    {{/if}}
-</template>
-
-<!-- status bar -->
-<template name="statusBar">
-    <div id="statusBar">
-        <div class="firstColor">
-            <span class="hide-on-med-and-down langLabel">
-                {{_ "status_lbl"}}
-            </span>
-            <div class="status {{statusColor}}"></div>
-            ({{display "connectionStatus"}})
-
-            <a class="waves-effect waves-light firstColor right statusLabel" id="statusBarVisibility">
-                <i class="small material-icons">star_border</i>
-            </a>
-            <div class="right spacer"></div>
-
-            <a class="waves-effect waves-light firstColor right statusLabel" id="reconnect">
-                <i class="small material-icons">swap_calls</i>
-            </a>
-            <a class="waves-effect waves-light firstColor right statusLabel" id="disconnect">
-                <i class="small material-icons">portable_wifi_off</i>
-            </a>
-            <div class="right" id="statusDescription"></div>
-
         </div>
-    </div>
+    </main>
 </template>
-
-<!-- command bar for click-to-edit editor -->
-<template name="editorCommands">
-    <div class="commands hidden">
-        <div class="btn btn-success editSave">{{_ "save_btn"}}</div>
-        <div class="btn btn-danger editCancel">{{_ "cancel_btn"}}</div>
-    </div>
-</template>
-
-
-
-
-
-
 
 
 <!-- DEVELOPMENT and ERROR management -->

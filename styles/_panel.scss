@@ -12,7 +12,7 @@ body {
     width: 100%;
 }
 .skelePanel {
-    background: $panelBackgroundColor;
+    background: $panelBackgroundOverlayColor;
     margin: 0 auto 35px auto;
     padding: 35px 35px 55px 35px;
 }
@@ -156,6 +156,8 @@ body.skelePanelBody {
 
     // main menu
     nav {
+        @extend .firstColor;
+        
         ul div {
             float: left;
             overflow: hidden;
@@ -251,8 +253,8 @@ body.skelePanelBody {
     }
 
     // languages and socials bar
-    .langBar {
-        max-height: 62px;
+    .skeleLangBar {
+        max-height: 70px;
 
         &:last-child:after {
             content:'';
@@ -347,6 +349,14 @@ body.skelePanelBody {
     /* footer */
     footer {
         .page-footer {
+            img.panelFooterLogo {
+                height: 180px;
+            }
+
+            .footer-bar-top {
+                margin-bottom: 20px;
+            }
+
             .footer-copyright {
                 padding: 0;
 
