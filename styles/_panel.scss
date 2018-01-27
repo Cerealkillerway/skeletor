@@ -157,7 +157,7 @@ body.skelePanelBody {
     // main menu
     nav {
         @extend .firstColor;
-        
+
         ul div {
             float: left;
             overflow: hidden;
@@ -295,6 +295,10 @@ body.skelePanelBody {
                 }
             }
         }
+    }
+
+    .listToolbarContainer {
+        margin-bottom: 35px;
     }
 
     .modal {

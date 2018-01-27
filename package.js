@@ -100,6 +100,7 @@ Package.onUse(function(api) {
     api.addFiles([
         'events/debugEvents.js',
         'events/panelLayoutEvents.js',
+        'events/panelFooterEvents.js',
         'events/panelToolbarsEvents.js',
 
         'helpers/panelLayoutHelpers.js',
