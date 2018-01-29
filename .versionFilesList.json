@@ -1,0 +1,9 @@
+{
+  "name": "cerealkiller:skeletor",
+  "currentVersion": "3.13.17",
+  "versionPrefix": "v",
+  "filesList": [
+    "package.js:package",
+    "README.md"
+  ]
+}

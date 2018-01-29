@@ -5,6 +5,8 @@
     /_______  /__|_ \\___  >____/\___  >__|  \____/|__|   
             \/     \/    \/          \/                   
 
+v3.13.17
+
 #### 0 Intro
 
 **Skeletor** is a meteor package that implements a set of features for creating fast and rich CRUD web applications.

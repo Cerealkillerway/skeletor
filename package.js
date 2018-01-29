@@ -1,6 +1,6 @@
 Package.describe({
     name: 'cerealkiller:skeletor',
-    version: '3.13.7',
+    version: '3.13.17',
     summary: 'CRUD app skeleton!',
     // URL to the Git repository containing the source code for this package.
     git: '',
@@ -32,7 +32,7 @@ Package.onUse(function(api) {
         'staringatlights:flow-router@2.12.1',
         'staringatlights:fast-render@2.16.0',
         'momentjs:moment@2.19.2',
-        'cerealkiller:skeleutils@1.6.0',
+        'cerealkiller:skeleutils@2.0.0',
         'gfk:underscore-deep'
     ],
     ['client', 'server']);
