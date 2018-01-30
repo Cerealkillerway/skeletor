@@ -113,9 +113,17 @@ body.skelePanelBody {
             height: 6rem;
         }
     }
+
     p {
         margin: 0;
         padding: 0;
+    }
+
+    .hoverable:hover {
+        -webkit-box-shadow: 7px 7px 1px 0px rgba(111, 111, 111, 0.75);
+        -moz-box-shadow: 7px 7px 1px 0px rgba(111, 111, 111, 0.75);
+        box-shadow: 7px 7px 1px 0px rgba(111, 111, 111, 0.75);
+        margin-bottom: 20px;
     }
 
     // links

@@ -1,6 +1,6 @@
 Package.describe({
     name: 'cerealkiller:skeletor',
-    version: '3.13.17',
+    version: '3.13.18',
     summary: 'CRUD app skeleton!',
     // URL to the Git repository containing the source code for this package.
     git: '',
@@ -11,13 +11,15 @@ Package.onUse(function(api) {
     // namespace
     api.addFiles('namespace.js');
 
+    api.versionsFrom('METEOR@1.6.1');
+
     // packages
     api.use([
         'jquery',
-        'blaze-html-templates',
+        'blaze-html-templates@1.1.2',
         'reactive-var',
         'kadira:blaze-layout@2.3.0',
-        'fourseven:scss',
+        'fourseven:scss@4.5.4',
         'materialize:materialize@0.100.2'
     ],
     ['client']);
@@ -26,14 +28,14 @@ Package.onUse(function(api) {
         'mongo',
         'session',
         'ecmascript',
-        'tap:i18n@1.8.2',
+        //'tap:i18n@1.8.2',
         'underscore@1.0.0',
         'meteorhacks:subs-manager@1.6.4',
         'staringatlights:flow-router@2.12.1',
         'staringatlights:fast-render@2.16.0',
         'momentjs:moment@2.19.2',
         'cerealkiller:skeleutils@2.0.0',
-        'gfk:underscore-deep'
+        'gfk:underscore-deep@1.0.0'
     ],
     ['client', 'server']);
 
@@ -46,7 +48,7 @@ Package.onUse(function(api) {
     {unordered: true});
 
     // i18n settings
-    api.addFiles('package-tap.i18n', ['client', 'server']);
+    //api.addFiles('package-tap.i18n', ['client', 'server']);
 
     // styles
     api.addFiles([
@@ -84,10 +86,10 @@ Package.onUse(function(api) {
     ['client']);
 
     // i18n
-    api.addFiles([
+    /*api.addFiles([
         'i18n/en.i18n.json',
         'i18n/it.i18n.json'
-    ], ['client', 'server']);
+    ], ['client', 'server']);*/
 
 
     // libraries
