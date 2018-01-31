@@ -1,6 +1,6 @@
 Package.describe({
     name: 'cerealkiller:skeletor',
-    version: '3.13.18',
+    version: '3.13.19',
     summary: 'CRUD app skeleton!',
     // URL to the Git repository containing the source code for this package.
     git: '',
