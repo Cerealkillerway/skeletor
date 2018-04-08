@@ -28,6 +28,7 @@ Skeletor = {
     SkeleUtils: SkeleUtils,
     private: {},
     numeral: numeral,
+    pagePlaceholders: {},
 
     // to be used for application's defined callbacks on skeletor's templates
     customCallbacks: {
