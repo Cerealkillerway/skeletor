@@ -316,7 +316,8 @@ Template.pagesList.onCreated(function() {
     let pagesOptions = {
         fields: {
             section: 1,
-            menu: 1
+            menu: 1,
+            placeholderItem: 1
         }
     };
     let sectionOptions = {
