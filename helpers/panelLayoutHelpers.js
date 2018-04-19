@@ -215,10 +215,10 @@ Template.menuCreate.helpers({
     data: function() {
         const instance = Template.instance();
         let context = {};
-        let code = FlowRouter.getParam('code');
+        let name = FlowRouter.getParam('name');
         let segmentLang = FlowRouter.getQueryParam('sLang');
 
-        if (code) {
+        if (name) {
             let query = {};
 
             // coming from skelelist link
@@ -227,7 +227,7 @@ Template.menuCreate.helpers({
             }
             // normal mode
             else {
-                query[segmentLang + '---code'] = code;
+                query.name = name;
             }
 
             context.item = Skeletor.Data.Menus.findOne(query);

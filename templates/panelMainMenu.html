@@ -63,14 +63,14 @@
 <!-- panel main menu items for pages management -->
 <template name="panelMainMenuSettings">
     <li>
-        <a href="/panel/settings/update">
+        <a href="/panel/settings/update{{skeleCurrentLangLink}}">
             <i class="material-icons left">&#xE8B8;</i>
             <div class="navItemName">{{_ "menu_settings"}}</div>
         </a>
     </li>
 
     <li>
-        <a href="/panel/application-data/update">
+        <a href="/panel/application-data/update{{skeleCurrentLangLink}}">
             <i class="material-icons left">fingerprint</i>
             <div class="navItemName">{{_ "menu_applicationData"}}</div>
         </a>
