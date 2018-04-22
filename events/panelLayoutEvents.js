@@ -1,3 +1,6 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+
+
 // Panel layout
 Template.skelePanelLayout.onCreated(function() {
     Skeletor.appRendered = new ReactiveVar(false);

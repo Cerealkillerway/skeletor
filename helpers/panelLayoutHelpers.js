@@ -1,3 +1,6 @@
+import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+
+
 // settings
 Template.settingCreate.helpers({
     data: function() {

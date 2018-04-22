@@ -28,11 +28,10 @@ Package.onUse(function(api) {
         'mongo',
         'session',
         'ecmascript',
-        //'tap:i18n@1.8.2',
         'underscore@1.0.0',
         'meteorhacks:subs-manager@1.6.4',
-        'staringatlights:flow-router@2.12.1',
-        'staringatlights:fast-render@2.16.0',
+        'ostrio:flow-router-extra@3.4.7',
+        'staringatlights:fast-render@3.0.3',
         'momentjs:moment@2.19.2',
         'cerealkiller:skeleutils@2.0.0',
         'gfk:underscore-deep@1.0.0'
@@ -46,9 +45,6 @@ Package.onUse(function(api) {
         'cerealkiller:skelesite'
     ],
     {unordered: true});
-
-    // i18n settings
-    //api.addFiles('package-tap.i18n', ['client', 'server']);
 
     // styles
     api.addFiles([
