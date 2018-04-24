@@ -1,6 +1,7 @@
-// numeral.js
 import numeral from 'numeral';
 
+
+// numeral.js
 numeral.register('locale', 'it', {
         delimiters: {
             thousands: '.',
@@ -29,6 +30,7 @@ Skeletor = {
     private: {},
     numeral: numeral,
     pagePlaceholders: {},
+    availableTemplates: {},
 
     // to be used for application's defined callbacks on skeletor's templates
     customCallbacks: {
