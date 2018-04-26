@@ -96,10 +96,10 @@ Template.settingCreate.onCreated(function() {
 
     this.autorun(() => {
         settingsQuery.code = 'publicAppConf';
-        let currentSetting = Skeletor.subsManagers.settingsSubs.subscribe('findDocuments', 'Settings', settingsQuery, {});
+        let currentSetting = Skeletor.persistentSubsManagers.settingsSubs.subscribe('findDocuments', 'Settings', settingsQuery, {});
 
         // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(Skeletor.subsManagers.settingsSubs.ready());
+        this.skeleSubsReady.set(Skeletor.persistentSubsManagers.settingsSubs.ready());
     });
 });
 
@@ -112,10 +112,10 @@ Template.applicationDataCreate.onCreated(function() {
 
     this.autorun(() => {
         settingsQuery.code = 'applicationData';
-        let currentSetting = Skeletor.subsManagers.settingsSubs.subscribe('findDocuments', 'Settings', settingsQuery, {});
+        let currentSetting = Skeletor.persistentSubsManagers.settingsSubs.subscribe('findDocuments', 'Settings', settingsQuery, {});
 
         // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(Skeletor.subsManagers.settingsSubs.ready());
+        this.skeleSubsReady.set(Skeletor.persistentSubsManagers.settingsSubs.ready());
     });
 });
 
