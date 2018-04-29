@@ -2,14 +2,14 @@
     <div class="skelePanel">
         <i class="material-icons large left">find_in_page</i>
         <h2>
-            {{_ "pagesListTitle_text"}}
+            {{i18n "pagesListTitle_text"}}
         </h2>
 
         {{#if (skeleCheckPermissions "allowPagesCreate")}}
             <div class="listToolbarContainer">
                 <a href="/panel/pages/{{defaultLang}}/create{{skeleCurrentLangLink}}" class="waves-effect waves-light btn thirdColor">
                     <i class="material-icons small left">add_box</i>
-                    {{_ "pagesCreate_btn"}}
+                    {{i18n "pagesCreate_btn"}}
                 </a>
             </div>
         {{/if}}

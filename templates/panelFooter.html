@@ -2,9 +2,9 @@
     <footer id="panelFooter" class="page-footer firstColor">
         <div class="footer-copyright lighten footer-bar-top">
             <div class="container">
-                {{_ "version"}} {{conf "version"}}
+                {{i18n "version"}} {{conf "version"}}
                 <a>
-                    <i class="medium material-icons firstInteractiveColor pointer right backTop waves-effect waves-light tooltipped" data-position="bottom" data-delay="10" data-tooltip="{{_ "backTop_tooltip"}}">arrow_drop_up</i>
+                    <i class="medium material-icons firstInteractiveColor pointer right backTop waves-effect waves-light tooltipped" data-position="bottom" data-delay="10" data-tooltip="{{i18n "backTop_tooltip"}}">arrow_drop_up</i>
                 </a>
             </div>
         </div>
@@ -14,9 +14,9 @@
                     <h5>{{conf "appName"}}</h5>
                     <p>
                         <span class="skeleBold">{{conf "appDetail"}}</span><br>
-                        {{_ "adminPanel_msg"}}<br><br>
+                        {{i18n "adminPanel_msg"}}<br><br>
 
-                        {{_ "support_msg"}} <a href="mailto:{{conf "webmasterEmail"}}">{{conf "webmasterEmail"}}</a>
+                        {{i18n "support_msg"}} <a href="mailto:{{conf "webmasterEmail"}}">{{conf "webmasterEmail"}}</a>
                     </p>
                 </div>
                 <div class="col l4 offset-l2 s12">
@@ -26,7 +26,7 @@
         </div>
         <div class="footer-copyright lighten">
             <div class="container">
-                © {{display "currentYear"}} {{_ "designedBy_text"}} {{conf "author.name"}} {{_ "for_text"}} {{conf "appName"}}
+                © {{display "currentYear"}} {{i18n "designedBy_text"}} {{conf "author.name"}} {{i18n "for_text"}} {{conf "appName"}}
                 <a class="right" href="{{conf "author.website"}}" target="_blank">
                     <i class="mdi-social-public small left"></i>
                     {{conf "author.websiteText"}}

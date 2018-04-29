@@ -31,6 +31,7 @@ Skeletor = {
     numeral: numeral,
     pagePlaceholders: {},
     availableTemplates: {},
+    i18n: {},
 
     // to be used for application's defined callbacks on skeletor's templates
     customCallbacks: {

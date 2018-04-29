@@ -5,12 +5,12 @@
             <h4 class="valign">
                 {{#if data.item}}
                     {{#unless skeleformTest data.item.name "SUPERUSER"}}
-                        {{_ "updateRole_text"}}
+                        {{i18n "updateRole_text"}}
                     {{else}}
                         {{data.item.name}}
                     {{/unless}}
                 {{else}}
-                    {{_ "createRole_text"}}
+                    {{i18n "createRole_text"}}
                 {{/if}}
             </h4>
         </div>

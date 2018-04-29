@@ -2,14 +2,14 @@
     <div class="skelePanel">
         <i class="material-icons large left">beenhere</i>
         <h2>
-            {{_ "rolesListTitle_text"}}
+            {{i18n "rolesListTitle_text"}}
         </h2>
 
         {{#if (skeleCheckPermissions "allowRolesCreate")}}
             <div class="listToolbarContainer">
                 <a href="/panel/roles/create{{skeleCurrentLangLink}}" class="waves-effect waves-light btn thirdColor">
                     <i class="material-icons small left">add_box</i>
-                    {{_ "rolesCreate_btn"}}
+                    {{i18n "rolesCreate_btn"}}
                 </a>
             </div>
         {{/if}}

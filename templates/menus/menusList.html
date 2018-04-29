@@ -2,14 +2,14 @@
     <div class="skelePanel">
         <i class="material-icons large left">menu</i>
         <h2>
-            {{_ "menusListTitle_text"}}
+            {{i18n "menusListTitle_text"}}
         </h2>
 
         {{#if (skeleCheckPermissions "allowMenusCreate")}}
             <div class="listToolbarContainer">
                 <a href="/panel/menus/{{defaultLang}}/create{{skeleCurrentLangLink}}" class="waves-effect waves-light btn thirdColor">
                     <i class="material-icons small left">add_box</i>
-                    {{_ "menusCreate_btn"}}
+                    {{i18n "menusCreate_btn"}}
                 </a>
             </div>
         {{/if}}

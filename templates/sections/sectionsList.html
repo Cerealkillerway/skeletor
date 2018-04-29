@@ -2,14 +2,14 @@
     <div class="skelePanel">
         <i class="material-icons large left">assignment</i>
         <h2>
-            {{_ "sectionsListTitle_text"}}
+            {{i18n "sectionsListTitle_text"}}
         </h2>
 
         {{#if (skeleCheckPermissions "allowSectionsCreate")}}
             <div class="listToolbarContainer">
                 <a href="/panel/sections/{{defaultLang}}/create{{skeleCurrentLangLink}}" class="waves-effect waves-light btn thirdColor">
                     <i class="material-icons small left">add_box</i>
-                    {{_ "sectionsCreate_btn"}}
+                    {{i18n "sectionsCreate_btn"}}
                 </a>
             </div>
         {{/if}}

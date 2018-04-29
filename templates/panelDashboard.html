@@ -1,7 +1,7 @@
 <template name="skelePanelDashboard">
     <div class="skelePanel skeleDashboard center-align">
         <h4>
-            <b>{{conf "appName"}} {{_ "adminTools_text"}}</b>
+            <b>{{conf "appName"}} {{i18n "adminTools_text"}}</b>
         </h4>
 
         {{#if
@@ -33,66 +33,66 @@
 
 
 <template name="skeleDashboardWesiteButtons">
-    <h4>{{_ "websiteButtons_text"}}</h4>
+    <h4>{{i18n "websiteButtons_text"}}</h4>
 
     <div class="buttonsContainer">
-        <a href="/{{defaultLang}}/home" target="_blank" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "openWebsite_tooltip"}}">
+        <a href="/{{defaultLang}}/home" target="_blank" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{i18n "openWebsite_tooltip"}}">
             <i class="material-icons large">public</i>
-            <div>{{_ "openWebsite_btn"}}</div>
+            <div>{{i18n "openWebsite_btn"}}</div>
         </a>
         {{#if (skeleCheckPermissions "allowSectionsRead")}}
-            <a href="/panel/sections/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Sections_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "sections_tooltip"}}">
+            <a href="/panel/sections/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Sections_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{i18n "sections_tooltip"}}">
                 <i class="material-icons">assignment</i>
-                <div>{{_ "sections_btn"}}</div>
+                <div>{{i18n "sections_btn"}}</div>
             </a>
         {{/if}}
         {{#if (skeleCheckPermissions "allowPagesRead")}}
-            <a href="/panel/pages/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Pages_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "pages_tooltip"}}">
+            <a href="/panel/pages/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Pages_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{i18n "pages_tooltip"}}">
                 <i class="material-icons">find_in_page</i>
-                <div>{{_ "pages_btn"}}</div>
+                <div>{{i18n "pages_btn"}}</div>
             </a>
         {{/if}}
         {{#if (skeleCheckPermissions "allowMenusRead")}}
-            <a href="/panel/menus/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Sections_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "menus_tooltip"}}">
+            <a href="/panel/menus/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Sections_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{i18n "menus_tooltip"}}">
                 <i class="material-icons">menu</i>
-                <div>{{_ "menus_btn"}}</div>
+                <div>{{i18n "menus_btn"}}</div>
             </a>
         {{/if}}
     </div>
 </template>
 
 <template name="skeleDashboardAclButtons">
-    <h4>{{_ "aclButtons_text"}}</h4>
+    <h4>{{i18n "aclButtons_text"}}</h4>
 
     <div class="buttonsContainer">
         {{#if (skeleCheckPermissions "allowUsersRead")}}
-            <a href="/panel/users{{skeleCurrentLangLink}}{{isPaginated "Users_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "users_tooltip"}}">
+            <a href="/panel/users{{skeleCurrentLangLink}}{{isPaginated "Users_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{i18n "users_tooltip"}}">
                 <i class="material-icons">person</i>
-                <div>{{_ "users_btn"}}</div>
+                <div>{{i18n "users_btn"}}</div>
             </a>
         {{/if}}
         {{#if (skeleCheckPermissions "allowRolesRead")}}
-            <a href="/panel/roles{{skeleCurrentLangLink}}{{isPaginated "Roles_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "roles_tooltip"}}">
+            <a href="/panel/roles{{skeleCurrentLangLink}}{{isPaginated "Roles_default"}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{i18n "roles_tooltip"}}">
                 <i class="material-icons">beenhere</i>
-                <div>{{_ "roles_btn"}}</div>
+                <div>{{i18n "roles_btn"}}</div>
             </a>
         {{/if}}
     </div>
 </template>
 
 <template name="skeleDashboardConfigButtons">
-    <h4>{{_ "configButtons_text"}}</h4>
+    <h4>{{i18n "configButtons_text"}}</h4>
 
     {{#if (skeleCheckPermissions "allowConfigUpdate")}}
         <div class="buttonsContainer">
-            <a href="/panel/settings/update{{skeleCurrentLangLink}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "settings_tooltip"}}">
+            <a href="/panel/settings/update{{skeleCurrentLangLink}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{i18n "settings_tooltip"}}">
                 <i class="material-icons">&#xE8B8;</i>
-                <div>{{_ "settings_btn"}}</div>
+                <div>{{i18n "settings_btn"}}</div>
             </a>
 
-            <a href="/panel/application-data/update{{skeleCurrentLangLink}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{_ "applicationData_tooltip"}}">
+            <a href="/panel/application-data/update{{skeleCurrentLangLink}}" class="btn tooltipped dashboardBtn" data-position="bottom" data-delay="10" data-tooltip="{{i18n "applicationData_tooltip"}}">
                 <i class="material-icons">fingerprint</i>
-                <div>{{_ "applicationData_btn"}}</div>
+                <div>{{i18n "applicationData_btn"}}</div>
             </a>
         </div>
     {{/if}}

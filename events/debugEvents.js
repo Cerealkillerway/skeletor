@@ -18,7 +18,7 @@ Template.debugToolbar.events({
     },
     // change current lang
     'click #debugLangChange': function(event, instance) {
-        if (TAPi18n.getLanguage() === 'it') changeLang('en');
+        if (i18n.currentLocale.get() === 'it') changeLang('en');
         else changeLang('it');
     },
     // toggle logger function

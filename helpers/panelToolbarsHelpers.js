@@ -34,7 +34,7 @@ Template.langBar.helpers({
         }
     },
     isActiveLang: function(buttonLang) {
-        if (TAPi18n.getLanguage() === buttonLang) {
+        if (i18n.currentLocale.get() === buttonLang) {
             return 'active';
         }
     }

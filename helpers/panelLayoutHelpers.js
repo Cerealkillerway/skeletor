@@ -1,6 +1,8 @@
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
 
 
+BlazeLayout.setRoot('body');
+
 // settings
 Template.settingCreate.helpers({
     data: function() {

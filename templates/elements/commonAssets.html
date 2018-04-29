@@ -6,17 +6,17 @@
                     <div class="valign-wrapper">
                         <i class="material-icons large">&#xE925;</i>
                         <h4 class="valign">
-                            {{_ "permissionDenied_title"}}
+                            {{i18n "permissionDenied_title"}}
                         </h4>
                     </div>
 
                     <div class="topSpaced">
-                        {{_ "unauthorized_text"}}
+                        {{i18n "unauthorized_text"}}
                     </div>
                     <div class="row">
                         <div class="col s12">
                             <a id="backToLogin" class="secondColor vSpaced waves-effect waves-light btn">
-                                <i class="material-icons left">perm_identity</i>{{_ "backTogin_btn"}}
+                                <i class="material-icons left">perm_identity</i>{{i18n "backTogin_btn"}}
                             </a>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
 <template name="workInProgress">
     <div class="panel centeredSection">
         <img src="/images/assets/work-in-progress.png"><br><br>
-        {{_ "workInProgress_text"}}
+        {{i18n "workInProgress_text"}}
     </div>
 </template>
 
@@ -39,19 +39,19 @@
 <template name="404">
     <div class="panel centeredSection">
         <img src="/images/logos/miniLogo.png">
-        <h2 class="blueTitle">{{_ "404Title_text"}}</h2>
+        <h2 class="blueTitle">{{i18n "404Title_text"}}</h2>
 
-        <p><b>{{_ "404Subtitle_text"}}</b></p>
-        <p>{{{_ "404Detail_text"}}}</p>
+        <p><b>{{i18n "404Subtitle_text"}}</b></p>
+        <p>{{{i18n "404Detail_text"}}}</p>
     </div>
 </template>
 
 <template name="unpublished">
     <div class="panel centeredSection">
         <img src="/images/logos/miniLogo.png">
-        <h2 class="blueTitle">{{_ "unpublishedTitle_text"}}</h2>
+        <h2 class="blueTitle">{{i18n "unpublishedTitle_text"}}</h2>
 
-        <p><b>{{_ "unpublishedSubtitle_text"}}</b></p>
-        <p>{{{_ "unpublishedDetail_text"}}}</p>
+        <p><b>{{i18n "unpublishedSubtitle_text"}}</b></p>
+        <p>{{{i18n "unpublishedDetail_text"}}}</p>
     </div>
 </template>
