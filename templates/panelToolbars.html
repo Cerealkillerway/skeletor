@@ -32,7 +32,7 @@
     <div class="langFlagsWrapper">
         {{#each langs}}
             <div class="langFlag {{isActiveLang this}}" data-lang="{{this}}">
-                <img src="/images/icons/lang/{{this}}.jpg">
+                <img src="{{skeleStaticPath}}/images/icons/lang/{{this}}.jpg">
             </div>
         {{/each}}
     </div>
@@ -45,7 +45,7 @@
         {{#each social}}
             <div class="socialIcon" data-type="{{type}}">
                 <a href="{{url}}" target="_blank">
-                    <img src="/images/icons/social/{{type}}.jpg">
+                    <img src="{{skeleStaticPath}}/images/icons/social/{{type}}.jpg">
                 </a>
             </div>
         {{/each}}
