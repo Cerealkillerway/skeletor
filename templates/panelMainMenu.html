@@ -81,7 +81,7 @@
 <template name="panelMainMenuPages">
     {{#if (skeleCheckPermissions "allowSectionsRead")}}
         <li>
-            <a href="/panel/sections/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Sections_default"}}">
+            <a href="/panel/sections/{{defaultLang}}{{skeleCurrentLangLink}}{{skelelistIsPaginated "Sections_default"}}">
                 <i class="material-icons left">assignment</i>
                 <div class="navItemName">{{i18n "menu_sections"}}</div>
             </a>
@@ -89,7 +89,7 @@
     {{/if}}
     {{#if (skeleCheckPermissions "allowPagesRead")}}
         <li>
-            <a href="/panel/pages/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Pages_default"}}">
+            <a href="/panel/pages/{{defaultLang}}{{skeleCurrentLangLink}}{{skelelistIsPaginated "Pages_default"}}">
                 <i class="material-icons left">find_in_page</i>
                 <div class="navItemName">{{i18n "menu_pages"}}</div>
             </a>
@@ -97,7 +97,7 @@
     {{/if}}
     {{#if (skeleCheckPermissions "allowMenusRead")}}
         <li>
-            <a href="/panel/menus/{{defaultLang}}{{skeleCurrentLangLink}}{{isPaginated "Menus_default"}}">
+            <a href="/panel/menus/{{defaultLang}}{{skeleCurrentLangLink}}{{skelelistIsPaginated "Menus_default"}}">
                 <i class="material-icons left">menu</i>
                 <div class="navItemName">{{i18n "menu_menus"}}</div>
             </a>
@@ -110,7 +110,7 @@
 <template name="panelMainMenuAcl">
     {{#if (skeleCheckPermissions "allowUsersRead")}}
         <li>
-            <a href="/panel/roles{{skeleCurrentLangLink}}{{isPaginated "Roles_default"}}">
+            <a href="/panel/roles{{skeleCurrentLangLink}}{{skelelistIsPaginated "Roles_default"}}">
                 <i class="material-icons left">beenhere</i>
                 <div class="navItemName">{{i18n "menu_roles"}}</div>
             </a>
@@ -118,7 +118,7 @@
     {{/if}}
     {{#if (skeleCheckPermissions "allowRolesRead")}}
         <li>
-            <a href="/panel/users{{skeleCurrentLangLink}}{{isPaginated "Users_default"}}">
+            <a href="/panel/users{{skeleCurrentLangLink}}{{skelelistIsPaginated "Users_default"}}">
                 <i class="material-icons left">person</i>
                 <div class="navItemName">{{i18n "menu_users"}}</div>
             </a>
