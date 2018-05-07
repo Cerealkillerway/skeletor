@@ -483,11 +483,13 @@ Template.menuCreate.onCreated(function() {
             menuQuery.name = name;
 
             let currentMenu = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', menuQuery, {});
+            let menuItems = Skeletor.persistentSubsManagers.menusSubs.subscribe('findMenuItems', name, currentLang);
 
             // set reactive var for all subscriptions ready
             this.skeleSubsReady.set(
                 Skeletor.subsManagers.menusSubs.ready() &&
-                currentMenu.ready()
+                currentMenu.ready() &&
+                menuItems.ready()
             );
         }
         else {

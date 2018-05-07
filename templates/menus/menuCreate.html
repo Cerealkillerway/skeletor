@@ -7,7 +7,7 @@
                     {{i18n "updateMenu_text"}}
                 {{else}}
                     {{i18n "createMenu_text"}}
-                {{/if}} [{{currentLang}}]
+                {{/if}} [{{currentContentLang}}]
             </h4>
         </div>
         {{#if data.item}}
@@ -16,6 +16,16 @@
 
         <div class="skeleformWrapper">
             {{> skeleform data}}
+        </div>
+
+        <div class="menuItems">
+            <ul>
+                {{#each data.menuItems}}
+                    <li>
+                        {{skeleLangAttribute this "menuName" "skeletorDefault"}}
+                    </li>
+                {{/each}}
+            </ul>
         </div>
     </div>
 </template>

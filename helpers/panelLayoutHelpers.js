@@ -221,6 +221,7 @@ Template.menuCreate.helpers({
         const instance = Template.instance();
         let context = {};
         let name = FlowRouter.getParam('name');
+        let currentLang = FlowRouter.getParam('itemLang');
         let segmentLang = FlowRouter.getQueryParam('sLang');
 
         if (name) {
@@ -236,12 +237,29 @@ Template.menuCreate.helpers({
             }
 
             context.item = Skeletor.Data.Menus.findOne(query);
+
+            if (context.item) {
+                // find menu items
+                let pagesQuery = {};
+                let pagesOptions = {
+                    fields: {}
+                };
+
+                pagesQuery.menu = context.item._id;
+                pagesQuery[currentLang + '---published'] = true;
+                pagesOptions.fields[currentLang + '---code'] = 1;
+                pagesOptions.fields[currentLang + '---menuName'] = 1;
+                pagesOptions.fields[currentLang + '---menuIcon'] = 1;
+
+                context.menuItems = Skeletor.Data.Pages.find(pagesQuery, pagesOptions);
+            }
         }
 
         context.schemaName = 'Menus_default';
         context.schema = Skeletor.Schemas.Menus_default;
         context.skeleSubsReady = instance.skeleSubsReady;
 
+        console.log(context);
         return context;
     }
 });
