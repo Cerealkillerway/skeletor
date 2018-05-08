@@ -308,6 +308,15 @@ body.skelePanelBody {
         margin-bottom: 35px;
     }
 
+    .menuItems {
+        .collection-item {
+            &.sortable-drag {
+                background-color: $secondPanelColor !important;
+                color: $secondPanelColorText;
+            }
+        }
+    }
+
     .modal {
         color:$firstTextColor;
         z-index: 3003 !important;

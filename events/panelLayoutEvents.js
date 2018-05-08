@@ -1,4 +1,5 @@
 import { FlowRouter } from 'meteor/ostrio:flow-router-extra';
+import Sortable from 'sortablejs';
 
 
 // Panel layout
@@ -497,6 +498,17 @@ Template.menuCreate.onCreated(function() {
             this.skeleSubsReady.set(Skeletor.subsManagers.menusSubs.ready());
         }
     });
+});
+
+Template.menuItemsSortable.onRendered(function() {
+    let items = this.$('.menuItems')[0];
+    let sortableOptions = {
+        animation: 150,
+        handle: '.dragHandle',
+    }
+
+
+    let sortable = Sortable.create(items, sortableOptions);
 });
 
 

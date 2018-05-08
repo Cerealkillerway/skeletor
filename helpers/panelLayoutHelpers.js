@@ -242,7 +242,12 @@ Template.menuCreate.helpers({
                 // find menu items
                 let pagesQuery = {};
                 let pagesOptions = {
-                    fields: {}
+                    fields: {
+                        menuOrder: 1
+                    },
+                    sort: {
+                        menuOrder: 1
+                    }
                 };
 
                 pagesQuery.menu = context.item._id;
@@ -259,7 +264,6 @@ Template.menuCreate.helpers({
         context.schema = Skeletor.Schemas.Menus_default;
         context.skeleSubsReady = instance.skeleSubsReady;
 
-        console.log(context);
         return context;
     }
 });

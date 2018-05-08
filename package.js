@@ -134,7 +134,8 @@ Package.onUse(function(api) {
 
 Npm.depends({
     'numeral': '2.0.4',
-    'nested-property': '0.0.7'
+    'nested-property': '0.0.7',
+    'sortablejs': '1.7.0'
 });
 
 Package.onTest(function(api) {
