@@ -331,7 +331,7 @@ body.skelePanelBody {
             box-shadow: 0 1px 0 0 $firstFocusColor !important;
             border-color: $firstFocusColor !important;
         }
-        label, .input-field input:not([readonly]) + label, .input-field input.datepicker + label, .input-field .prefix, .note-editor + label {
+        label, .input-field input:not([readonly]) + label, .input-field input.datepicker + label, .input-field .prefix {
             color: $firstPanelColorText !important;
         }
         .input-field input:focus:not([readonly]) + label, .input-field input.datepicker:focus + label, .input-field .prefix.active, textarea.materialize-textarea:focus:not([readonly]) + label {
