@@ -317,6 +317,11 @@ body.skelePanelBody {
         }
     }
 
+    // select dropdowns
+    .dropdown-content {
+        z-index: 10000
+    }
+
     .modal {
         color:$firstTextColor;
         z-index: 3003 !important;
