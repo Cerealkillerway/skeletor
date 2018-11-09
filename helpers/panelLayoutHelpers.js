@@ -54,6 +54,7 @@ Template.usersList.helpers({
         context.schemaName = 'Users_default';
         context.schema = Skeletor.Schemas.Users_default;
         context.skeleSubsReady = instance.skeleSubsReady;
+        context.loadMore = instance.loadMore;
 
         return context;
     }
@@ -88,6 +89,7 @@ Template.rolesList.helpers({
         context.schemaName = 'Roles_default';
         context.schema = Skeletor.Schemas.Roles_default;
         context.skeleSubsReady = instance.skeleSubsReady;
+        context.loadMore = instance.loadMore;
 
         return context;
     }
@@ -121,6 +123,7 @@ Template.sectionsList.helpers({
         context.schemaName = 'Sections_default';
         context.schema = Skeletor.Schemas.Sections_default;
         context.skeleSubsReady = instance.skeleSubsReady;
+        context.loadMore = instance.loadMore;
 
         return context;
     }
@@ -166,6 +169,7 @@ Template.pagesList.helpers({
         context.schemaName = 'Pages_default';
         context.schema = Skeletor.Schemas.Pages_default;
         context.skeleSubsReady = instance.skeleSubsReady;
+        context.loadMore = instance.loadMore;
 
         return context;
     }
@@ -211,6 +215,7 @@ Template.menusList.helpers({
         context.schemaName = 'Menus_default';
         context.schema = Skeletor.Schemas.Menus_default;
         context.skeleSubsReady = instance.skeleSubsReady;
+        context.loadMore = instance.loadMore;
 
         return context;
     }

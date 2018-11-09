@@ -136,6 +136,16 @@ Template.usersList.onCreated(function() {
         name: 1
     };
 
+    this.loadMore = [];
+    this.loadMore.push({
+        subscriptionHandler: 'usersSubs',
+        subscriptionName: 'findDocuments',
+        collection: 'Users',
+        query: {},
+        options: userOptions,
+        schemaName: 'Users_default'
+    });
+
     this.autorun(() => {
         let usersList = Skeletor.subsManagers.usersSubs.subscribe('findDocuments', 'Users', {}, userOptions);
         let rolesList = Skeletor.subsManagers.rolesSubs.subscribe('findDocuments', 'Roles', {}, rolesOptions);
@@ -203,6 +213,16 @@ Template.rolesList.onCreated(function() {
         name: 1
     };
 
+    this.loadMore = [];
+    this.loadMore.push({
+        subscriptionHandler: 'rolesSubs',
+        subscriptionName: 'findDocuments',
+        collection: 'Roles',
+        query: {},
+        options: rolesOptions,
+        schemaName: 'Roles_default'
+    });
+
     this.autorun(() => {
         let rolesList = Skeletor.subsManagers.rolesSubs.subscribe('findDocuments', 'Roles', {}, rolesOptions);
 
@@ -255,6 +275,15 @@ Template.sectionsList.onCreated(function() {
     let sectionsOptions = {};
 
     sectionsOptions.fields = {};
+    this.loadMore = [];
+    this.loadMore.push({
+        subscriptionHandler: 'sectionsSubs',
+        subscriptionName: 'findDocuments',
+        collection: 'Sections',
+        query: {},
+        options: sectionsOptions,
+        schemaName: 'Sections_default'
+    });
 
     this.autorun(() => {
         let currentLang = FlowRouter.getParam('itemLang');
@@ -330,6 +359,15 @@ Template.pagesList.onCreated(function() {
     let menuOptions = {
         fields: {}
     };
+    this.loadMore = [];
+    this.loadMore.push({
+        subscriptionHandler: 'pagesSubs',
+        subscriptionName: 'findDocuments',
+        collection: 'Pages',
+        query: {},
+        options: pagesOptions,
+        schemaName: 'Pages_default'
+    });
 
     sectionOptions.fields = {};
 
@@ -444,6 +482,15 @@ Template.menusList.onCreated(function() {
     let menusOptions = {};
 
     menusOptions.fields = {};
+    this.loadMore = [];
+    this.loadMore.push({
+        subscriptionHandler: 'menusSubs',
+        subscriptionName: 'findDocuments',
+        collection: 'Menus',
+        query: {},
+        options: menusOptions,
+        schemaName: 'Menus_default'
+    });
 
     this.autorun(() => {
         let currentLang = FlowRouter.getParam('itemLang');
