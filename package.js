@@ -35,7 +35,7 @@ Package.onUse(function(api) {
         'momentjs:moment@2.19.2',
         'cerealkiller:skeleutils',
         'gfk:underscore-deep@1.0.0',
-        'ros:publish-counts@0.4.0'
+        'jcbernack:reactive-aggregate@1.0.0'
     ],
     ['client', 'server']);
 

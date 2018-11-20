@@ -1,0 +1,143 @@
+import { Counts } from 'meteor/ros:publish-counts';
+
+
+//GENERAL PUBLICATIONS
+// Find documents from a collection
+Meteor.publish('findDocuments', function(collection, query, options, schemaName, page) {
+    let permitted = false;
+    let publishHandle = [];
+
+    // check permissions
+    if (SkeleUtils.Permissions.checkPermissions(Skeletor.Utilities.getPermissions(collection, 'read'))) {
+        permitted = true;
+    }
+    if (collection === 'Users' || collection === 'Roles') {
+        let currentUserDocument = Meteor.user();
+
+        if (!permitted && (currentUserDocument !== null)) {
+            switch (collection) {
+                case 'Users':
+                query = {_id: Meteor.userId()}
+                break;
+
+                case 'Roles':
+                query = {_id: {$in: currentUserDocument.profile.roles}};
+                break;
+            }
+        }
+
+        permitted = true;
+    }
+
+    if (!permitted) {
+        throw new Meteor.Error(`unauthorized to read ${collection}`);
+    }
+
+    /* ### TEST ###
+    let rawCollection = Skeletor.Data.Customers.rawCollection();
+
+    console.log('================================================================');
+    rawCollection.aggregate([
+        {
+            '$project': {
+                'last_name': 1,
+                'i_last_name': {
+                    '$toLower': '$last_name'
+                },
+                'first_name': 1,
+                'i_first_name': {
+                    '$toLower': '$first_name'
+                }
+            }
+        },
+        {
+            '$sort': {
+                i_last_name: 1, i_first_name: 1
+            }
+        }
+    ]).toArray(function(error, result) {
+        console.log(result);
+    });
+    ### END TEST ###*/
+
+    if (schemaName) {
+        let schema = Skeletor.Schemas[schemaName];
+        let listSchema = schema.__listView;
+        let itemsPerPage = listSchema.options.itemsPerPage || 10;
+        let rawCollection = Skeletor.Data[collection].rawCollection();
+        let aggregatePipeline = [];
+        let projectOptions = {
+            '$project': {}
+        };
+        let sortOptions = {
+            '$sort': {}
+        }
+
+        if (options && options.fields) {
+            _.each(options.fields, function(value, fieldName) {
+                projectOptions.$project[fieldName] = 1;
+            });
+        }
+
+        if (listSchema.sort) {
+            _.each(listSchema.sort, function(value, fieldName) {
+                if (value.caseInsensitive) {
+                    projectOptions.$project[`i_${fieldName}`] = {'$toLower': '$' + fieldName};
+
+                    sortOptions.$sort[`i_${fieldName}`] = value.direction;
+                }
+                else {
+                    sortOptions.$sort[fieldName] = value.direction;
+                }
+            });
+        }
+
+        aggregatePipeline.push(projectOptions);
+        aggregatePipeline.push(sortOptions);
+
+        rawCollection.aggregateSync = Meteor.wrapAsync(rawCollection.aggregate)
+
+        let result = rawCollection.aggregateSync(aggregatePipeline);
+
+        console.log(result);
+    }
+
+    return [Skeletor.Data[collection].find()];
+
+    // handle pagination
+    /*if (schemaName) {
+        let schema = Skeletor.Schemas[schemaName];
+        let listSchema = schema.__listView;
+        let itemsPerPage = listSchema.options.itemsPerPage || 10;
+
+        if (listSchema.sort) {
+            let sortOptions = {};
+
+            _.each(listSchema.sort, function(value, fieldName) {
+                sortOptions[fieldName] = value.direction;
+            });
+
+            options.sort = sortOptions;
+        }
+
+        if (listSchema.options && listSchema.options.pagination) {
+            options.limit = itemsPerPage;
+        }
+
+        if (page) {
+            options.skip = itemsPerPage * (page - 1);
+        }
+    }
+
+    publishHandle.push(Skeletor.Data[collection].find(query, options));
+
+    return publishHandle;*/
+});
+
+
+Meteor.publish('countCollection', function(collection) {
+    Counts.publish(this, `${collection}Counter`, Skeletor.Data[collection].find());
+});
+
+
+//Meteor._sleepForMs(5000);
