@@ -18,7 +18,7 @@ Template.debugToolbar.events({
     },
     // change current lang
     'click #debugLangChange': function(event, instance) {
-        if (i18n.currentLocale.get() === 'it') changeLang('en');
+        if (Skeletor.Skelelang.i18n.currentLocale.get() === 'it') changeLang('en');
         else changeLang('it');
     },
     // toggle logger function

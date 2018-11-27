@@ -21,14 +21,14 @@ Template.statusBar.rendered = function() {
 
         if (id === 'statusBarVisibility') {
             if ($(this).children('i').first().html() === 'star') {
-                name = i18n.get('setAutohide_tooltip');
+                name = Skeletor.Skelelang.i18n.get('setAutohide_tooltip');
             }
             else {
-                name = i18n.get('setFixedMode_tooltip');
+                name = Skeletor.Skelelang.i18n.get('setFixedMode_tooltip');
             }
         }
         else {
-            name = i18n.get(id + '_tooltip');
+            name = Skeletor.Skelelang.i18n.get(id + '_tooltip');
         }
 
         Meteor.clearTimeout(cleaner);

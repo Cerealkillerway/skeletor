@@ -34,7 +34,7 @@ Template.langBar.helpers({
         }
     },
     isActiveLang: function(buttonLang) {
-        if (i18n.currentLocale.get() === buttonLang) {
+        if (Skeletor.Skelelang.i18n.currentLocale.get() === buttonLang) {
             return 'active';
         }
     }

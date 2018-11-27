@@ -13,6 +13,12 @@ Package.onUse(function(api) {
 
     api.versionsFrom('METEOR@1.6.1');
 
+
+    api.use([
+        'cerealkiller:skelelang',
+    ],
+    ['client', 'server']);
+
     // packages
     api.use([
         'jquery',
@@ -84,8 +90,8 @@ Package.onUse(function(api) {
 
     // i18n
     /*api.addFiles([
-        'i18n/en.i18n.json',
-        'i18n/it.i18n.json'
+        'i18n/en.Skeletor.Skelelang.i18n.json',
+        'i18n/it.Skeletor.Skelelang.i18n.json'
     ], ['client', 'server']);*/
 
 
@@ -108,6 +114,7 @@ Package.onUse(function(api) {
     ['client']);
 
     api.addFiles([
+        'lib/utils.js',
         'lib/main-init.js',
         'lib/routerPanel.js',
         'lib/methods.js',

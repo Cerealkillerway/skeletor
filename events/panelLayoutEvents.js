@@ -137,7 +137,7 @@ Template.usersList.onCreated(function() {
     };
 
     this.autorun(() => {
-        let usersList = Skeletor.subsManagers.usersSubs.subscribe('findDocuments', 'Users', {}, userOptions);
+        let usersList = Skeletor.subsManagers.usersSubs.subscribe('rawFindDocuments', 'Users', {}, userOptions, 'Users_default');
         let rolesList = Skeletor.subsManagers.rolesSubs.subscribe('findDocuments', 'Roles', {}, rolesOptions);
 
         // set reactive var for all subscriptions ready
@@ -155,9 +155,9 @@ Template.userCreate.onCreated(function() {
     let usersOptions = {};
     let rolesOptions = {};
 
-    usersOptions.fields = {
+    /*usersOptions.fields = {
         username: 1
-    };
+    };*/
     rolesOptions.fields = {
         name: 1
     };
@@ -166,7 +166,7 @@ Template.userCreate.onCreated(function() {
         let username = FlowRouter.getParam('username');
 
         // needed for both update and creation
-        let usersList = Skeletor.subsManagers.usersSubs.subscribe('findDocuments', 'Users', {}, usersOptions);
+        //let usersList = Skeletor.subsManagers.usersSubs.subscribe('findDocuments', 'Users', {}, usersOptions);
         let rolesList = Skeletor.subsManagers.rolesSubs.subscribe('findDocuments', 'Roles', {}, rolesOptions);
 
         // case updating record
@@ -177,7 +177,7 @@ Template.userCreate.onCreated(function() {
 
             // set reactive var for all subscriptions ready
             this.skeleSubsReady.set(
-                Skeletor.subsManagers.usersSubs.ready() &&
+                //Skeletor.subsManagers.usersSubs.ready() &&
                 Skeletor.subsManagers.rolesSubs.ready() &&
                 currentUser.ready()
             );
@@ -185,7 +185,7 @@ Template.userCreate.onCreated(function() {
         else {
             // set reactive var for all subscriptions ready
             this.skeleSubsReady.set(
-                Skeletor.subsManagers.usersSubs.ready() &&
+                //Skeletor.subsManagers.usersSubs.ready() &&
                 Skeletor.subsManagers.rolesSubs.ready()
             );
         }
@@ -204,7 +204,7 @@ Template.rolesList.onCreated(function() {
     };
 
     this.autorun(() => {
-        let rolesList = Skeletor.subsManagers.rolesSubs.subscribe('findDocuments', 'Roles', {}, rolesOptions);
+        let rolesList = Skeletor.subsManagers.rolesSubs.subscribe('rawFindDocuments', 'Roles', {}, rolesOptions, 'Roles_default');
 
         // set reactive var for all subscriptions ready
         this.skeleSubsReady.set(Skeletor.subsManagers.rolesSubs.ready());
@@ -267,7 +267,7 @@ Template.sectionsList.onCreated(function() {
             sectionsOptions.fields[defaultLang + '---name'] = 1;
         }
 
-        let sectionsList = Skeletor.subsManagers.sectionsSubs.subscribe('findDocuments', 'Sections', {}, sectionsOptions);
+        let sectionsList = Skeletor.subsManagers.sectionsSubs.subscribe('rawFindDocuments', 'Sections', {}, sectionsOptions, 'Sections_default');
 
         // set reactive var for all subscriptions ready
         this.skeleSubsReady.set(Skeletor.subsManagers.sectionsSubs.ready());
@@ -355,7 +355,7 @@ Template.pagesList.onCreated(function() {
         }
 
 
-        let pagesList = Skeletor.subsManagers.pagesSubs.subscribe('findDocuments', 'Pages', {}, pagesOptions);
+        let pagesList = Skeletor.subsManagers.pagesSubs.subscribe('rawFindDocuments', 'Pages', {}, pagesOptions, 'Pages_default');
         let sectionCodes = Skeletor.subsManagers.sectionsSubs.subscribe('findDocuments', 'Sections', {}, sectionOptions);
         let menuCodes = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', {}, menuOptions);
 
@@ -454,7 +454,7 @@ Template.menusList.onCreated(function() {
             menusOptions.fields.name = 1;
         }
 
-        let menusList = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', {}, menusOptions);
+        let menusList = Skeletor.subsManagers.menusSubs.subscribe('rawFindDocuments', 'Menus', {}, menusOptions, 'Menus_default');
 
         // set reactive var for all subscriptions ready
         this.skeleSubsReady.set(Skeletor.subsManagers.menusSubs.ready());
