@@ -123,29 +123,7 @@ Template.applicationDataCreate.onCreated(function() {
 
 // Users
 Template.usersList.onCreated(function() {
-    this.skeleSubsReady = new ReactiveVar(false);
-    // subscribe data
-    let userOptions = {};
-    let rolesOptions = {};
-
-    userOptions.fields = {
-        username: 1,
-        profile: 1
-    };
-    rolesOptions.fields = {
-        name: 1
-    };
-
-    this.autorun(() => {
-        let usersList = Skeletor.subsManagers.usersSubs.subscribe('rawFindDocuments', 'Users', {}, userOptions, 'Users_default');
-        let rolesList = Skeletor.subsManagers.rolesSubs.subscribe('findDocuments', 'Roles', {}, rolesOptions);
-
-        // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(
-            Skeletor.subsManagers.usersSubs.ready() &&
-            Skeletor.subsManagers.rolesSubs.ready()
-        );
-    });
+    Skeletor.Utilities.autoSubscribe(this, 'Users_default', 'list');
 });
 
 Template.userCreate.onCreated(function() {
@@ -195,20 +173,7 @@ Template.userCreate.onCreated(function() {
 
 // Roles
 Template.rolesList.onCreated(function() {
-    this.skeleSubsReady = new ReactiveVar(false);
-    // subscribe data
-    let rolesOptions = {};
-
-    rolesOptions.fields = {
-        name: 1
-    };
-
-    this.autorun(() => {
-        let rolesList = Skeletor.subsManagers.rolesSubs.subscribe('rawFindDocuments', 'Roles', {}, rolesOptions, 'Roles_default');
-
-        // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(Skeletor.subsManagers.rolesSubs.ready());
-    });
+    Skeletor.Utilities.autoSubscribe(this, 'Roles_default', 'list');
 });
 
 Template.roleCreate.onCreated(function() {
@@ -249,29 +214,7 @@ Template.roleCreate.onCreated(function() {
 
 // Sections
 Template.sectionsList.onCreated(function() {
-    this.skeleSubsReady = new ReactiveVar(false);
-    // subscribe data
-    let defaultLang = Skeletor.configuration.lang.default;
-    let sectionsOptions = {};
-
-    sectionsOptions.fields = {};
-
-    this.autorun(() => {
-        let currentLang = FlowRouter.getParam('itemLang');
-
-        sectionsOptions.fields[currentLang + '---code'] = 1;
-        sectionsOptions.fields[currentLang + '---name'] = 1;
-
-        if (currentLang !== defaultLang) {
-            sectionsOptions.fields[defaultLang + '---code'] = 1;
-            sectionsOptions.fields[defaultLang + '---name'] = 1;
-        }
-
-        let sectionsList = Skeletor.subsManagers.sectionsSubs.subscribe('rawFindDocuments', 'Sections', {}, sectionsOptions, 'Sections_default');
-
-        // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(Skeletor.subsManagers.sectionsSubs.ready());
-    });
+    Skeletor.Utilities.autoSubscribe(this, 'Sections_default', 'list');
 });
 
 Template.sectionCreate.onCreated(function() {
@@ -314,58 +257,7 @@ Template.sectionCreate.onCreated(function() {
 
 // Pages
 Template.pagesList.onCreated(function() {
-    this.skeleSubsReady = new ReactiveVar(false);
-    // subscribe data
-    let defaultLang = Skeletor.configuration.lang.default;
-    let pagesOptions = {
-        fields: {
-            section: 1,
-            menu: 1,
-            placeholderItem: 1
-        }
-    };
-    let sectionOptions = {
-        fields: {}
-    };
-    let menuOptions = {
-        fields: {}
-    };
-
-    sectionOptions.fields = {};
-
-    this.autorun(() => {
-        let currentLang = FlowRouter.getParam('itemLang');
-
-        pagesOptions.fields[currentLang + '---title'] = 1;
-        pagesOptions.fields[currentLang + '---code'] = 1;
-        pagesOptions.fields[currentLang + '---published'] = 1;
-
-        sectionOptions.fields[currentLang + '---code'] = 1;
-        sectionOptions.fields[currentLang + '---name'] = 1;
-
-        menuOptions.fields.name = 1;
-
-        if (currentLang !== defaultLang) {
-            pagesOptions.fields[defaultLang + '---title'] = 1;
-            pagesOptions.fields[defaultLang + '---code'] = 1;
-            pagesOptions.fields[defaultLang + '---published'] = 1;
-
-            sectionOptions.fields[defaultLang + '---code'] = 1;
-            sectionOptions.fields[defaultLang + '---name'] = 1;
-        }
-
-
-        let pagesList = Skeletor.subsManagers.pagesSubs.subscribe('rawFindDocuments', 'Pages', {}, pagesOptions, 'Pages_default');
-        let sectionCodes = Skeletor.subsManagers.sectionsSubs.subscribe('findDocuments', 'Sections', {}, sectionOptions);
-        let menuCodes = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', {}, menuOptions);
-
-        // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(
-            Skeletor.subsManagers.pagesSubs.ready() &&
-            Skeletor.subsManagers.sectionsSubs.ready() &&
-            Skeletor.subsManagers.menusSubs.ready()
-        );
-    });
+    Skeletor.Utilities.autoSubscribe(this, 'Pages_default', 'list');
 });
 
 Template.pageCreate.onCreated(function() {
@@ -438,27 +330,7 @@ Template.pageCreate.onCreated(function() {
 
 // Menus
 Template.menusList.onCreated(function() {
-    this.skeleSubsReady = new ReactiveVar(false);
-    // subscribe data
-    let defaultLang = Skeletor.configuration.lang.default;
-    let menusOptions = {};
-
-    menusOptions.fields = {};
-
-    this.autorun(() => {
-        let currentLang = FlowRouter.getParam('itemLang');
-
-        menusOptions.fields.name = 1;
-
-        if (currentLang !== defaultLang) {
-            menusOptions.fields.name = 1;
-        }
-
-        let menusList = Skeletor.subsManagers.menusSubs.subscribe('rawFindDocuments', 'Menus', {}, menusOptions, 'Menus_default');
-
-        // set reactive var for all subscriptions ready
-        this.skeleSubsReady.set(Skeletor.subsManagers.menusSubs.ready());
-    });
+    Skeletor.Utilities.autoSubscribe(this, 'Menus_default', 'list');
 });
 
 Template.menuCreate.onCreated(function() {
