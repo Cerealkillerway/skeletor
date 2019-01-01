@@ -261,70 +261,7 @@ Template.pagesList.onCreated(function() {
 });
 
 Template.pageCreate.onCreated(function() {
-    this.skeleSubsReady = new ReactiveVar(false);
-    // subscribe data
-    let pageQuery = {};
-    let pageOptions = {
-        fields: {}
-    };
-    let sectionOptions = {
-        fields: {}
-    };
-    let menuOptions = {
-        fields: {}
-    };
-
-    this.autorun(() => {
-        let currentLang = FlowRouter.getParam('itemLang');
-        let segmentLang = FlowRouter.getQueryParam('sLang');
-        let defaultLang = Skeletor.configuration.lang.default;
-        let code = FlowRouter.getParam('code');
-
-        // needed for both update and creation
-        let pageCodes = Skeletor.subsManagers.pagesSubs.subscribe('findDocuments', 'Pages', {}, pageOptions);
-
-        pageOptions.fields[currentLang + '---code'] = 1;
-        pageOptions.fields[currentLang + '---published'] = 1;
-
-        sectionOptions.fields[currentLang + '---code'] = 1;
-        sectionOptions.fields[currentLang + '---name'] = 1;
-
-        menuOptions.fields.name = 1;
-
-        if (defaultLang !== currentLang) {
-            sectionOptions.fields[defaultLang + '---code'] = 1;
-            sectionOptions.fields[defaultLang + '---name'] = 1;
-        }
-
-        let sectionCodes = Skeletor.subsManagers.sectionsSubs.subscribe('findDocuments', 'Sections', {}, sectionOptions);
-        let menuCodes = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', {}, menuOptions);
-
-        // case updating record
-        if (code) {
-            pageQuery[segmentLang + '---code'] = code;
-
-            let currentPage = Meteor.subscribe('findDocuments', 'Pages', pageQuery, {});
-            let pageCodes = Skeletor.subsManagers.pagesSubs.subscribe('findDocuments', 'Pages', {}, pageOptions);
-            let sectionCodes = Skeletor.subsManagers.sectionsSubs.subscribe('findDocuments', 'Sections', {}, sectionOptions);
-            let menuCodes = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', {}, menuOptions);
-
-            // set reactive var for all subscriptions ready
-            this.skeleSubsReady.set(
-                Skeletor.subsManagers.pagesSubs.ready() &&
-                Skeletor.subsManagers.sectionsSubs.ready() &&
-                Skeletor.subsManagers.menusSubs.ready() &&
-                currentPage.ready()
-            );
-        }
-        else {
-            // set reactive var for all subscriptions ready
-            this.skeleSubsReady.set(
-                Skeletor.subsManagers.pagesSubs.ready() &&
-                Skeletor.subsManagers.sectionsSubs.ready() &&
-                Skeletor.subsManagers.menusSubs.ready()
-            );
-        }
-    });
+    Skeletor.Utilities.autoSubscribe(this, 'Pages_default', 'detail');
 });
 
 
@@ -334,42 +271,11 @@ Template.menusList.onCreated(function() {
 });
 
 Template.menuCreate.onCreated(function() {
-    this.skeleSubsReady = new ReactiveVar(false);
-    // subscribe data
-    let menuQuery = {};
-    let menusOptions = {};
+    Skeletor.Utilities.autoSubscribe(this, 'Menus_default', 'detail');
+});
 
-    menusOptions.fields = {};
-
-    this.autorun(() => {
-        let currentLang = FlowRouter.getParam('itemLang');
-        let segmentLang = FlowRouter.getQueryParam('sLang');
-        let name = FlowRouter.getParam('name');
-
-        // needed for both update and creation
-        menusOptions.fields.name = 1;
-
-        let menusList = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', {}, menusOptions);
-
-        // case updating record
-        if (name) {
-            menuQuery.name = name;
-
-            let currentMenu = Skeletor.subsManagers.menusSubs.subscribe('findDocuments', 'Menus', menuQuery, {});
-            let menuItems = Skeletor.persistentSubsManagers.menusSubs.subscribe('findMenuItems', name, currentLang);
-
-            // set reactive var for all subscriptions ready
-            this.skeleSubsReady.set(
-                Skeletor.subsManagers.menusSubs.ready() &&
-                currentMenu.ready() &&
-                menuItems.ready()
-            );
-        }
-        else {
-            // set reactive var for all subscriptions ready
-            this.skeleSubsReady.set(Skeletor.subsManagers.menusSubs.ready());
-        }
-    });
+Template.menuItemsSortable.onCreated(function() {
+    console.log(this);
 });
 
 Template.menuItemsSortable.onRendered(function() {

@@ -237,27 +237,6 @@ Template.menuCreate.helpers({
             }
 
             context.item = Skeletor.Data.Menus.findOne(query);
-
-            if (context.item) {
-                // find menu items
-                let pagesQuery = {};
-                let pagesOptions = {
-                    fields: {
-                        menuOrder: 1
-                    },
-                    sort: {
-                        menuOrder: 1
-                    }
-                };
-
-                pagesQuery.menu = context.item._id;
-                pagesQuery[currentLang + '---published'] = true;
-                pagesOptions.fields[currentLang + '---code'] = 1;
-                pagesOptions.fields[currentLang + '---menuName'] = 1;
-                pagesOptions.fields[currentLang + '---menuIcon'] = 1;
-
-                context.menuItems = Skeletor.Data.Pages.find(pagesQuery, pagesOptions);
-            }
         }
 
         context.schemaName = 'Menus_default';
