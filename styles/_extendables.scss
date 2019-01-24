@@ -1,0 +1,17 @@
+%elementScrollbars {
+    &::-webkit-scrollbar {
+        width: 17px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $thirdPanelColor;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: lighten($thirdPanelColor, 20%);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: lighten($thirdPanelColor, 30%);
+    }
+    &::-webkit-scrollbar-button {
+        display: none !important;
+    }
+}

@@ -3,10 +3,11 @@
 
 // app colors
 @import "{}/client/styles/panelColors";
-
-// skeletor
-@import "panel";
-@import "responsive";
-
 @import "{}/client/styles/siteColors";
-@import "{}/client/styles/generalStyles";
+
+// skeletor colors
+@import "panel-colors";
+
+// skeletor styles
+@import "responsive";
+@import "panel";

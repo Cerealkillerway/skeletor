@@ -1,0 +1,807 @@
+// custom app colors
+@import "{}/client/styles/panelColors";
+
+
+// PANEL COLORS
+// default links
+$defaultLink: #e1b924 !default;
+$defaultLinkVisited: #c19d0b !default;
+$defaultLinkHover: #c19d0b !default;
+$defaultLinkActive: #c19d0b !default;
+
+// backgrounds
+$panelBackgroundColor: #333333 !default;
+$panelBackgroundOverlayColor: #dddddd !default;
+$firstBackgroundColor: #ffffff !default;
+$firstDebugBackgroundColor: #263238 !default;
+
+// loading
+$loadingForeColor: #e1b924 !default;
+$loadingBackColor: #111111 !default;
+
+// main colors
+$alertDebugColor: #ff1744 !default;
+$alertDebugColorText: #fafafa !default;
+$firstDebugColor: #c6ff00 !default;
+$firstDebugColorText: #212121 !default;
+$firstDebugColorActive: #76ff03 !default;
+$firstDebugColorActiveText: #212121 !default;
+
+$firstPanelColor: #7c51a0 !default;
+$firstPanelColorHover: #4a148c !default;
+$firstPanelColorText: #dddddd !default;
+$firstPanelColorLink: #e1b924 !default;
+$firstPanelColorLinkVisited: #c19d0b !default;
+$firstPanelColorLinkHover: #c19d0b !default;
+$firstPanelColorLinkActive: #c19d0b !default;
+$firstPanelColorBorder: #222 !default;
+
+$secondPanelColor: #4a148c !default;
+$secondPanelColorHover: #5913af !default;
+$secondPanelColorText: #dddddd !default;
+$secondPanelColorLink: #e1b924 !default;
+$secondPanelColorLinkVisited: #e1b924 !default;
+$secondPanelColorLinkHover: #e1b924 !default;
+$secondPanelColorLinkActive: #e1b924 !default;
+$secondPanelColorBorder: #dddddd !default;
+
+$thirdPanelColor: #222222 !default;
+$thirdPanelColorHover: #353535 !default;
+$thirdPanelColorText: #eeeeee !default;
+$thirdPanelColorLink: #e1b924 !default;
+$thirdPanelColorLinkVisited: #c19d0b !default;
+$thirdPanelColorLinkHover: #c19d0b !default;
+$thirdPanelColorLinkActive: #c19d0b !default;
+$thirdPanelColorBorder: #424242 !default;
+
+$fourthPanelColor: #e1b924 !default;
+$fourthPanelColorHover: #4a148c !default;
+$fourthPanelColorText: #fafafa !default;
+$fourthPanelColorLink: #e1b924 !default;
+$fourthPanelColorLinkVisited: #c19d0b !default;
+$fourthPanelColorLinkHover: #c19d0b !default;
+$fourthPanelColorLinkActive: #c19d0b !default;
+$fourthPanelColorBorder: darken($fourthPanelColor, 15%) !default;
+
+$panelConfirmColor: #e1b924 !default;
+$panelConfirmColorText: #222222 !default;
+$panelUndoColor: #4a148c !default;
+$panelUndoColorText: #fafafa !default;
+
+// text colors
+$firstTextColor: #212121 !default;
+
+// form elements
+$firstInputColor: #757575 !default;
+$firstFocusColor: #d5135a !default;
+$firstInputSuccessColor: #1b5e20 !default;
+$firstInputErrorColor: #f50057 !default;
+$permissionsErrorColor: #ff6f00 !default;
+
+// hover effect colors
+$firstHoverColor: #e1b924 !default;
+$secondHoverColor: #4a148c !default;
+
+// interactive elements (color background and text, normal and hover status)
+$firstInteractiveColor: #7c51a0 !default;
+$firstInteractiveColorHover: #e1b924 !default;
+$firstInteractiveText: #fafafa !default;
+$firstInteractiveTextHover: #222222 !default;
+
+body.skelePanelBody {
+    &::-webkit-scrollbar {
+        width: 17px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: $thirdPanelColor;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: lighten($thirdPanelColor, 20%);
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: lighten($thirdPanelColor, 30%);
+    }
+    &::-webkit-scrollbar-button {
+        display: none !important;
+    }
+
+    // overrides
+    #panelFooter {
+        background-color: darken($firstPanelColor, 5%) !important;
+        .lighten {
+            @extend .thirdColor;
+        }
+    }
+    #statusBar {
+        .firstColor {
+            @extend .thirdColor;
+        }
+
+        #statusDescription {
+            color: #fff !important;
+        }
+    }
+    .staticTop {
+        background-color: darken($firstPanelColor, 20%) !important;
+    }
+
+    .panelBody .modal table.hoverable > tbody {
+        color: #222;
+    }
+
+    .skeleLangBar, .skeleCurrentVersionBar {
+        @extend .thirdColor;
+    }
+
+    .skeleCurrentUserBar {
+        @extend .secondColor;
+    }
+
+    #panelFooter {
+        background-color: darken($firstPanelColor, 30%) !important;
+        border-top: solid 3px $firstPanelColor !important;
+    }
+
+
+    // debug
+    #debugActivator {
+        background-color: $firstDebugBackgroundColor !important;
+        border: {
+            color: lighten($firstDebugBackgroundColor, 20%) !important;
+            top: solid 3px;
+        }
+    }
+    #debugActionsContainer {
+        @extend #debugActivator;
+        border-left: solid 3px;
+    }
+
+
+
+    // color classes
+    .alertDebugColor, .alertDebugColor i {
+        background-color: $alertDebugColor !important;
+        color: $alertDebugColorText !important;
+    }
+    .firstDebugColor, .firstDebugColor i {
+        background-color: $firstDebugColor !important;
+        color: $firstDebugColorText !important;
+    }
+    .firstDebugColor.active, .firstDebugColor.active i {
+        background-color: $firstDebugColorActive !important;
+        color: $firstDebugColorActiveText !important;
+    }
+
+
+
+    .firstColorText {
+        color: $firstPanelColor !important;
+    }
+    .firstColor {
+        background-color: $firstPanelColor !important;
+        color: $firstPanelColorText !important;
+
+        a:link {
+            color: $firstPanelColorLink !important;
+        }
+        a:visited {
+            color: $firstPanelColorLinkVisited !important;
+        }
+        a:hover {
+            color: $firstPanelColorLinkHover !important;
+        }
+        a:active {
+            color: $firstPanelColorLinkActive !important;
+        }
+
+        .lighten {
+            background-color: lighten($firstPanelColor, 20%) !important;
+            color: $firstPanelColorText !important;
+        }
+
+        .darken {
+            background-color: darken($firstPanelColor, 20%) !important;
+            color: $firstPanelColorText !important;
+        }
+
+        &.disabled {
+            background-color: lighten($firstPanelColor, 15%) !important;
+        }
+    }
+
+    nav.firstColor {
+        background-color: darken($firstPanelColor, 30%) !important;
+        border-bottom: solid 3px darken($firstPanelColor, 20%);
+
+        ul.side-nav {
+            .separator + li {
+                border-color: darken($firstPanelColor, 30%);
+            }
+        }
+    }
+
+    nav.firstColor .side-nav.firstColor {
+        background-color: darken($firstPanelColor, 20%) !important;
+    }
+
+    .side-nav.firstColor {
+        i.material-icons {
+            color: $firstPanelColorText;
+        }
+    }
+
+    footer.firstColor {
+        border-top: solid 3px $firstPanelColorBorder !important;
+    }
+
+
+    .secondColorText {
+        color: $secondPanelColor !important;
+    }
+    .secondColor {
+        background-color: $secondPanelColor !important;
+        color: $secondPanelColorText !important;
+
+        a:link {
+            color: $secondPanelColorLink !important;
+        }
+        a:visited {
+            color: $secondPanelColorLinkVisited !important;
+        }
+        a:hover {
+            color: $secondPanelColorLinkHover !important;
+        }
+        a:active {
+            color: $secondPanelColorLinkActive !important;
+        }
+
+        .lighten {
+            background-color: lighten($secondPanelColor, 20%) !important;
+            color: $secondPanelColorText !important;
+        }
+        .darken {
+            background-color: darken($secondPanelColor, 20%) !important;
+            color: $secondPanelColorText !important;
+        }
+
+        &.disabled {
+            background-color: lighten($secondPanelColor, 15%) !important;
+        }
+    }
+
+    nav.secondColor {
+        border-bottom: solid 3px $secondPanelColorBorder !important;
+    }
+
+    nav.secondColor .side-nav li:hover {
+        background-color: darken($secondPanelColor, 20%) !important;
+    }
+
+    footer.secondColor {
+        border-top: solid 3px $secondPanelColorBorder !important;
+    }
+
+    .secondColorContent {
+        color: $secondPanelColor !important;
+    }
+
+
+
+    .thirdColorText {
+        color: $thirdPanelColor !important;
+    }
+    .thirdColor {
+        background-color: $thirdPanelColor !important;
+        color: $thirdPanelColorText !important;
+
+        a:link {
+            color: $thirdPanelColorLink !important;
+        }
+        a:visited {
+            color: $thirdPanelColorLinkVisited !important;
+        }
+        a:hover {
+            color: $thirdPanelColorLinkHover !important;
+        }
+        a:active {
+            color: $thirdPanelColorLinkActive !important;
+        }
+
+        .lighten {
+            background-color: lighten($thirdPanelColor, 20%) !important;
+            color: $thirdPanelColorText !important;
+        }
+        .darken {
+            background-color: darken($thirdPanelColor, 20%) !important;
+            color: $thirdPanelColorText !important;
+        }
+
+        &.disabled {
+            background-color: lighten($thirdPanelColor, 25%) !important;
+        }
+    }
+
+    nav.thirdColor {
+        border-bottom: solid 3px $thirdPanelColorBorder !important;
+    }
+
+    nav.thirdColor .side-nav li:hover {
+        background-color: darken($thirdPanelColor, 20%) !important;
+    }
+
+    footer.thirdColor {
+        border-top: solid 3px $thirdPanelColorBorder !important;
+    }
+
+
+
+    .fourthColorText {
+        color: $fourthPanelColor !important;
+    }
+    .fourthColor {
+        background-color: $fourthPanelColor !important;
+        color: $fourthPanelColorText !important;
+
+        a:link {
+            color: $fourthPanelColorLink !important;
+        }
+        a:visited {
+            color: $fourthPanelColorLinkVisited !important;
+        }
+        a:hover {
+            color: $fourthPanelColorLinkHover !important;
+        }
+        a:active {
+            color: $fourthPanelColorLinkActive !important;
+        }
+
+        .lighten {
+            background-color: lighten($fourthPanelColor, 20%) !important;
+            color: $fourthPanelColorText !important;
+        }
+        .darken {
+            background-color: darken($fourthPanelColor, 20%) !important;
+            color: $fourthPanelColorText !important;
+        }
+
+        &.disabled {
+            background-color: lighten($fourthPanelColor, 15%) !important;
+        }
+    }
+
+    nav.fourthColor {
+        border-bottom: solid 3px $fourthPanelColorBorder !important;
+    }
+
+    nav.fourthColor .side-nav li:hover {
+        background-color: darken($fourthPanelColor, 20%) !important;
+    }
+
+    footer.fourthColor {
+        border-top: solid 3px $fourthPanelColorBorder !important;
+    }
+
+
+    .confirmColor {
+        background-color: $panelConfirmColor !important;
+        color: $panelConfirmColorText !important;
+    }
+    .undoColor {
+        background-color: $panelUndoColor !important;
+        color: $secondPanelColorText !important;
+    }
+
+
+    .firstInteractiveColor {
+        background-color: $firstInteractiveColor !important;
+        color: $firstInteractiveText !important;
+    }
+
+    .firstInteractiveColor:hover {
+        background-color: $firstInteractiveColorHover !important;
+        color: $firstInteractiveTextHover !important;
+    }
+
+
+
+    .firstHoverColor {
+        color: $defaultLinkVisited !important;
+    }
+    .firstHoverColor:hover {
+        color: $firstHoverColor !important;
+    }
+
+
+    // form validation
+    // success status
+    .input-field.valid input:not([readonly]), .input-field.valid input:focus:not([readonly]), .input-field.valid input.datepicker, .valid .canvasContainer {
+        border-color: $firstInputSuccessColor;
+    }
+    .input-field.valid input:not([readonly]) + label, .input-field.valid input.datepicker + label, .input-field.valid .prefix, .valid .note-editor + label {
+        color: $firstInputSuccessColor;
+    }
+    .input-field.valid input:focus:not([readonly]) + label, .input-field.valid input.datepicker:focus + label, .input-field.valid .prefix.active {
+        color: $firstInputSuccessColor;
+    }
+    .input-field.valid input:focus:not([readonly]), .input-field.valid input.datepicker:focus {
+        box-shadow: 0 1px 0 0 $firstInputSuccessColor;
+    }
+    .valid .colorValidation {
+        background-color: $firstInputSuccessColor;
+    }
+    .valid .note-editor {
+        border: {
+            top: none;
+            bottom: solid 3px $firstInputSuccessColor;
+            left: solid 3px $firstInputSuccessColor;
+            right: solid 3px $firstInputSuccessColor;
+        }
+    }
+
+    // error status
+    .input-field.invalid input:not([readonly]), .input-field.invalid input:focus:not([readonly]), .input-field.invalid input.datepicker, .invalid .canvasContainer {
+        border-color: $firstInputErrorColor;
+    }
+    .skeleformFieldAlert.invalid, .input-field.invalid input:not([readonly]) + label, .input-field.invalid input.datepicker + label, .input-field.invalid .prefix, .invalid .note-editor + label {
+        color: $firstInputErrorColor;
+    }
+    .input-field.invalid input:focus:not([readonly]) + label, .input-field.invalid input.datepicker:focus + label, .input-field.invalid .prefix.active {
+        color: $firstInputErrorColor;
+    }
+    .input-field.invalid input:focus:not([readonly]), .input-field.invalid input.datepicker:focus {
+        box-shadow: 0 1px 0 0 $firstInputErrorColor;
+    }
+    .invalid .colorValidation {
+        background-color: $firstInputErrorColor;
+    }
+    .invalid .note-editor {
+        border: {
+            top: none;
+            bottom: solid 3px $firstInputErrorColor;
+            left: solid 3px $firstInputErrorColor;
+            right: solid 3px $firstInputErrorColor;
+        }
+    }
+    .invalid {
+        .skeleformFieldAlert {
+            color: $firstInputErrorColor;
+        }
+    }
+
+    /*.successBorder, .successColor {
+        border-color: #3fb618 !important;
+    }
+
+    .successColor {
+        background-color: #3fb618 !important;
+    }
+
+    .errorBorder, .errorColor {
+        border-color: #ff0039 !important;
+    }
+
+    .errorColor {
+        background-color: #ff0039 !important;
+    }
+
+    .has-success .note-editor {
+        border: 1px solid #3fb618;
+    }
+
+    .has-error .note-editor {
+        border: 1px solid #ff0039;
+    }*/
+
+
+    // form elements
+    // input, checkbox and select
+    input:not([readonly]), input.datepicker, .select-wrapper input.select-dropdown {
+        border-color: $firstInputColor;
+    }
+    .select-dropdown {
+        &::-webkit-scrollbar {
+            width: 17px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: $thirdPanelColor;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: lighten($thirdPanelColor, 20%);
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: lighten($thirdPanelColor, 30%);
+        }
+        &::-webkit-scrollbar-button {
+            display: none !important;
+        }
+    }
+    input:not([readonly]) + label, input.datepicker + label, .select-wrapper + label, .input-field .prefix {
+        color: $firstInputColor;
+    }
+    input:focus:not([readonly]) + label, input.datepicker:focus + label, .select-wrapper:focus + label, .input-field .prefix.active, .note-editor + label {
+        color: $firstInputColor;
+    }
+    input:focus:not([readonly]), input.datepicker:focus, .select-wrapper:focus {
+        box-shadow: 0 1px 0 0 $firstInputColor;
+    }
+    [type="checkbox"]:checked + label:before {
+        border-right-color: $secondPanelColor;
+        border-bottom-color: $secondPanelColor;
+    }
+    li.active {
+        [type="checkbox"]:checked + label:before {
+            border-right-color: $secondPanelColorText;
+            border-bottom-color: $secondPanelColorText;
+        }
+    }
+    .file-field {
+        .btn {
+            background-color: $secondPanelColor;
+        }
+    }
+
+    // focus status
+    input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
+        border-color: $firstFocusColor;
+        box-shadow: 0 1px 0 0 $firstFocusColor;
+    }
+    input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=url]:focus:not([readonly]) + label, input[type=time]:focus:not([readonly]) + label, input[type=date]:focus:not([readonly]) + label, input[type=datetime-local]:focus:not([readonly]) + label, input[type=tel]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label, input[type=search]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
+        color: $firstFocusColor;
+    }
+
+    // switch
+    .switch label input[type=checkbox]:checked + .lever {
+        background-color: lighten($secondPanelColor, 10%);
+
+        &::after {
+            background-color: $secondPanelColor;
+        }
+    }
+
+    // select
+    .select-dropdown li.disabled, .select-dropdown li.disabled > span, .select-dropdown li.optgroup {
+        background-color: $firstPanelColor;
+        color: $firstPanelColorText !important;
+    }
+
+    // datepicker
+    .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
+        background-color: $fourthPanelColor !important;
+    }
+    .picker__weekday-display {
+        font-weight: 500;
+    }
+    .picker__date-display {
+        background-color: $firstPanelColor !important;
+    }
+    .picker__footer {
+        background-color: darken($firstPanelColor, 10%);
+
+        button:focus {
+            background-color: darken($firstPanelColor, 10%);
+        }
+    }
+    .picker__day.picker__day--today {
+        color: $secondPanelColor;
+        font-weight: bold;
+    }
+    .picker__table {
+        thead {
+            background-color: $firstBackgroundColor;
+            color: $firstPanelColor;
+        }
+    }
+    .picker__box {
+        background-color: $firstBackgroundColor !important;
+    }
+    .picker__header {
+        select {
+            border-color: darken($firstBackgroundColor, 20%) !important;
+        }
+    }
+    .picker__close, .picker__today {
+        color: $firstPanelColorText !important;
+    }
+    .picker__nav--prev:hover, .picker__nav--next:hover {
+        background-color:$secondPanelColor !important;
+    }
+    button.picker__clear {
+        color: $firstPanelColorText !important;
+    }
+
+    .dropdown-content li > a, .dropdown-content li > span {
+        color: $firstPanelColor !important;
+    }
+
+    .dropdown-content li:hover, .dropdown-content li.active {
+        background-color: $secondPanelColor !important;
+
+        span {
+            color: $secondPanelColorText !important;
+        }
+    }
+
+
+    // timepicker
+    .picker--time .picker__box {
+        background-color: darken($firstPanelColor, 15%) !important;
+    }
+
+    .picker__list {
+        padding-bottom: 2em;
+    }
+
+    .picker__list-item {
+        background-color: $firstPanelColor;
+        color: $firstPanelColorText;
+        border-top: solid 1px lighten($firstPanelColor, 10%);
+        border-bottom: solid 1px lighten($firstPanelColor, 10%);
+    }
+
+    .picker__list-item--selected, .picker__list-item--selected:hover, .picker--focused .picker__list-item--selected {
+        background: $secondPanelColor;
+        border-color: $secondPanelColor;
+    }
+
+    .picker__list-item:hover {
+        background-color: lighten($secondPanelColor, 15%);
+        border-color: lighten($secondPanelColor, 10%);
+        color: $firstPanelColorText;
+    }
+
+    .picker--time .picker__button--clear {
+        color: $firstPanelColorText;
+        font-size: 18px;
+
+        &::before {
+            width: 0;
+            border-top: none;
+            margin-right: 0;
+        }
+    }
+
+    .picker--time .picker__button--clear:hover, .picker--time .picker__button--clear:focus {
+        border: none;
+        background-color: darken($firstPanelColor, 20%);
+    }
+
+
+
+    // other elements
+    // table
+    thead {
+        background-color: $firstPanelColor;
+        color: $firstPanelColorText;
+        border: none !important;
+
+        .skeleListViewHeader {
+            &:hover {
+                background-color: darken($firstPanelColor, 10%);
+            }
+        }
+    }
+
+    table.hoverable {
+        tbody > tr {
+            &:hover {
+                background-color: $firstInteractiveColorHover !important;
+
+                a:link {
+                    color: $firstPanelColorText !important;
+                }
+                a:visited {
+                    color: $firstPanelColorText !important;
+                }
+                a:hover {
+                    color: $firstPanelColorText !important;
+                }
+                a:active {
+                    color: $firstPanelColorText !important;
+                }
+            }
+
+            &.secondColor:hover {
+                background-color: darken($secondPanelColor, 15%) !important;
+            }
+        }
+    }
+
+
+    // block quote
+    blockquote {
+        border-color: $secondPanelColor !important;
+    }
+
+    // toasts
+    .toast {
+        &.success {
+            background-color: $firstInputSuccessColor;
+        }
+        &.error {
+            background-color: $firstInputErrorColor;
+        }
+        &.permissionsError {
+            background-color: $permissionsErrorColor;
+        }
+
+        border-color: $firstPanelColor !important;
+    }
+
+    // pagination
+    .pagination {
+        li.active {
+            @extend .secondColor;
+        }
+
+        a:hover {
+            color: $firstPanelColorLinkActive !important;
+        }
+    }
+
+    // progress bars
+    .progress {
+        background-color: $firstPanelColor;
+
+        .determinate {
+            background-color: $secondPanelColor;
+        }
+    }
+
+
+    // skelelist
+    .skelelist {
+        .skelelistActionExtras {
+            .deleteConfirmation {
+                .cancelDeletion {
+                    color: $secondPanelColor;
+                }
+            }
+        }
+
+        .skeleLoadMore {
+            background-color: $thirdPanelColor;
+            color: $thirdPanelColorText;
+
+            &:hover {
+                background-color: lighten($thirdPanelColor, 10%);
+            }
+        }
+
+        .skelelistInfo {
+            .skeleCounter {
+                background-color: $thirdPanelColor;
+                color: $thirdPanelColorText;
+
+                .skeleCounterNumber {
+                    background-color: $secondPanelColor;
+                }
+            }
+        }
+
+        .skelelistSearchBar {
+            background-color: darken($firstPanelColor, 27%);
+
+            .skelelistSearchBtn {
+                background-color: $fourthPanelColor;
+                color: $firstTextColor;
+
+                .material-icons {
+                    color: $firstTextColor;
+                }
+            }
+
+            .skelelistSearchInput {
+                border-color: darken($firstPanelColorText, 10%) !important;
+                color: $firstHoverColor;
+
+                &:focus:not([readonly]) {
+                    box-shadow: 0 1px 0 0 darken($firstPanelColorText, 10%);
+                }
+
+                & + label {
+                    color: darken($firstPanelColorText, 10%) !important;
+                }
+            }
+        }
+    }
+}
