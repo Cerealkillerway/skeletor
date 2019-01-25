@@ -56,9 +56,6 @@ Package.onUse(function(api) {
     // styles
     api.addFiles([
         'styles/skeletor.scss',
-        'styles/_panel.scss',
-        'styles/_responsive.scss',
-        'styles/_panel-colors.scss',
         'styles/_extendables.scss'
     ],
     ['client']);

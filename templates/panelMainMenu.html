@@ -34,7 +34,7 @@
 
     {{#if (skeleCheckPermissions "allowConfigRead")}}
         {{> panelMainMenuSettings}}
-        <div class="separator darken"></div>
+        <div class="separator"></div>
     {{/if}}
 
     {{#if
@@ -54,7 +54,7 @@
             (skeleCheckPermissions "allowRolesRead")
             "or")
     }}
-        <div class="separator darken"></div>
+        <div class="separator"></div>
         {{> panelMainMenuAcl}}
     {{/if}}
 </template>

@@ -12,14 +12,12 @@ body {
     width: 100%;
 }
 .skelePanel {
-    background: $panelBackgroundOverlayColor;
     margin: 0 auto 35px auto;
     padding: 35px 35px 55px 35px;
 }
 
 .skeleDocumentTitle {
     margin-left: 100px;
-    color: $secondPanelColor;
     font-weight: bold;
     font-size: 18px;
 }
@@ -55,9 +53,6 @@ body {
 .pointer, input[type="file"] {
     cursor: pointer;
 }
-.divider {
-    background-color: lighten($firstTextColor, 30%) !important;
-}
 .skeleBold {
     font-weight: 500;
 }
@@ -90,18 +85,6 @@ body.skelePanelBody {
     &::-webkit-scrollbar {
         width: 17px;
     }
-    &::-webkit-scrollbar-track {
-        background-color: $firstPanelColor;
-    }
-    &::-webkit-scrollbar-thumb {
-        background-color: lighten($firstPanelColor, 20%);
-    }
-    &::-webkit-scrollbar-thumb:hover {
-        background-color: lighten($firstPanelColor, 30%);
-    }
-    &::-webkit-scrollbar-button {
-        display: none !important;
-    }
 
     main {
         flex: 1 0 auto;
@@ -125,22 +108,6 @@ body.skelePanelBody {
         box-shadow: none;
     }
 
-    // links
-    a {
-        &:link {
-            color: $defaultLink;
-        }
-        &:visited {
-            color: $defaultLinkVisited;
-        }
-        &:hover {
-            color: $defaultLinkHover;
-        }
-        &:active {
-            color: $defaultLinkActive;
-        }
-    }
-
     // images
     img {
         max-width: 100%;
@@ -149,10 +116,6 @@ body.skelePanelBody {
     // tables
     td, th{
         border-radius: 0 !important;
-    }
-
-    table.hoverable tbody tr:hover {
-        background-color: $firstHoverColor !important;
     }
 
     .btn {
@@ -176,7 +139,6 @@ body.skelePanelBody {
             }
             .menuItemName {
                 text-transform: uppercase;
-                color: $firstPanelColorLinkHover;
                 position: relative;
                 left: -35px;
                 font-weight: bold;
@@ -209,22 +171,6 @@ body.skelePanelBody {
 
     .skeleDashboard {
         .buttonsContainer {
-            a:nth-child(odd) {
-                @extend .firstColor;
-
-                &:hover {
-                    background-color: darken($firstPanelColor, 30%) !important;
-                }
-            }
-
-            a:nth-child(even) {
-                @extend .secondColor;
-
-                &:hover {
-                    background-color: lighten($secondPanelColor, 15%) !important;
-                }
-            }
-
             .dashboardBtn {
                 width: 172px !important;
                 height: 172px !important;
@@ -290,16 +236,10 @@ body.skelePanelBody {
 
             img {
                 max-height: 30px;
-                border: solid 3px $thirdPanelColorBorder;
+                border: solid 3px;
                 margin-right: 5px;
                 margin-top: -3px;
                 cursor: pointer !important;
-            }
-
-            &.active {
-                img {
-                    border-color: $firstHoverColor;
-                }
             }
         }
     }
@@ -308,64 +248,25 @@ body.skelePanelBody {
         margin-bottom: 35px;
     }
 
-    .menuItems {
-        .collection-item {
-            &.sortable-drag {
-                background-color: $secondPanelColor !important;
-                color: $secondPanelColorText;
-            }
-        }
-    }
-
     // select dropdowns
     .dropdown-content {
         z-index: 10000
     }
 
     .modal {
-        color:$firstTextColor;
         z-index: 3003 !important;
-        background-color: $panelBackgroundColor;
         border-radius: 0;
         backface-visibility: hidden;
 
-        /*.input-field input:not([readonly]), .input-field input.datepicker {
-            border-color: $firstPanelColorText !important;
-        }
-        .input-field input:focus:not([readonly]), .input-field input.datepicker:focus, textarea.materialize-textarea:focus:not([readonly]) {
-            box-shadow: 0 1px 0 0 $firstFocusColor !important;
-            border-color: $firstFocusColor !important;
-        }
-        label, .input-field input:not([readonly]) + label, .input-field input.datepicker + label, .input-field .prefix {
-            color: $firstPanelColorText !important;
-        }
-        .input-field input:focus:not([readonly]) + label, .input-field input.datepicker:focus + label, .input-field .prefix.active, textarea.materialize-textarea:focus:not([readonly]) + label {
-            color: $firstFocusColor !important;
-        }*/
-
         .btn {
-            background-color: $secondPanelColor;
             margin-right: 15px;
-        }
-        .btn:hover {
-            background-color: lighten($secondPanelColor, 10%) !important;
-        }
-
-        .btn.disabled {
-            background-color: darken($secondPanelColor, 15%) !important;
         }
 
         .modal-footer {
-            background-color: darken($firstPanelColor, 10%);
             border-radius: 0;
 
             .btnClose {
                 margin-right: 15px;
-                background-color: $thirdPanelColor;
-            }
-
-            .btnClose:hover {
-                background-color: lighten($thirdPanelColor, 10%) !important;
             }
         }
     }

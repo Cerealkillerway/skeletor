@@ -2,7 +2,7 @@
 @import "{}/client/styles/panelColors";
 
 
-// PANEL COLORS
+// variables
 // default links
 $defaultLink: #e1b924 !default;
 $defaultLinkVisited: #c19d0b !default;
@@ -27,8 +27,8 @@ $firstDebugColorText: #212121 !default;
 $firstDebugColorActive: #76ff03 !default;
 $firstDebugColorActiveText: #212121 !default;
 
-$firstPanelColor: #7c51a0 !default;
-$firstPanelColorHover: #4a148c !default;
+$firstPanelColor: #00297f !default;
+$firstPanelColorHover: #333 !default;
 $firstPanelColorText: #dddddd !default;
 $firstPanelColorLink: #e1b924 !default;
 $firstPanelColorLinkVisited: #c19d0b !default;
@@ -37,7 +37,7 @@ $firstPanelColorLinkActive: #c19d0b !default;
 $firstPanelColorBorder: #222 !default;
 
 $secondPanelColor: #4a148c !default;
-$secondPanelColorHover: #5913af !default;
+$secondPanelColorHover: #333 !default;
 $secondPanelColorText: #dddddd !default;
 $secondPanelColorLink: #e1b924 !default;
 $secondPanelColorLinkVisited: #e1b924 !default;
@@ -46,7 +46,7 @@ $secondPanelColorLinkActive: #e1b924 !default;
 $secondPanelColorBorder: #dddddd !default;
 
 $thirdPanelColor: #222222 !default;
-$thirdPanelColorHover: #353535 !default;
+$thirdPanelColorHover: #333 !default;
 $thirdPanelColorText: #eeeeee !default;
 $thirdPanelColorLink: #e1b924 !default;
 $thirdPanelColorLinkVisited: #c19d0b !default;
@@ -55,7 +55,7 @@ $thirdPanelColorLinkActive: #c19d0b !default;
 $thirdPanelColorBorder: #424242 !default;
 
 $fourthPanelColor: #e1b924 !default;
-$fourthPanelColorHover: #4a148c !default;
+$fourthPanelColorHover: #333 !default;
 $fourthPanelColorText: #fafafa !default;
 $fourthPanelColorLink: #e1b924 !default;
 $fourthPanelColorLinkVisited: #c19d0b !default;
@@ -65,7 +65,9 @@ $fourthPanelColorBorder: darken($fourthPanelColor, 15%) !default;
 
 $panelConfirmColor: #e1b924 !default;
 $panelConfirmColorText: #222222 !default;
+$panelConfirmColorHover: #dedede !default;
 $panelUndoColor: #4a148c !default;
+$panelUndoColorHover: #333333 !default;
 $panelUndoColorText: #fafafa !default;
 
 // text colors
@@ -73,9 +75,9 @@ $firstTextColor: #212121 !default;
 
 // form elements
 $firstInputColor: #757575 !default;
-$firstFocusColor: #d5135a !default;
-$firstInputSuccessColor: #1b5e20 !default;
-$firstInputErrorColor: #f50057 !default;
+$firstFocusColor: #4a148c !default;
+$firstInputSuccessColor: #2e7d32 !default;
+$firstInputErrorColor: #b71c1c !default;
 $permissionsErrorColor: #ff6f00 !default;
 
 // hover effect colors
@@ -83,15 +85,14 @@ $firstHoverColor: #e1b924 !default;
 $secondHoverColor: #4a148c !default;
 
 // interactive elements (color background and text, normal and hover status)
-$firstInteractiveColor: #7c51a0 !default;
-$firstInteractiveColorHover: #e1b924 !default;
-$firstInteractiveText: #fafafa !default;
-$firstInteractiveTextHover: #222222 !default;
+$firstInteractiveColor: #e1b924 !default;
+$firstInteractiveColorHover: #03a9f4 !default;
+$firstInteractiveText: #222222 !default;
+$firstInteractiveTextHover: #01579b !default;
 
+
+// elements
 body.skelePanelBody {
-    &::-webkit-scrollbar {
-        width: 17px;
-    }
     &::-webkit-scrollbar-track {
         background-color: $thirdPanelColor;
     }
@@ -105,13 +106,40 @@ body.skelePanelBody {
         display: none !important;
     }
 
-    // overrides
-    #panelFooter {
-        background-color: darken($firstPanelColor, 5%) !important;
-        .lighten {
-            @extend .thirdColor;
+
+    // links
+    a:link {
+        color: $firstPanelColorLink;
+    }
+    a:visited {
+        color: $firstPanelColorLinkVisited;
+    }
+    a:hover {
+        color: $firstPanelColorLinkHover;
+    }
+    a:active {
+        color: $firstPanelColorLinkActive;
+    }
+
+
+    // top main menu
+    nav.skelePanelMainMenu {
+        background-color: darken($firstPanelColor, 30%) !important;
+        border-bottom: solid 3px darken($firstPanelColor, 20%);
+
+        .separator {
+            background-color: darken($firstPanelColor, 10%);
+        }
+
+        ul.side-nav {
+            .separator + li {
+                border-color: darken($firstPanelColor, 30%);
+            }
         }
     }
+
+
+    // connection and status toolbar
     #statusBar {
         .firstColor {
             @extend .thirdColor;
@@ -121,14 +149,8 @@ body.skelePanelBody {
             color: #fff !important;
         }
     }
-    .staticTop {
-        background-color: darken($firstPanelColor, 20%) !important;
-    }
 
-    .panelBody .modal table.hoverable > tbody {
-        color: #222;
-    }
-
+    // top row mini bars
     .skeleLangBar, .skeleCurrentVersionBar {
         @extend .thirdColor;
     }
@@ -137,9 +159,15 @@ body.skelePanelBody {
         @extend .secondColor;
     }
 
+
+    // footer
     #panelFooter {
         background-color: darken($firstPanelColor, 30%) !important;
         border-top: solid 3px $firstPanelColor !important;
+
+        .lighten {
+            @extend .thirdColor;
+        }
     }
 
 
@@ -157,7 +185,6 @@ body.skelePanelBody {
     }
 
 
-
     // color classes
     .alertDebugColor, .alertDebugColor i {
         background-color: $alertDebugColor !important;
@@ -173,535 +200,284 @@ body.skelePanelBody {
     }
 
 
-
+    // first color block
     .firstColorText {
-        color: $firstPanelColor !important;
+        color: $firstPanelColor;
     }
     .firstColor {
-        background-color: $firstPanelColor !important;
-        color: $firstPanelColorText !important;
+        background-color: $firstPanelColor;
+        color: $firstPanelColorText;
+
+        &:hover {
+            background-color: $firstPanelColorHover;
+        }
 
         a:link {
-            color: $firstPanelColorLink !important;
+            color: $firstPanelColorLink;
         }
         a:visited {
-            color: $firstPanelColorLinkVisited !important;
+            color: $firstPanelColorLinkVisited;
         }
         a:hover {
-            color: $firstPanelColorLinkHover !important;
+            color: $firstPanelColorLinkHover;
         }
         a:active {
-            color: $firstPanelColorLinkActive !important;
+            color: $firstPanelColorLinkActive;
         }
 
         .lighten {
-            background-color: lighten($firstPanelColor, 20%) !important;
-            color: $firstPanelColorText !important;
-        }
-
-        .darken {
-            background-color: darken($firstPanelColor, 20%) !important;
-            color: $firstPanelColorText !important;
-        }
-
-        &.disabled {
-            background-color: lighten($firstPanelColor, 15%) !important;
-        }
-    }
-
-    nav.firstColor {
-        background-color: darken($firstPanelColor, 30%) !important;
-        border-bottom: solid 3px darken($firstPanelColor, 20%);
-
-        ul.side-nav {
-            .separator + li {
-                border-color: darken($firstPanelColor, 30%);
-            }
-        }
-    }
-
-    nav.firstColor .side-nav.firstColor {
-        background-color: darken($firstPanelColor, 20%) !important;
-    }
-
-    .side-nav.firstColor {
-        i.material-icons {
+            background-color: lighten($firstPanelColor, 20%);
             color: $firstPanelColorText;
         }
+
+        .darken {
+            background-color: darken($firstPanelColor, 20%);
+            color: $firstPanelColorText;
+        }
+
+        &.disabled {
+            background-color: lighten($firstPanelColor, 15%);
+        }
     }
 
-    footer.firstColor {
-        border-top: solid 3px $firstPanelColorBorder !important;
-    }
 
-
+    // second color block
     .secondColorText {
-        color: $secondPanelColor !important;
+        color: $secondPanelColor;
     }
     .secondColor {
-        background-color: $secondPanelColor !important;
-        color: $secondPanelColorText !important;
+        background-color: $secondPanelColor;
+        color: $secondPanelColorText;
+
+        &:hover {
+            background-color: $secondPanelColorHover;
+        }
 
         a:link {
-            color: $secondPanelColorLink !important;
+            color: $secondPanelColorLink;
         }
         a:visited {
-            color: $secondPanelColorLinkVisited !important;
+            color: $secondPanelColorLinkVisited;
         }
         a:hover {
-            color: $secondPanelColorLinkHover !important;
+            color: $secondPanelColorLinkHover;
         }
         a:active {
-            color: $secondPanelColorLinkActive !important;
+            color: $secondPanelColorLinkActive;
         }
 
         .lighten {
-            background-color: lighten($secondPanelColor, 20%) !important;
-            color: $secondPanelColorText !important;
+            background-color: lighten($secondPanelColor, 20%);
+            color: $secondPanelColorText;
         }
         .darken {
-            background-color: darken($secondPanelColor, 20%) !important;
-            color: $secondPanelColorText !important;
+            background-color: darken($secondPanelColor, 20%);
+            color: $secondPanelColorText;
         }
 
         &.disabled {
-            background-color: lighten($secondPanelColor, 15%) !important;
+            background-color: lighten($secondPanelColor, 15%);
         }
     }
 
-    nav.secondColor {
-        border-bottom: solid 3px $secondPanelColorBorder !important;
-    }
 
-    nav.secondColor .side-nav li:hover {
-        background-color: darken($secondPanelColor, 20%) !important;
-    }
-
-    footer.secondColor {
-        border-top: solid 3px $secondPanelColorBorder !important;
-    }
-
-    .secondColorContent {
-        color: $secondPanelColor !important;
-    }
-
-
-
+    // third color block
     .thirdColorText {
-        color: $thirdPanelColor !important;
+        color: $thirdPanelColor;
     }
     .thirdColor {
-        background-color: $thirdPanelColor !important;
-        color: $thirdPanelColorText !important;
+        background-color: $thirdPanelColor;
+        color: $thirdPanelColorText;
+
+        &:hover {
+            background-color: $thirdPanelColorHover;
+        }
 
         a:link {
-            color: $thirdPanelColorLink !important;
+            color: $thirdPanelColorLink;
         }
         a:visited {
-            color: $thirdPanelColorLinkVisited !important;
+            color: $thirdPanelColorLinkVisited;
         }
         a:hover {
-            color: $thirdPanelColorLinkHover !important;
+            color: $thirdPanelColorLinkHover;
         }
         a:active {
-            color: $thirdPanelColorLinkActive !important;
+            color: $thirdPanelColorLinkActive;
         }
 
         .lighten {
-            background-color: lighten($thirdPanelColor, 20%) !important;
-            color: $thirdPanelColorText !important;
+            background-color: lighten($thirdPanelColor, 20%);
+            color: $thirdPanelColorText;
         }
         .darken {
-            background-color: darken($thirdPanelColor, 20%) !important;
-            color: $thirdPanelColorText !important;
+            background-color: darken($thirdPanelColor, 20%);
+            color: $thirdPanelColorText;
         }
 
         &.disabled {
-            background-color: lighten($thirdPanelColor, 25%) !important;
+            background-color: lighten($thirdPanelColor, 25%);
         }
     }
 
-    nav.thirdColor {
-        border-bottom: solid 3px $thirdPanelColorBorder !important;
-    }
 
-    nav.thirdColor .side-nav li:hover {
-        background-color: darken($thirdPanelColor, 20%) !important;
-    }
-
-    footer.thirdColor {
-        border-top: solid 3px $thirdPanelColorBorder !important;
-    }
-
-
-
+    // fourth color block
     .fourthColorText {
-        color: $fourthPanelColor !important;
+        color: $fourthPanelColor;
     }
     .fourthColor {
-        background-color: $fourthPanelColor !important;
-        color: $fourthPanelColorText !important;
+        background-color: $fourthPanelColor;
+        color: $fourthPanelColorText;
+
+        &:hover {
+            background-color: $fourthPanelColorHover;
+        }
 
         a:link {
-            color: $fourthPanelColorLink !important;
+            color: $fourthPanelColorLink;
         }
         a:visited {
-            color: $fourthPanelColorLinkVisited !important;
+            color: $fourthPanelColorLinkVisited;
         }
         a:hover {
-            color: $fourthPanelColorLinkHover !important;
+            color: $fourthPanelColorLinkHover;
         }
         a:active {
-            color: $fourthPanelColorLinkActive !important;
+            color: $fourthPanelColorLinkActive;
         }
 
         .lighten {
-            background-color: lighten($fourthPanelColor, 20%) !important;
-            color: $fourthPanelColorText !important;
+            background-color: lighten($fourthPanelColor, 20%);
+            color: $fourthPanelColorText;
         }
         .darken {
-            background-color: darken($fourthPanelColor, 20%) !important;
-            color: $fourthPanelColorText !important;
+            background-color: darken($fourthPanelColor, 20%);
+            color: $fourthPanelColorText;
         }
 
         &.disabled {
-            background-color: lighten($fourthPanelColor, 15%) !important;
+            background-color: lighten($fourthPanelColor, 15%);
         }
     }
 
-    nav.fourthColor {
-        border-bottom: solid 3px $fourthPanelColorBorder !important;
-    }
-
-    nav.fourthColor .side-nav li:hover {
-        background-color: darken($fourthPanelColor, 20%) !important;
-    }
-
-    footer.fourthColor {
-        border-top: solid 3px $fourthPanelColorBorder !important;
-    }
 
 
     .confirmColor {
-        background-color: $panelConfirmColor !important;
-        color: $panelConfirmColorText !important;
+        background-color: $panelConfirmColor;
+        color: $panelConfirmColorText;
+
+        &:hover {
+            background-color: $panelConfirmColorHover;
+        }
+
+        &:link {
+            color: $panelConfirmColorText;
+        }
+        &:visited {
+            color: $panelConfirmColorText;
+        }
+        &:hover {
+            color: $panelConfirmColorText;
+        }
+        &:active {
+            color: $panelConfirmColorText;
+        }
     }
     .undoColor {
-        background-color: $panelUndoColor !important;
-        color: $secondPanelColorText !important;
+        background-color: $panelUndoColor;
+        color: $panelUndoColorText;
+
+        &:hover {
+            background-color: $panelUndoColorHover;
+        }
+
+        &:link {
+            color: $panelUndoColorText;
+        }
+        &:visited {
+            color: $panelUndoColorText;
+        }
+        &:hover {
+            color: $panelUndoColorText;
+        }
+        &:active {
+            color: $panelUndoColorText;
+        }
     }
 
 
     .firstInteractiveColor {
-        background-color: $firstInteractiveColor !important;
-        color: $firstInteractiveText !important;
+        background-color: $firstInteractiveColor;
+        color: $firstInteractiveText;
     }
 
     .firstInteractiveColor:hover {
-        background-color: $firstInteractiveColorHover !important;
-        color: $firstInteractiveTextHover !important;
+        background-color: $firstInteractiveColorHover;
+        color: $firstInteractiveTextHover;
     }
 
 
 
     .firstHoverColor {
-        color: $defaultLinkVisited !important;
+        color: $defaultLinkVisited;
     }
     .firstHoverColor:hover {
-        color: $firstHoverColor !important;
+        color: $firstHoverColor;
     }
 
 
-    // form validation
-    // success status
-    .input-field.valid input:not([readonly]), .input-field.valid input:focus:not([readonly]), .input-field.valid input.datepicker, .valid .canvasContainer {
-        border-color: $firstInputSuccessColor;
-    }
-    .input-field.valid input:not([readonly]) + label, .input-field.valid input.datepicker + label, .input-field.valid .prefix, .valid .note-editor + label {
-        color: $firstInputSuccessColor;
-    }
-    .input-field.valid input:focus:not([readonly]) + label, .input-field.valid input.datepicker:focus + label, .input-field.valid .prefix.active {
-        color: $firstInputSuccessColor;
-    }
-    .input-field.valid input:focus:not([readonly]), .input-field.valid input.datepicker:focus {
-        box-shadow: 0 1px 0 0 $firstInputSuccessColor;
-    }
-    .valid .colorValidation {
-        background-color: $firstInputSuccessColor;
-    }
-    .valid .note-editor {
-        border: {
-            top: none;
-            bottom: solid 3px $firstInputSuccessColor;
-            left: solid 3px $firstInputSuccessColor;
-            right: solid 3px $firstInputSuccessColor;
-        }
-    }
-
-    // error status
-    .input-field.invalid input:not([readonly]), .input-field.invalid input:focus:not([readonly]), .input-field.invalid input.datepicker, .invalid .canvasContainer {
-        border-color: $firstInputErrorColor;
-    }
-    .skeleformFieldAlert.invalid, .input-field.invalid input:not([readonly]) + label, .input-field.invalid input.datepicker + label, .input-field.invalid .prefix, .invalid .note-editor + label {
-        color: $firstInputErrorColor;
-    }
-    .input-field.invalid input:focus:not([readonly]) + label, .input-field.invalid input.datepicker:focus + label, .input-field.invalid .prefix.active {
-        color: $firstInputErrorColor;
-    }
-    .input-field.invalid input:focus:not([readonly]), .input-field.invalid input.datepicker:focus {
-        box-shadow: 0 1px 0 0 $firstInputErrorColor;
-    }
-    .invalid .colorValidation {
-        background-color: $firstInputErrorColor;
-    }
-    .invalid .note-editor {
-        border: {
-            top: none;
-            bottom: solid 3px $firstInputErrorColor;
-            left: solid 3px $firstInputErrorColor;
-            right: solid 3px $firstInputErrorColor;
-        }
-    }
-    .invalid {
-        .skeleformFieldAlert {
-            color: $firstInputErrorColor;
-        }
-    }
-
-    /*.successBorder, .successColor {
-        border-color: #3fb618 !important;
-    }
-
-    .successColor {
-        background-color: #3fb618 !important;
-    }
-
-    .errorBorder, .errorColor {
-        border-color: #ff0039 !important;
-    }
-
-    .errorColor {
-        background-color: #ff0039 !important;
-    }
-
-    .has-success .note-editor {
-        border: 1px solid #3fb618;
-    }
-
-    .has-error .note-editor {
-        border: 1px solid #ff0039;
-    }*/
-
-
-    // form elements
-    // input, checkbox and select
-    input:not([readonly]), input.datepicker, .select-wrapper input.select-dropdown {
-        border-color: $firstInputColor;
-    }
-    .select-dropdown {
-        &::-webkit-scrollbar {
-            width: 17px;
-        }
-        &::-webkit-scrollbar-track {
-            background-color: $thirdPanelColor;
-        }
-        &::-webkit-scrollbar-thumb {
-            background-color: lighten($thirdPanelColor, 20%);
-        }
-        &::-webkit-scrollbar-thumb:hover {
-            background-color: lighten($thirdPanelColor, 30%);
-        }
-        &::-webkit-scrollbar-button {
-            display: none !important;
-        }
-    }
-    input:not([readonly]) + label, input.datepicker + label, .select-wrapper + label, .input-field .prefix {
-        color: $firstInputColor;
-    }
-    input:focus:not([readonly]) + label, input.datepicker:focus + label, .select-wrapper:focus + label, .input-field .prefix.active, .note-editor + label {
-        color: $firstInputColor;
-    }
-    input:focus:not([readonly]), input.datepicker:focus, .select-wrapper:focus {
-        box-shadow: 0 1px 0 0 $firstInputColor;
-    }
-    [type="checkbox"]:checked + label:before {
-        border-right-color: $secondPanelColor;
-        border-bottom-color: $secondPanelColor;
-    }
-    li.active {
-        [type="checkbox"]:checked + label:before {
-            border-right-color: $secondPanelColorText;
-            border-bottom-color: $secondPanelColorText;
-        }
-    }
-    .file-field {
-        .btn {
-            background-color: $secondPanelColor;
-        }
-    }
-
-    // focus status
-    input[type=text]:focus:not([readonly]), input[type=password]:focus:not([readonly]), input[type=email]:focus:not([readonly]), input[type=url]:focus:not([readonly]), input[type=time]:focus:not([readonly]), input[type=date]:focus:not([readonly]), input[type=datetime-local]:focus:not([readonly]), input[type=tel]:focus:not([readonly]), input[type=number]:focus:not([readonly]), input[type=search]:focus:not([readonly]), textarea.materialize-textarea:focus:not([readonly]) {
-        border-color: $firstFocusColor;
-        box-shadow: 0 1px 0 0 $firstFocusColor;
-    }
-    input[type=text]:focus:not([readonly]) + label, input[type=password]:focus:not([readonly]) + label, input[type=email]:focus:not([readonly]) + label, input[type=url]:focus:not([readonly]) + label, input[type=time]:focus:not([readonly]) + label, input[type=date]:focus:not([readonly]) + label, input[type=datetime-local]:focus:not([readonly]) + label, input[type=tel]:focus:not([readonly]) + label, input[type=number]:focus:not([readonly]) + label, input[type=search]:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label, textarea.materialize-textarea:focus:not([readonly]) + label {
-        color: $firstFocusColor;
-    }
-
-    // switch
-    .switch label input[type=checkbox]:checked + .lever {
-        background-color: lighten($secondPanelColor, 10%);
-
-        &::after {
-            background-color: $secondPanelColor;
-        }
-    }
-
-    // select
-    .select-dropdown li.disabled, .select-dropdown li.disabled > span, .select-dropdown li.optgroup {
-        background-color: $firstPanelColor;
-        color: $firstPanelColorText !important;
-    }
-
-    // datepicker
-    .picker__day--selected, .picker__day--selected:hover, .picker--focused .picker__day--selected {
-        background-color: $fourthPanelColor !important;
-    }
-    .picker__weekday-display {
-        font-weight: 500;
-    }
-    .picker__date-display {
-        background-color: $firstPanelColor !important;
-    }
-    .picker__footer {
-        background-color: darken($firstPanelColor, 10%);
-
-        button:focus {
-            background-color: darken($firstPanelColor, 10%);
-        }
-    }
-    .picker__day.picker__day--today {
-        color: $secondPanelColor;
-        font-weight: bold;
-    }
-    .picker__table {
-        thead {
-            background-color: $firstBackgroundColor;
-            color: $firstPanelColor;
-        }
-    }
-    .picker__box {
-        background-color: $firstBackgroundColor !important;
-    }
-    .picker__header {
-        select {
-            border-color: darken($firstBackgroundColor, 20%) !important;
-        }
-    }
-    .picker__close, .picker__today {
-        color: $firstPanelColorText !important;
-    }
-    .picker__nav--prev:hover, .picker__nav--next:hover {
-        background-color:$secondPanelColor !important;
-    }
-    button.picker__clear {
-        color: $firstPanelColorText !important;
-    }
-
-    .dropdown-content li > a, .dropdown-content li > span {
-        color: $firstPanelColor !important;
-    }
-
-    .dropdown-content li:hover, .dropdown-content li.active {
-        background-color: $secondPanelColor !important;
-
-        span {
-            color: $secondPanelColorText !important;
-        }
-    }
-
-
-    // timepicker
-    .picker--time .picker__box {
-        background-color: darken($firstPanelColor, 15%) !important;
-    }
-
-    .picker__list {
-        padding-bottom: 2em;
-    }
-
-    .picker__list-item {
-        background-color: $firstPanelColor;
-        color: $firstPanelColorText;
-        border-top: solid 1px lighten($firstPanelColor, 10%);
-        border-bottom: solid 1px lighten($firstPanelColor, 10%);
-    }
-
-    .picker__list-item--selected, .picker__list-item--selected:hover, .picker--focused .picker__list-item--selected {
-        background: $secondPanelColor;
-        border-color: $secondPanelColor;
-    }
-
-    .picker__list-item:hover {
-        background-color: lighten($secondPanelColor, 15%);
-        border-color: lighten($secondPanelColor, 10%);
-        color: $firstPanelColorText;
-    }
-
-    .picker--time .picker__button--clear {
-        color: $firstPanelColorText;
-        font-size: 18px;
-
-        &::before {
-            width: 0;
-            border-top: none;
-            margin-right: 0;
-        }
-    }
-
-    .picker--time .picker__button--clear:hover, .picker--time .picker__button--clear:focus {
-        border: none;
-        background-color: darken($firstPanelColor, 20%);
-    }
-
-
-
-    // other elements
     // table
-    thead {
-        background-color: $firstPanelColor;
-        color: $firstPanelColorText;
-        border: none !important;
+    table {
+        thead {
+            background-color: $firstPanelColor;
+            color: $firstPanelColorText;
+            border: none !important;
 
-        .skeleListViewHeader {
-            &:hover {
-                background-color: darken($firstPanelColor, 10%);
+            .skeleListViewHeader {
+                &:hover {
+                    background-color: darken($firstPanelColor, 10%);
+                }
             }
         }
-    }
 
-    table.hoverable {
-        tbody > tr {
-            &:hover {
-                background-color: $firstInteractiveColorHover !important;
+        &.hoverable {
+            tbody {
+                tr {
+                    a:link {
+                        color: $firstInteractiveTextHover;
+                    }
+                    a:visited {
+                        color: $firstInteractiveTextHover;
+                    }
+                    a:hover {
+                        color: $firstInteractiveTextHover;
+                    }
+                    a:active {
+                        color: $firstInteractiveTextHover;
+                    }
 
-                a:link {
-                    color: $firstPanelColorText !important;
-                }
-                a:visited {
-                    color: $firstPanelColorText !important;
-                }
-                a:hover {
-                    color: $firstPanelColorText !important;
-                }
-                a:active {
-                    color: $firstPanelColorText !important;
-                }
-            }
+                    &:hover {
+                        background-color: $firstInteractiveColorHover;
+                        color: darken($firstInteractiveTextHover, 20%);
 
-            &.secondColor:hover {
-                background-color: darken($secondPanelColor, 15%) !important;
+                        a:link {
+                            color: darken($firstInteractiveTextHover, 10%);
+                        }
+                        a:visited {
+                            color: darken($firstInteractiveTextHover, 10%);
+                        }
+                        a:hover {
+                            color: darken($firstInteractiveTextHover, 10%);
+                        }
+                        a:active {
+                            color: darken($firstInteractiveTextHover, 10%);
+                        }
+                    }
+
+                    &.secondColor:hover {
+                        background-color: darken($secondPanelColor, 15%);
+                    }
+                }
             }
         }
     }
@@ -709,7 +485,7 @@ body.skelePanelBody {
 
     // block quote
     blockquote {
-        border-color: $secondPanelColor !important;
+        border-color: $secondPanelColor;
     }
 
     // toasts
@@ -727,16 +503,6 @@ body.skelePanelBody {
         border-color: $firstPanelColor !important;
     }
 
-    // pagination
-    .pagination {
-        li.active {
-            @extend .secondColor;
-        }
-
-        a:hover {
-            color: $firstPanelColorLinkActive !important;
-        }
-    }
 
     // progress bars
     .progress {
@@ -748,59 +514,78 @@ body.skelePanelBody {
     }
 
 
-    // skelelist
-    .skelelist {
-        .skelelistActionExtras {
-            .deleteConfirmation {
-                .cancelDeletion {
-                    color: $secondPanelColor;
+    // toolbars
+    .skeleLangBar {
+        .langFlag, .socialIcon {
+            img {
+                border-color: $thirdPanelColorBorder;
+            }
+
+            &.active {
+                img {
+                    border-color: $firstHoverColor;
                 }
             }
         }
+    }
 
-        .skeleLoadMore {
-            background-color: $thirdPanelColor;
-            color: $thirdPanelColorText;
 
-            &:hover {
-                background-color: lighten($thirdPanelColor, 10%);
+    // dashboard
+    .skeleDashboard {
+        .buttonsContainer {
+            a:nth-child(odd) {
+                @extend .firstColor;
+
+                &:hover {
+                    background-color: lighten($firstPanelColor, 15%) !important;
+                }
+            }
+
+            a:nth-child(even) {
+                @extend .secondColor;
+
+                &:hover {
+                    background-color: lighten($secondPanelColor, 15%) !important;
+                }
             }
         }
+    }
 
-        .skelelistInfo {
-            .skeleCounter {
+
+    // elements
+    .skelePanel {
+        background: $panelBackgroundOverlayColor;
+    }
+
+    .skeleDocumentTitle {
+        color: $secondPanelColor;
+    }
+
+    .modal {
+        color:$firstTextColor;
+        background-color: $panelBackgroundColor;
+
+        .btn {
+            background-color: $secondPanelColor;
+        }
+
+        .btn:hover {
+            background-color: lighten($secondPanelColor, 10%) !important;
+        }
+
+        .btn.disabled {
+            background-color: darken($secondPanelColor, 15%) !important;
+        }
+
+        .modal-footer {
+            background-color: darken($firstPanelColor, 10%);
+
+            .btnClose {
                 background-color: $thirdPanelColor;
-                color: $thirdPanelColorText;
-
-                .skeleCounterNumber {
-                    background-color: $secondPanelColor;
-                }
-            }
-        }
-
-        .skelelistSearchBar {
-            background-color: darken($firstPanelColor, 27%);
-
-            .skelelistSearchBtn {
-                background-color: $fourthPanelColor;
-                color: $firstTextColor;
-
-                .material-icons {
-                    color: $firstTextColor;
-                }
             }
 
-            .skelelistSearchInput {
-                border-color: darken($firstPanelColorText, 10%) !important;
-                color: $firstHoverColor;
-
-                &:focus:not([readonly]) {
-                    box-shadow: 0 1px 0 0 darken($firstPanelColorText, 10%);
-                }
-
-                & + label {
-                    color: darken($firstPanelColorText, 10%) !important;
-                }
+            .btnClose:hover {
+                background-color: lighten($thirdPanelColor, 10%) !important;
             }
         }
     }
