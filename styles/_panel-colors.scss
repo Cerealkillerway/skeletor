@@ -88,7 +88,7 @@ $secondHoverColor: #4a148c !default;
 $firstInteractiveColor: #e1b924 !default;
 $firstInteractiveColorHover: #03a9f4 !default;
 $firstInteractiveText: #222222 !default;
-$firstInteractiveTextHover: #01579b !default;
+$firstInteractiveTextHover: #09416d !default;
 
 
 // elements
@@ -432,12 +432,6 @@ body.skelePanelBody {
             background-color: $firstPanelColor;
             color: $firstPanelColorText;
             border: none !important;
-
-            .skeleListViewHeader {
-                &:hover {
-                    background-color: darken($firstPanelColor, 10%);
-                }
-            }
         }
 
         &.hoverable {

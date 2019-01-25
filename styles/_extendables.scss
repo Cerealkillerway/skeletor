@@ -19,3 +19,10 @@
 %noMarginRow {
     margin-bottom: 0 !important;
 }
+
+%hoverableList {
+    li:hover {
+        background-color: $firstInteractiveColorHover;
+        color: $firstInteractiveTextHover !important;
+    }
+}
