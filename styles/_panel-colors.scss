@@ -28,7 +28,7 @@ $firstDebugColorActive: #76ff03 !default;
 $firstDebugColorActiveText: #212121 !default;
 
 $firstPanelColor: #00297f !default;
-$firstPanelColorHover: #333 !default;
+$firstPanelColorHover: #083fb3 !default;
 $firstPanelColorText: #dddddd !default;
 $firstPanelColorLink: #e1b924 !default;
 $firstPanelColorLinkVisited: #c19d0b !default;
@@ -37,7 +37,7 @@ $firstPanelColorLinkActive: #c19d0b !default;
 $firstPanelColorBorder: #222 !default;
 
 $secondPanelColor: #4a148c !default;
-$secondPanelColorHover: #333 !default;
+$secondPanelColorHover: #621bb9 !default;
 $secondPanelColorText: #dddddd !default;
 $secondPanelColorLink: #e1b924 !default;
 $secondPanelColorLinkVisited: #e1b924 !default;
@@ -46,7 +46,7 @@ $secondPanelColorLinkActive: #e1b924 !default;
 $secondPanelColorBorder: #dddddd !default;
 
 $thirdPanelColor: #222222 !default;
-$thirdPanelColorHover: #333 !default;
+$thirdPanelColorHover: #252525 !default;
 $thirdPanelColorText: #eeeeee !default;
 $thirdPanelColorLink: #e1b924 !default;
 $thirdPanelColorLinkVisited: #c19d0b !default;
@@ -55,7 +55,7 @@ $thirdPanelColorLinkActive: #c19d0b !default;
 $thirdPanelColorBorder: #424242 !default;
 
 $fourthPanelColor: #e1b924 !default;
-$fourthPanelColorHover: #333 !default;
+$fourthPanelColorHover: #f1c933 !default;
 $fourthPanelColorText: #fafafa !default;
 $fourthPanelColorLink: #e1b924 !default;
 $fourthPanelColorLinkVisited: #c19d0b !default;
@@ -65,10 +65,13 @@ $fourthPanelColorBorder: darken($fourthPanelColor, 15%) !default;
 
 $panelConfirmColor: #e1b924 !default;
 $panelConfirmColorText: #222222 !default;
-$panelConfirmColorHover: #dedede !default;
+$panelConfirmColorHover: #ffdd5c !default;
 $panelUndoColor: #4a148c !default;
-$panelUndoColorHover: #333333 !default;
 $panelUndoColorText: #fafafa !default;
+$panelUndoColorHover: #621bb9 !default;
+$panelActionColor: #00297f !default;
+$panelActionColorText: #dddddd !default;
+$panelActionColorHover: #083fb3 !default;
 
 // text colors
 $firstTextColor: #212121 !default;
@@ -124,7 +127,7 @@ body.skelePanelBody {
 
     // top main menu
     nav.skelePanelMainMenu {
-        background-color: darken($firstPanelColor, 30%) !important;
+        background-color: darken($firstPanelColor, 30%);
         border-bottom: solid 3px darken($firstPanelColor, 20%);
 
         .separator {
@@ -132,8 +135,16 @@ body.skelePanelBody {
         }
 
         ul.side-nav {
+            background-color: darken($firstPanelColor, 30%);
+
+            li {
+                .material-icons {
+                    color: $firstPanelColorLink
+                }
+            }
+
             .separator + li {
-                border-color: darken($firstPanelColor, 30%);
+                border-color: darken($firstPanelColor, 10%);
             }
         }
     }
@@ -212,6 +223,19 @@ body.skelePanelBody {
             background-color: $firstPanelColorHover;
         }
 
+        &:link {
+            color: $firstPanelColorText;
+        }
+        &:visited {
+            color: $firstPanelColorText;
+        }
+        &:hover {
+            color: $firstPanelColorText;
+        }
+        &:active {
+            color: $firstPanelColorText;
+        }
+
         a:link {
             color: $firstPanelColorLink;
         }
@@ -251,6 +275,19 @@ body.skelePanelBody {
 
         &:hover {
             background-color: $secondPanelColorHover;
+        }
+
+        &:link {
+            color: $secondPanelColorText;
+        }
+        &:visited {
+            color: $secondPanelColorText;
+        }
+        &:hover {
+            color: $secondPanelColorText;
+        }
+        &:active {
+            color: $secondPanelColorText;
         }
 
         a:link {
@@ -293,6 +330,19 @@ body.skelePanelBody {
             background-color: $thirdPanelColorHover;
         }
 
+        &:link {
+            color: $thirdPanelColorText;
+        }
+        &:visited {
+            color: $thirdPanelColorText;
+        }
+        &:hover {
+            color: $thirdPanelColorText;
+        }
+        &:active {
+            color: $thirdPanelColorText;
+        }
+
         a:link {
             color: $thirdPanelColorLink;
         }
@@ -331,6 +381,19 @@ body.skelePanelBody {
 
         &:hover {
             background-color: $fourthPanelColorHover;
+        }
+
+        &:link {
+            color: $fourthPanelColorText;
+        }
+        &:visited {
+            color: $fourthPanelColorText;
+        }
+        &:hover {
+            color: $fourthPanelColorText;
+        }
+        &:active {
+            color: $fourthPanelColorText;
         }
 
         a:link {
@@ -404,6 +467,27 @@ body.skelePanelBody {
             color: $panelUndoColorText;
         }
     }
+    .actionColor {
+        background-color: $panelActionColor;
+        color: $panelActionColorText;
+
+        &:hover {
+            background-color: $panelActionColorHover;
+        }
+
+        &:link {
+            color: $panelActionColorText;
+        }
+        &:visited {
+            color: $panelActionColorText;
+        }
+        &:hover {
+            color: $panelActionColorText;
+        }
+        &:active {
+            color: $panelActionColorText;
+        }
+    }
 
 
     .firstInteractiveColor {
@@ -468,8 +552,17 @@ body.skelePanelBody {
                         }
                     }
 
-                    &.secondColor:hover {
-                        background-color: darken($secondPanelColor, 15%);
+                    &.firstColor {
+                        @extend .firstColor;
+                    }
+                    &.secondColor {
+                        @extend .secondColor;
+                    }
+                    &.thirdColor {
+                        @extend .thirdColor;
+                    }
+                    &.fourthColor {
+                        @extend .fourthColor;
                     }
                 }
             }
@@ -529,18 +622,10 @@ body.skelePanelBody {
         .buttonsContainer {
             a:nth-child(odd) {
                 @extend .firstColor;
-
-                &:hover {
-                    background-color: lighten($firstPanelColor, 15%) !important;
-                }
             }
 
             a:nth-child(even) {
                 @extend .secondColor;
-
-                &:hover {
-                    background-color: lighten($secondPanelColor, 15%) !important;
-                }
             }
         }
     }
