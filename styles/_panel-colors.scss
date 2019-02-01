@@ -550,6 +550,10 @@ body.skelePanelBody {
                         a:active {
                             color: darken($firstInteractiveTextHover, 10%);
                         }
+
+                        .skelelistActionLabel {
+                            color: $firstInteractiveTextHover;
+                        }
                     }
 
                     &.firstColor {
@@ -642,30 +646,10 @@ body.skelePanelBody {
 
     .modal {
         color:$firstTextColor;
-        background-color: $panelBackgroundColor;
-
-        .btn {
-            background-color: $secondPanelColor;
-        }
-
-        .btn:hover {
-            background-color: lighten($secondPanelColor, 10%) !important;
-        }
-
-        .btn.disabled {
-            background-color: darken($secondPanelColor, 15%) !important;
-        }
+        background-color: $firstBackgroundColor;
 
         .modal-footer {
             background-color: darken($firstPanelColor, 10%);
-
-            .btnClose {
-                background-color: $thirdPanelColor;
-            }
-
-            .btnClose:hover {
-                background-color: lighten($thirdPanelColor, 10%) !important;
-            }
         }
     }
 }

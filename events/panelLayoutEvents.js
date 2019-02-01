@@ -127,47 +127,7 @@ Template.usersList.onCreated(function() {
 });
 
 Template.userCreate.onCreated(function() {
-    this.skeleSubsReady = new ReactiveVar(false);
-    // subscribe data
-    let userQuery = {};
-    let usersOptions = {};
-    let rolesOptions = {};
-
-    /*usersOptions.fields = {
-        username: 1
-    };*/
-    rolesOptions.fields = {
-        name: 1
-    };
-
-    this.autorun(() => {
-        let username = FlowRouter.getParam('username');
-
-        // needed for both update and creation
-        //let usersList = Skeletor.subsManagers.usersSubs.subscribe('findDocuments', 'Users', {}, usersOptions);
-        let rolesList = Skeletor.subsManagers.rolesSubs.subscribe('findDocuments', 'Roles', {}, rolesOptions);
-
-        // case updating record
-        if (username) {
-            userQuery.username = username;
-
-            let currentUser = Meteor.subscribe('findDocuments', 'Users', userQuery, {});
-
-            // set reactive var for all subscriptions ready
-            this.skeleSubsReady.set(
-                //Skeletor.subsManagers.usersSubs.ready() &&
-                Skeletor.subsManagers.rolesSubs.ready() &&
-                currentUser.ready()
-            );
-        }
-        else {
-            // set reactive var for all subscriptions ready
-            this.skeleSubsReady.set(
-                //Skeletor.subsManagers.usersSubs.ready() &&
-                Skeletor.subsManagers.rolesSubs.ready()
-            );
-        }
-    });
+    Skeletor.Utilities.autoSubscribe(this, 'Users_default', 'detail');
 });
 
 
@@ -177,38 +137,7 @@ Template.rolesList.onCreated(function() {
 });
 
 Template.roleCreate.onCreated(function() {
-    this.skeleSubsReady = new ReactiveVar(false);
-    // subscribe data
-    let roleQuery = {};
-    let rolesOptions = {};
-
-    rolesOptions.fields = {
-        name: 1
-    };
-
-    this.autorun(() => {
-        let name = FlowRouter.getParam('name');
-
-        // needed for both update and creation
-        let rolesList = Skeletor.subsManagers.rolesSubs.subscribe('findDocuments', 'Roles', {}, rolesOptions);
-
-        // case updating record
-        if (name) {
-            roleQuery.name = name;
-
-            let currentRole = Meteor.subscribe('findDocuments', 'Roles', roleQuery, {});
-
-            // set reactive var for all subscriptions ready
-            this.skeleSubsReady.set(
-                Skeletor.subsManagers.rolesSubs.ready() &&
-                currentRole.ready()
-            );
-        }
-        else {
-            // set reactive var for all subscriptions ready
-            this.skeleSubsReady.set(Skeletor.subsManagers.rolesSubs.ready());
-        }
-    });
+    Skeletor.Utilities.autoSubscribe(this, 'Roles_default', 'detail');
 });
 
 
@@ -218,40 +147,7 @@ Template.sectionsList.onCreated(function() {
 });
 
 Template.sectionCreate.onCreated(function() {
-    this.skeleSubsReady = new ReactiveVar(false);
-    // subscribe data
-    let sectionQuery = {};
-    let sectionsOptions = {};
-
-    sectionsOptions.fields = {};
-
-    this.autorun(() => {
-        let currentLang = FlowRouter.getParam('itemLang');
-        let segmentLang = FlowRouter.getQueryParam('sLang');
-        let code = FlowRouter.getParam('code');
-
-        // needed for both update and creation
-        sectionsOptions.fields[currentLang + '---code'] = 1;
-
-        let sectionsList = Skeletor.subsManagers.sectionsSubs.subscribe('findDocuments', 'Sections', {}, sectionsOptions);
-
-        // case updating record
-        if (code) {
-            sectionQuery[segmentLang + '---code'] = code;
-
-            let currentSection = Meteor.subscribe('findDocuments', 'Sections', sectionQuery, {});
-
-            // set reactive var for all subscriptions ready
-            this.skeleSubsReady.set(
-                Skeletor.subsManagers.sectionsSubs.ready() &&
-                currentSection.ready()
-            );
-        }
-        else {
-            // set reactive var for all subscriptions ready
-            this.skeleSubsReady.set(Skeletor.subsManagers.sectionsSubs.ready());
-        }
-    });
+    Skeletor.Utilities.autoSubscribe(this, 'Sections_default', 'detail');
 });
 
 
@@ -273,22 +169,6 @@ Template.menusList.onCreated(function() {
 Template.menuCreate.onCreated(function() {
     Skeletor.Utilities.autoSubscribe(this, 'Menus_default', 'detail');
 });
-
-Template.menuItemsSortable.onCreated(function() {
-    console.log(this);
-});
-
-Template.menuItemsSortable.onRendered(function() {
-    let items = this.$('.menuItems')[0];
-    let sortableOptions = {
-        animation: 150,
-        handle: '.dragHandle',
-    }
-
-
-    let sortable = Sortable.create(items, sortableOptions);
-});
-
 
 
 Template.skeleTooltip.onRendered(function() {
