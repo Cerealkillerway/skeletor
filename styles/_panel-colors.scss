@@ -538,6 +538,19 @@ body.skelePanelBody {
                         background-color: $firstInteractiveColorHover;
                         color: darken($firstInteractiveTextHover, 20%);
 
+                        .firstColor {
+                            @extend .firstColor;
+                        }
+                        .secondColor {
+                            @extend .secondColor;
+                        }
+                        .thirdColor {
+                            @extend .thirdColor;
+                        }
+                        .fourthColor {
+                            @extend .fourthColor;
+                        }
+
                         a:link {
                             color: darken($firstInteractiveTextHover, 10%);
                         }
@@ -554,19 +567,6 @@ body.skelePanelBody {
                         .skelelistActionLabel {
                             color: $firstInteractiveTextHover;
                         }
-                    }
-
-                    &.firstColor {
-                        @extend .firstColor;
-                    }
-                    &.secondColor {
-                        @extend .secondColor;
-                    }
-                    &.thirdColor {
-                        @extend .thirdColor;
-                    }
-                    &.fourthColor {
-                        @extend .fourthColor;
                     }
                 }
             }
