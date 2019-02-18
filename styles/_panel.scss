@@ -133,6 +133,14 @@ body.skelePanelBody {
             overflow: hidden;
         }
         .iconSwing {
+            li > a {
+                &:hover {
+                    i.left {
+                        color: lighten($secondHoverColor, 10%);
+                    }
+                }
+            }
+
             .navItemName {
                 max-width: 0;
                 overflow: hidden;
