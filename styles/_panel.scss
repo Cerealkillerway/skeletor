@@ -124,6 +124,17 @@ body.skelePanelBody {
         }
     }
 
+    .skeleProgressBtnWrapper {
+        & > .btn {
+            overflow: visible;
+            margin-bottom: 30px;
+
+            .progress {
+                margin-top: 25px;
+            }
+        }
+    }
+
     // main menu
     nav {
         @extend .firstColor;

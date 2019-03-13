@@ -124,6 +124,17 @@ body.skelePanelBody {
         color: $firstPanelColorLinkActive;
     }
 
+    // buttons
+    .btn {
+        background-color: $firstInteractiveColor;
+        color: $firstInteractiveText;
+
+        &:hover {
+            background-color: $firstInteractiveColorHover;
+            color: $firstInteractiveTextHover;
+        }
+    }
+
 
     // top main menu
     nav.skelePanelMainMenu {
@@ -229,9 +240,6 @@ body.skelePanelBody {
         &:visited {
             color: $firstPanelColorText;
         }
-        &:hover {
-            color: $firstPanelColorText;
-        }
         &:active {
             color: $firstPanelColorText;
         }
@@ -281,9 +289,6 @@ body.skelePanelBody {
             color: $secondPanelColorText;
         }
         &:visited {
-            color: $secondPanelColorText;
-        }
-        &:hover {
             color: $secondPanelColorText;
         }
         &:active {
@@ -336,9 +341,6 @@ body.skelePanelBody {
         &:visited {
             color: $thirdPanelColorText;
         }
-        &:hover {
-            color: $thirdPanelColorText;
-        }
         &:active {
             color: $thirdPanelColorText;
         }
@@ -387,9 +389,6 @@ body.skelePanelBody {
             color: $fourthPanelColorText;
         }
         &:visited {
-            color: $fourthPanelColorText;
-        }
-        &:hover {
             color: $fourthPanelColorText;
         }
         &:active {
@@ -649,6 +648,7 @@ body.skelePanelBody {
         background-color: $firstBackgroundColor;
 
         .modal-footer {
+            margin-top: 2px;
             background-color: darken($firstPanelColor, 10%);
         }
     }
