@@ -598,7 +598,7 @@ body.skelePanelBody {
     .progress {
         background-color: $firstPanelColor;
 
-        .determinate {
+        .determinate, .indeterminate {
             background-color: $secondPanelColor;
         }
     }

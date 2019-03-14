@@ -124,16 +124,11 @@ body.skelePanelBody {
         }
     }
 
-    .skeleProgressBtnWrapper {
-        & > .btn {
-            overflow: visible;
-            margin-bottom: 30px;
-
-            .progress {
-                margin-top: 25px;
-            }
-        }
+    .progress {
+        height: 18px;
+        margin-top: 15px;
     }
+
 
     // main menu
     nav {
