@@ -102,6 +102,35 @@ body.skelePanelBody {
         padding: 0;
     }
 
+    input[type="date"] {
+        appearance: none;
+        -webkit-appearance: none;
+        color: $firstPanelColor;
+        font-family: "Helvetica", arial, sans-serif;
+
+        &::-webkit-clear-button {
+            display: none;
+        }
+
+        /* Removes the spin button */
+        &::-webkit-inner-spin-button {
+            display: none;
+        }
+
+        /* Always display the drop down caret */
+        &::-webkit-calendar-picker-indicator {
+            color: $firstPanelColor;
+            background-color: transparent;
+        }
+
+        &, focus {
+            color: $firstPanelColor;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+        }
+    }
+
     .hoverable:hover {
         -webkit-box-shadow: none;
         -moz-box-shadow: none;
