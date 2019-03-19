@@ -163,7 +163,7 @@ body.skelePanelBody {
     #sidenav-overlay {
         z-index: 11000;
     }
-    
+
     nav {
         @extend .firstColor;
 
@@ -303,7 +303,7 @@ body.skelePanelBody {
     }
 
     .modal {
-        z-index: 3003 !important;
+        z-index: 13000 !important;
         border-radius: 0;
         backface-visibility: hidden;
 
@@ -318,6 +318,10 @@ body.skelePanelBody {
                 margin-right: 15px;
             }
         }
+    }
+
+    .modal-overlay {
+        z-index: 12500 !important;
     }
 
 

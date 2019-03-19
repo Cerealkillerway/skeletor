@@ -278,6 +278,16 @@ body.skelePanelBody {
     // second color block
     .secondColorText {
         color: $secondPanelColor;
+
+        &:link {
+            color: $secondPanelColor;
+        }
+        &:visited {
+            color: darken($secondPanelColor, 10%);
+        }
+        &:active {
+            color: $secondPanelColor;
+        }
     }
     .secondColor {
         background-color: $secondPanelColor;
