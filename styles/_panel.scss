@@ -160,6 +160,10 @@ body.skelePanelBody {
 
 
     // main menu
+    #sidenav-overlay {
+        z-index: 11000;
+    }
+    
     nav {
         @extend .firstColor;
 
@@ -202,6 +206,8 @@ body.skelePanelBody {
         }
 
         ul.side-nav {
+            z-index: 12000;
+
             .separator {
                 display: none;
             }
