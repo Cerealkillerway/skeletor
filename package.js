@@ -11,7 +11,7 @@ Package.onUse(function(api) {
     // namespace
     api.addFiles('namespace.js');
 
-    api.versionsFrom('METEOR@1.6.1');
+    api.versionsFrom('METEOR@1.8.0.2');
 
 
     api.use([
@@ -52,6 +52,14 @@ Package.onUse(function(api) {
         'cerealkiller:skelesite'
     ],
     {unordered: true});
+
+
+    // static assets
+    api.addAssets([
+        'public/icons/lang/en.jpg',
+        'public/icons/lang/it.jpg'
+    ],
+    ['client']);
 
     // styles
     api.addFiles([
@@ -142,7 +150,8 @@ Package.onUse(function(api) {
 Npm.depends({
     'numeral': '2.0.4',
     'nested-property': '0.0.7',
-    'sortablejs': '1.7.0'
+    'sortablejs': '1.7.0',
+    "bcrypt": "3.0.5"
 });
 
 Package.onTest(function(api) {
