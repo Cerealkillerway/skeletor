@@ -9,7 +9,7 @@ Package.describe({
 
 Package.onUse(function(api) {
     // namespace
-    api.addFiles('namespace.js');
+    api.addFiles(['namespace.js'], ['client', 'server']);
 
     api.versionsFrom('METEOR@1.8.0.2');
 
@@ -48,8 +48,7 @@ Package.onUse(function(api) {
     // need skeleform, skelelist and skelesite, but allow them to be loaded last
     api.use([
         'cerealkiller:skeleform',
-        'cerealkiller:skelelist',
-        'cerealkiller:skelesite'
+        'cerealkiller:skelelist'
     ],
     {unordered: true});
 
@@ -85,12 +84,6 @@ Package.onUse(function(api) {
         'templates/users/userCreate.html',
         'templates/roles/rolesList.html',
         'templates/roles/roleCreate.html',
-        'templates/sections/sectionsList.html',
-        'templates/sections/sectionCreate.html',
-        'templates/pages/pagesList.html',
-        'templates/pages/pageCreate.html',
-        'templates/menus/menusList.html',
-        'templates/menus/menuCreate.html',
         'templates/debug.html'
     ],
     ['client']);
@@ -127,20 +120,12 @@ Package.onUse(function(api) {
         'lib/methods.js',
         'lib/authMatch.js',
         'lib/collections/collections.js',
-        'lib/collections/menus.js',
-        'lib/collections/pages.js',
         'lib/collections/roles.js',
-        'lib/collections/sections.js',
         'lib/collections/settings.js',
         'lib/collections/applicationData.js',
         'lib/collections/users.js',
     ],
     ['client', 'server']);
-
-    // static files
-    /*api.addFiles([
-    ],
-    ['client']);*/
 
 
     // exports
