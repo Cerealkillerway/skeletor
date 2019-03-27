@@ -1,6 +1,6 @@
 Package.describe({
     name: 'cerealkiller:skeletor',
-    version: '4.0.1',
+    version: '5.0.0',
     summary: 'CRUD app skeleton!',
     // URL to the Git repository containing the source code for this package.
     git: '',
@@ -9,15 +9,21 @@ Package.describe({
 
 Package.onUse(function(api) {
     // namespace
-    api.addFiles(['namespace.js'], ['client', 'server']);
+    api.addFiles([
+        'namespace.js'
+    ],
+    ['client', 'server']);
+
 
     api.versionsFrom('METEOR@1.8.0.2');
 
 
+    // dependencies
     api.use([
         'cerealkiller:skelelang',
     ],
     ['client', 'server']);
+
 
     // packages
     api.use([
@@ -29,6 +35,7 @@ Package.onUse(function(api) {
         'materialize:materialize@0.100.2'
     ],
     ['client']);
+
 
     api.use([
         'mongo',
@@ -45,6 +52,7 @@ Package.onUse(function(api) {
     ],
     ['client', 'server']);
 
+
     // need skeleform, skelelist and skelesite, but allow them to be loaded last
     api.use([
         'cerealkiller:skeleform',
@@ -60,6 +68,7 @@ Package.onUse(function(api) {
     ],
     ['client']);
 
+
     // styles
     api.addFiles([
         'styles/skeletor.scss',
@@ -67,62 +76,57 @@ Package.onUse(function(api) {
     ],
     ['client']);
 
+
     // templates
     api.addFiles([
-        'templates/panelMainMenu.html',
-        'templates/panelDashboard.html',
+        'templates/panel-main-menu.html',
+        'templates/panel-dashboard.html',
         'templates/login.html',
-        'templates/panelLayouts.html',
-        'templates/panelFooter.html',
-        'templates/panelToolbars.html',
-        'templates/elements/commonAssets.html',
-        'templates/elements/skeleTooltip.html',
-        'templates/elements/superUser.html',
-        'templates/settings/settingCreate.html',
-        'templates/applicationData/applicationDataCreate.html',
-        'templates/users/usersList.html',
-        'templates/users/userCreate.html',
-        'templates/roles/rolesList.html',
-        'templates/roles/roleCreate.html',
+        'templates/panel-layouts.html',
+        'templates/panel-footer.html',
+        'templates/panel-toolbars.html',
+        'templates/common-assets.html',
+        'templates/settings/setting-create.html',
+        'templates/application-data/application-data-create.html',
+        'templates/users/users-list.html',
+        'templates/users/user-create.html',
+        'templates/roles/roles-list.html',
+        'templates/roles/role-create.html',
         'templates/debug.html'
     ],
     ['client']);
-
-    // i18n
-    /*api.addFiles([
-        'i18n/en.Skeletor.Skelelang.i18n.json',
-        'i18n/it.Skeletor.Skelelang.i18n.json'
-    ], ['client', 'server']);*/
 
 
     // libraries
     api.addFiles([
         'lib/publish.js',
-        'lib/methodsServer.js'
+        'lib/methods-server.js'
     ],
     ['server']);
 
-    api.addFiles([
-        'events/debugEvents.js',
-        'events/panelLayoutEvents.js',
-        'events/panelFooterEvents.js',
-        'events/panelToolbarsEvents.js',
 
-        'helpers/panelLayoutHelpers.js',
-        'helpers/panelToolbarsHelpers.js'
+    api.addFiles([
+        'events/debug-events.js',
+        'events/panel-layout-events.js',
+        'events/panel-footer-events.js',
+        'events/panel-toolbars-events.js',
+
+        'helpers/panel-layout-helpers.js',
+        'helpers/panel-toolbars-helpers.js'
     ],
     ['client']);
+
 
     api.addFiles([
         'lib/utils.js',
         'lib/main-init.js',
-        'lib/routerPanel.js',
+        'lib/router-panel.js',
         'lib/methods.js',
-        'lib/authMatch.js',
+        'lib/auth-match.js',
         'lib/collections/collections.js',
         'lib/collections/roles.js',
         'lib/collections/settings.js',
-        'lib/collections/applicationData.js',
+        'lib/collections/application-data.js',
         'lib/collections/users.js',
     ],
     ['client', 'server']);
@@ -132,12 +136,14 @@ Package.onUse(function(api) {
     api.export(['Skeletor']);
 });
 
+
 Npm.depends({
     'numeral': '2.0.4',
     'nested-property': '0.0.7',
     'sortablejs': '1.7.0',
     "bcrypt": "3.0.5"
 });
+
 
 Package.onTest(function(api) {
     api.use([

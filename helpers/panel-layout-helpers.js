@@ -67,7 +67,10 @@ Template.userCreate.helpers({
 
         if (username && instance.skeleSubsReady.get()) {
             context.item = Skeletor.Data.Users.findOne({username: username});
-            context.item.userEmail = context.item.emails[0].address;
+
+            if (context.item && context.item.emails) {
+                context.item.userEmail = context.item.emails[0].address;
+            }
         }
 
         context.schemaName = 'Users_default';

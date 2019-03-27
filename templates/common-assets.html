@@ -1,3 +1,4 @@
+<!-- unhautorized page template -->
 <template name="skeleUnauthorized">
     <main>
         <div class="skeleCentralBody">
@@ -46,6 +47,7 @@
     </div>
 </template>
 
+
 <template name="unpublished">
     <div class="panel centeredSection">
         <img src="{{skeleStaticPath}}/images/logos/miniLogo.png">
@@ -54,4 +56,16 @@
         <p><b>{{i18n "unpublishedSubtitle_text"}}</b></p>
         <p>{{{i18n "unpublishedDetail_text"}}}</p>
     </div>
+</template>
+
+
+<!-- superuser role description -->
+<template name="skeleSuperUserRole">
+    {{{i18n "superUserRole_text"}}}
+</template>
+
+
+<!-- template for material tooltips -->
+<template name="skeleTooltip">
+    <div class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="{{i18n tooltip}}">{{i18n content}}</div>
 </template>
