@@ -47,8 +47,7 @@ Package.onUse(function(api) {
         'staringatlights:fast-render@3.0.3',
         'momentjs:moment@2.19.2',
         'cerealkiller:skeleutils',
-        'gfk:underscore-deep@1.0.0',
-        'jcbernack:reactive-aggregate@1.0.0'
+        'gfk:underscore-deep@1.0.0'
     ],
     ['client', 'server']);
 
