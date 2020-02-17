@@ -26,7 +26,6 @@ Package.onUse(function(api) {
         'reactive-var',
         'kadira:blaze-layout@2.3.0',
         'fourseven:scss@4.5.4',
-        'materialize:materialize@0.100.2'
     ],
     ['client']);
 
