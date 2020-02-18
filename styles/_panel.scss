@@ -205,7 +205,7 @@ body.skelePanelBody {
             cursor: pointer;
         }
 
-        ul.side-nav {
+        ul.sidenav {
             z-index: 12000;
 
             .separator {
@@ -293,6 +293,40 @@ body.skelePanelBody {
         }
     }
 
+
+    // replicaSet
+    .skeleformReplicaSet {
+        .emailsFrame {
+            flex: 1 0 calc(25% - 50px);
+            max-width: calc(25% - 50px);
+
+            &:first-child {
+                .replicaFrameBody {
+                    margin-left: 5px;
+                }
+            }
+
+            .replicaFrameBody {
+                margin: 10px;
+                padding: 0;
+                border: solid 1px lighten($firstPanelColor, 20%);
+
+                .skeleformReplicaHandle {
+                    height: 15px;
+                    width: 100%;
+                    left: 0;
+                    background-color: lighten($firstPanelColor, 20%);
+                }
+
+                .skeleReplicaBtnAdd, .skeleReplicaBtnRemove {
+                    width: 46px;
+                    padding: 0;
+                }
+            }
+        }
+    }
+
+
     .listToolbarContainer {
         margin-bottom: 35px;
     }
@@ -303,7 +337,7 @@ body.skelePanelBody {
     }
 
     .modal {
-        z-index: 13000 !important;
+        z-index: 12000 !important;
         border-radius: 0;
         backface-visibility: hidden;
 
@@ -321,7 +355,7 @@ body.skelePanelBody {
     }
 
     .modal-overlay {
-        z-index: 12500 !important;
+        z-index: 11000 !important;
     }
 
 
