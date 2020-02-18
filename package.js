@@ -32,7 +32,6 @@ Package.onUse(function(api) {
         'reactive-var',
         'kadira:blaze-layout@2.3.0',
         'fourseven:scss@4.5.4',
-        'materialize:materialize@0.100.2'
     ],
     ['client']);
 
@@ -140,7 +139,9 @@ Npm.depends({
     'numeral': '2.0.4',
     'nested-property': '0.0.7',
     'sortablejs': '1.7.0',
-    "bcrypt": "3.0.5"
+    'bcrypt': '3.0.8',
+    'materialize-css': '1.0.0',
+
 });
 
 
